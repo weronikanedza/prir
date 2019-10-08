@@ -1,0 +1,9 @@
+#include "Row.hpp"
+//
+//double[] Row::getFeatures() {
+//	return features;
+//}
+//
+//string Row::getCategory() {
+//	return category;
+//}
