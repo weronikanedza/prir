@@ -44,7 +44,7 @@ all: lab1
 lab1: $(OBJS) $(USER_OBJS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: Cross G++ Linker'
-	g++  -o "lab1" $(OBJS) $(USER_OBJS) $(LIBS)
+	g++ -fopenmp -o "lab1" $(OBJS) $(USER_OBJS) $(LIBS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 

@@ -1,0 +1,13 @@
+#include <string>
+
+using namespace std;
+
+class Row {
+	private:
+		double* features;
+		string category;
+	public:
+	 	double* getFeatures();
+	 	string getCategory();
+}
+;

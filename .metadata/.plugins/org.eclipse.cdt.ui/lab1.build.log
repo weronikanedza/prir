@@ -1,0 +1,31 @@
+19:50:31 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/lab1.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/lab1.d" -MT"src/lab1.o" -o "src/lab1.o" "../src/lab1.cpp"
+../src/lab1.cpp: In function ‘void calcDeviation(std::vector<Row>)’:
+../src/lab1.cpp:57:20: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int i = 0; i < inData.size(); i++) {
+                  ~~^~~~~~~~~~~~~~~
+../src/lab1.cpp: In function ‘void findMinMax(std::vector<Row>)’:
+../src/lab1.cpp:75:20: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int i = 0; i < inData.size(); i++) {
+                  ~~^~~~~~~~~~~~~~~
+../src/lab1.cpp: In function ‘void normalize(std::vector<Row>)’:
+../src/lab1.cpp:95:20: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int i = 0; i < inData.size(); i++) {
+                  ~~^~~~~~~~~~~~~~~
+../src/lab1.cpp: In function ‘void standarize(std::vector<Row>)’:
+../src/lab1.cpp:110:20: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int i = 0; i < inData.size(); i++) {
+                  ~~^~~~~~~~~~~~~~~
+Finished building: ../src/lab1.cpp
+ 
+Building target: lab1
+Invoking: Cross G++ Linker
+g++ -fopenmp -o "lab1"  ./src/FIleLoader.o ./src/lab1.o   
+Finished building target: lab1
+ 
+
+19:50:32 Build Finished. 0 errors, 4 warnings. (took 1s.3ms)
+

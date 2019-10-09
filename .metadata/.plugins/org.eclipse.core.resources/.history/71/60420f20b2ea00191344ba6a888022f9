@@ -1,0 +1,43 @@
+#include "FileLoader.hpp"
+
+using namespace std;
+
+#define double min[4] {100,100,100,100};
+#define double max[4];
+
+void findMinMax(vector<Row> inData);
+void normalize(vector<Row> inData);
+void standarize(vector<Row> inData);
+
+
+int main() {
+	vector<Row> rows = FileLoader().readFile();
+	normalize(rows);
+	return 0;
+}
+
+void findMinMax(vector<Row> inData) {
+
+	for (int i = 0; i < inData.size(); i++) {
+		for (int j = 0; j < 4; j++) {
+			if (min[j] > inData[i].features[j]) {
+				min[j] = inData[i].features[j];
+			}
+
+			if (max[j] < inData[i].features[j]) {
+				max[j] = inData[i].features[j];
+			}
+		}
+	}
+
+}
+
+void normalize(vector<Row> inData)
+{
+	findMinMax(inData);
+}
+
+
+void standarize(vector<Row> inData) {
+
+}

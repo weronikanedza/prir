@@ -1,0 +1,69 @@
+#include "FileLoader.hpp"
+
+using namespace std;
+
+double minVal[4] = { 100, 100, 100, 100 };
+double maxVal[4];
+double average[4];
+double variation[4];
+
+void findMinMax(vector<Row> inData);
+void normalize(vector<Row> inData);
+void standarize(vector<Row> inData);
+void calcAverage(vector<Row> inData);
+void calcVariation(vector<Row> inData);
+
+int main() {
+	vector<Row> rows = FileLoader().readFile();
+	normalize(rows);
+	standarize(rows);
+	return 0;
+}
+
+void calcAverage(vector<Row> inData) {
+	double sum[4];
+	for (int i = 0; i < inData.size(); i++) {
+		for (int j = 0; j < 4; j++) {
+			sum[j] += inData[i].features[j];
+		}
+	}
+
+	for (int j = 0; j < 4; j++) {
+		average[j] = sum[j] / inData.size();
+	}
+}
+
+void calcVariation(vector<Row> inData) {
+
+}
+
+void findMinMax(vector<Row> inData) {
+
+	for (int i = 0; i < inData.size(); i++) {
+		for (int j = 0; j < 4; j++) {
+			if (minVal[j] > inData[i].features[j]) {
+				minVal[j] = inData[i].features[j];
+			}
+
+			if (maxVal[j] < inData[i].features[j]) {
+				maxVal[j] = inData[i].features[j];
+			}
+		}
+	}
+
+}
+
+void normalize(vector<Row> inData) {
+	findMinMax(inData);
+	for (int i = 0; i < inData.size(); i++) {
+		for (int j = 0; j < 4; j++) {
+			inData[i].features[j] = (inData[i].features[j] - minVal[j])
+					/ (maxVal[j] - minVal[j]);
+		}
+	}
+}
+
+void standarize(vector<Row> inData) {
+	calcAverage(inData);
+	calcVariation(inData);
+}

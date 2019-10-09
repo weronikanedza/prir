@@ -1,0 +1,9 @@
+#include "Row.h"
+
+double* Row::getFeatures() {
+	return features;
+}
+
+String Row::getCategory(){
+	return category;
+}

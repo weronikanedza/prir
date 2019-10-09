@@ -1,0 +1,7 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+	cout << "ss" << endl; // prints ss
+	return 0;
+}

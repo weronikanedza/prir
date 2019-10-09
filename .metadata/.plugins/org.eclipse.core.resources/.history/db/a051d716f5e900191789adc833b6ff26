@@ -1,0 +1,24 @@
+#include <string>
+#include <vector>
+
+#define SIZE 4
+
+using namespace std;
+
+class Row {
+	public:
+		double* features;
+		string category;
+		Row(double* features, string m_category) : 
+		features(features),category(category) {};
+		
+		void setFeatures(vector<double>  features);
+		void setCategory(string category);
+	 	vector<double>  getFeatures();
+	 	string getCategory();
+	 	
+	 ~Row() {
+	 delete features;
+	 }
+}
+;

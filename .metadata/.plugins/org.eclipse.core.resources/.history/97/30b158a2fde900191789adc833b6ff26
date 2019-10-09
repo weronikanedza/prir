@@ -1,0 +1,45 @@
+#include <iostream>
+#include "Row.hpp"
+#include <fstream>
+#include <sstream>
+
+using namespace std;
+
+#define NUM_OF_FEATURE 4
+
+void readFile(vector<Row> &rows);
+Row loadRow(string line);
+
+int main() {
+	vector<Row> rows;
+
+	cout << "ss" << endl; // prints ss
+	return 0;
+}
+
+void readFile(vector<Row> &rows) {
+	fstream fileStream;
+	fileStream.open("iris_data.csv", ios::in);
+	string line;
+
+	while (getline(fileStream, line)) {
+		rows.push_back(loadRow(line));
+	}
+
+	fileStream.close();
+}
+
+Row loadRow(string line) {
+	vector<double> features;
+	string word;
+	stringstream s(line);
+	string::size_type sz;
+
+	for(int i=0;i<NUM_OF_FEATURE;i++){
+		getline(s,word,', ');
+		features.push_back(stod(word,&sz));
+	}
+	getline(s,word,', ');
+
+	return new Row(features,word);
+}

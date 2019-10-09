@@ -1,0 +1,7 @@
+#include "Row.h"
+
+double* Row::getFeatures() {
+	return features;
+}
+
+

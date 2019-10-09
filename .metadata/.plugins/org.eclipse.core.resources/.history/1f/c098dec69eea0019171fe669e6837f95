@@ -1,0 +1,16 @@
+#include "FileLoader.hpp"
+
+vector<Row> readFile() {
+
+	ifstream file("iris.csv", ios::in);
+	string line;
+	vector<Row> rows;
+
+	while (getline(file, line)) {
+		rows.push_back(loadRow(line));
+	}
+
+
+	file.close();
+	return rows;
+}

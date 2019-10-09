@@ -1,0 +1,8 @@
+class Row {
+	private:
+		 double* features;
+		 string category;
+	public:
+	 double* getFeatures();
+	 String getCategory();
+}

@@ -1,0 +1,9 @@
+#include <vector>
+
+using namespace std;
+
+class FileLoader {
+	public:
+	vector<Row> readFile();
+}
+;

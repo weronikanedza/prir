@@ -1,0 +1,10 @@
+
+#include "FileLoader.hpp"
+
+using namespace std;
+
+int main() {
+	vector<Row> rows = FileLoader().readFile();
+	return 0;
+}
+

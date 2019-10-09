@@ -1,47 +1,120 @@
-#include <iostream>
-#include <fstream>
-#include <sstream>
-#include <iomanip>
-
-#include "Row.hpp"
+#include "FileLoader.hpp"
+#include <math.h>
+#include <omp.h>
 
 using namespace std;
 
-#define NUM_OF_FEATURE 4
+double minVal[4] = { 100, 100, 100, 100 };
+double maxVal[4];
+double average[4];
+double deviation[4];
+double minMaxTime;
+double normalizationTime;
+double deviationTime;
 
-vector<Row> readFile();
-Row loadRow(string line);
+void findMinMax(vector<Row> inData);
+void normalize(vector<Row> inData);
+void standarize(vector<Row> inData);
+void calcAverage(vector<Row> inData);
+void calcDeviation(vector<Row> inData);
 
 int main() {
-	vector<Row> rows = readFile();
+	vector<Row> rows = FileLoader().readFile();
+	normalize(rows);
+	standarize(rows);
+
 	return 0;
 }
 
-vector<Row> readFile() {
+void calcAverage(vector<Row> inData) {
+	double sum[4];
 
-	ifstream file("iris.csv", ios::in);
-	string line;
-	vector<Row> rows;
+	double begin = omp_get_wtime();
 
-	while (getline(file, line)) {
-		rows.push_back(loadRow(line));
+	int featureSize = 4;
+	int size = inData.size();
+	int i, j;
+
+	#pragma omp parallel for shared(size,sum,featureSize,inData) private(i,j)
+	for (i = 0; i < size; i++) {
+		for (j = 0; j < featureSize; j++) {
+			sum[j] += inData[i].features[j];
+		}
 	}
 
+	double end = omp_get_wtime();
+	deviationTime = end - begin;
 
-	file.close();
-	return rows;
+	for (int j = 0; j < 4; j++) {
+		average[j] = sum[j] / inData.size();
+	}
 }
 
-Row loadRow(string line) {
-	vector<double> features;
-	string word;
-	stringstream s(line);
+void calcDeviation(vector<Row> inData) {
+	double variation[4];
 
-	for (int i = 0; i < NUM_OF_FEATURE; i++) {
-		getline(s, word, ',');
-		features.push_back(atof(word.c_str()));
+	double begin = omp_get_wtime();
+
+	for (int i = 0; i < inData.size(); i++) {
+		for (int j = 0; j < 4; j++) {
+			variation[j] += pow(inData[i].features[j] - average[j], 2)
+					/ inData.size();
+		}
 	}
-	getline(s, word, ',');
+	double end = omp_get_wtime();
+	deviationTime = end - begin;
+	for (int j = 0; j < 4; j++) {
+		deviation[j] = sqrt(variation[j]);
+	}
 
-	return Row(features, word);
+}
+
+void findMinMax(vector<Row> inData) {
+
+	double begin = omp_get_wtime();
+
+	for (int i = 0; i < inData.size(); i++) {
+		for (int j = 0; j < 4; j++) {
+			if (minVal[j] > inData[i].features[j]) {
+				minVal[j] = inData[i].features[j];
+			}
+
+			if (maxVal[j] < inData[i].features[j]) {
+				maxVal[j] = inData[i].features[j];
+			}
+		}
+	}
+
+	double end = omp_get_wtime();
+	minMaxTime = end - begin;
+}
+
+void normalize(vector<Row> inData) {
+	findMinMax(inData);
+
+	double begin = omp_get_wtime();
+	for (int i = 0; i < inData.size(); i++) {
+		for (int j = 0; j < 4; j++) {
+			inData[i].features[j] = (inData[i].features[j] - minVal[j])
+					/ (maxVal[j] - minVal[j]);
+		}
+	}
+	double end = omp_get_wtime();
+	normalizationTime = end - begin;
+}
+
+void standarize(vector<Row> inData) {
+	calcAverage(inData);
+	calcDeviation(inData);
+	double begin = omp_get_wtime();
+
+	for (int i = 0; i < inData.size(); i++) {
+		for (int j = 0; j < 4; j++) {
+			inData[i].features[j] = (inData[i].features[j] - average[j])
+					/ deviation[j];
+		}
+	}
+
+	double end = omp_get_wtime();
+	normalizationTime = end - begin;
 }

@@ -1,0 +1,16 @@
+#include <string>
+#define SIZE 4;
+
+using namespace std;
+
+class Row {
+	public:
+		double* features[SIZE];
+		string category;
+		Row(double* features, string category);
+		void setFeatures(double* features);
+		void setCategory(string category);
+	 	double* getFeatures();
+	 	string getCategory();
+}
+;
