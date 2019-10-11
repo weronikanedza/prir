@@ -1,5 +1,8 @@
+#pragma once
+
 #include <string>
 #include <vector>
+#define NUM_OF_FEATURES 4
 
 using namespace std;
 
