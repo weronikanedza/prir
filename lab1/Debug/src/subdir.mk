@@ -5,18 +5,21 @@
 # Add inputs and outputs from these tool invocations to the build variables 
 CPP_SRCS += \
 ../src/FIleLoader.cpp \
+../src/KNN.cpp \
 ../src/Normalization.cpp \
 ../src/Standarization.cpp \
 ../src/lab1.cpp 
 
 OBJS += \
 ./src/FIleLoader.o \
+./src/KNN.o \
 ./src/Normalization.o \
 ./src/Standarization.o \
 ./src/lab1.o 
 
 CPP_DEPS += \
 ./src/FIleLoader.d \
+./src/KNN.d \
 ./src/Normalization.d \
 ./src/Standarization.d \
 ./src/lab1.d 

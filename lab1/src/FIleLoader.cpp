@@ -17,11 +17,9 @@ vector<Row> FileLoader::readFile() {
 		rows.push_back(loadRow(line));
 	}
 
-
 	file.close();
 	return rows;
 }
-
 
 Row FileLoader::loadRow(string line) {
 	vector<double> features;
@@ -32,7 +30,22 @@ Row FileLoader::loadRow(string line) {
 		getline(s, word, ',');
 		features.push_back(atof(word.c_str()));
 	}
-	getline(s, word, ',');
 
-	return Row(features, word);
+	getline(s, word, ',');
+	return prepareData(features, word);
+
+}
+
+Row FileLoader::prepareData(vector<double> features, string category) {
+	int categoryTmp = 2;
+
+	if (category.compare("Iris-setosa")==0) {
+		categoryTmp = 0;
+	}
+
+	if (category.compare("Iris-versicolor")==0) {
+		categoryTmp = 1;
+	}
+
+	return Row(features, categoryTmp);
 }
