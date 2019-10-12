@@ -3,9 +3,13 @@
 void Normalization::normalize() {
 	findMinMax();
 
+	int num_of_features = NUM_OF_FEATURES;
+	int i, j;
 	double begin = omp_get_wtime();
-	for (int i = 0; i < inData.size(); i++) {
-		for (int j = 0; j < 4; j++) {
+
+	#pragma omp parallel for default(none) shared(inData,inDataSize,num_of_features,min,max) private(i,j)
+	for (i = 0; i < inDataSize; i++) {
+		for (j = 0; j < num_of_features; j++) {
 			inData[i].features[j] = (inData[i].features[j] - min[j])
 					/ (max[j] - min[j]);
 		}
@@ -16,10 +20,13 @@ void Normalization::normalize() {
 }
 
 void Normalization::findMinMax() {
+	int i, j;
+	int num_of_features = NUM_OF_FEATURES;
 	double begin = omp_get_wtime();
 
-	for (int i = 0; i < inData.size(); i++) {
-		for (int j = 0; j < 4; j++) {
+	#pragma omp parallel for default(none) shared(inData,min,max,num_of_features,inDataSize) private(i,j)
+	for (int i = 0; i < inDataSize; i++) {
+		for (int j = 0; j < num_of_features; j++) {
 			if (min[j] > inData[i].features[j]) {
 				min[j] = inData[i].features[j];
 			}
@@ -36,5 +43,9 @@ void Normalization::findMinMax() {
 
 double Normalization::getNormalizationTime() {
 	return normalizationTime;
+}
+
+double Normalization::getMinMaxTime(){
+	return minMaxTime;
 }
 

@@ -4,7 +4,7 @@
 
 void KNN::createSets() {
 	//3 categories each 50 rows
-	int teachingSetSize = 0.8 * inData.size() / 3;
+	int teachingSetSize = 0.6 * inData.size() / 3;
 
 	for (int i = 0; i < 3; i++) {
 		for (int j = i * 50; j < i * 50 + teachingSetSize; j++) {

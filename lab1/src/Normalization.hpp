@@ -8,12 +8,14 @@ private:
 	vector<Row> inData;
 	double normalizationTime;
 	double minMaxTime;
+	int inDataSize;
 	double min[NUM_OF_FEATURES] = {100,100,100,100};
 	double max[NUM_OF_FEATURES];
 public:
 	Normalization(vector<Row> inData) :
-			inData(inData) {};
+			inData(inData),inDataSize(inData.size()) {};
 	double getNormalizationTime();
 	void normalize();
 	void findMinMax();
+	double getMinMaxTime();
 };

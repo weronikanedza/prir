@@ -269,3 +269,867 @@ Invoking: Cross G++ Linker
 g++ -fopenmp -o "lab1"  ./src/FIleLoader.o ./src/KNN.o ./src/Normalization.o ./src/Standarization.o ./src/lab1.o   
 Finished building target: lab1
  
+10:39:33 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNN.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNN.d" -MT"src/KNN.o" -o "src/KNN.o" "../src/KNN.cpp"
+../src/KNN.cpp: In member function ‘void KNN::knn()’:
+../src/KNN.cpp:29:20: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int i = 0; i < testingSet.size(); i++) {
+                  ~~^~~~~~~~~~~~~~~~~~~
+../src/KNN.cpp: In member function ‘double KNN::getAccuracy()’:
+../src/KNN.cpp:38:20: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int i = 0; i < testingSet.size(); i++) {
+                  ~~^~~~~~~~~~~~~~~~~~~
+../src/KNN.cpp: In member function ‘int KNN::calculatePrediction(std::priority_queue<Row, std::vector<Row>, CompareRows>, Row, int)’:
+../src/KNN.cpp:52:20: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int j = 0; j < trainingSet.size(); j++) {
+                  ~~^~~~~~~~~~~~~~~~~~~~
+Finished building: ../src/KNN.cpp
+ 
+Building target: lab1
+Invoking: Cross G++ Linker
+g++ -fopenmp -o "lab1"  ./src/FIleLoader.o ./src/KNN.o ./src/Normalization.o ./src/Standarization.o ./src/lab1.o   
+Finished building target: lab1
+ 
+10:39:37 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+make: Nothing to be done for 'all'.
+11:07:01 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/Normalization.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/Normalization.d" -MT"src/Normalization.o" -o "src/Normalization.o" "../src/Normalization.cpp"
+../src/Normalization.cpp: In member function ‘void Normalization::normalize()’:
+../src/Normalization.cpp:7:20: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int i = 0; i < inData.size(); i++) {
+                  ~~^~~~~~~~~~~~~~~
+../src/Normalization.cpp: In member function ‘void Normalization::findMinMax()’:
+../src/Normalization.cpp:21:20: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int i = 0; i < inData.size(); i++) {
+                  ~~^~~~~~~~~~~~~~~
+Finished building: ../src/Normalization.cpp
+ 
+Building file: ../src/lab1.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/lab1.d" -MT"src/lab1.o" -o "src/lab1.o" "../src/lab1.cpp"
+Finished building: ../src/lab1.cpp
+ 
+Building target: lab1
+Invoking: Cross G++ Linker
+g++ -fopenmp -o "lab1"  ./src/FIleLoader.o ./src/KNN.o ./src/Normalization.o ./src/Standarization.o ./src/lab1.o   
+Finished building target: lab1
+ 
+11:08:23 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/Normalization.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/Normalization.d" -MT"src/Normalization.o" -o "src/Normalization.o" "../src/Normalization.cpp"
+../src/Normalization.cpp: In member function ‘void Normalization::normalize()’:
+../src/Normalization.cpp:9:17: error: ‘shared’ is not valid for ‘#pragma omp for’
+ #pragma omp for shared(inData,inDataSize,num_of_features,min,max) private(i,j)
+                 ^~~~~~
+../src/Normalization.cpp:9:75: error: ‘i’ has not been declared
+ #pragma omp for shared(inData,inDataSize,num_of_features,min,max) private(i,j)
+                                                                           ^
+../src/Normalization.cpp:9:77: error: ‘j’ has not been declared
+ #pragma omp for shared(inData,inDataSize,num_of_features,min,max) private(i,j)
+                                                                             ^
+../src/Normalization.cpp:6:6: warning: unused variable ‘num_of_features’ [-Wunused-variable]
+  int num_of_features = NUM_OF_FEATURES;
+      ^~~~~~~~~~~~~~~
+../src/Normalization.cpp: In member function ‘void Normalization::findMinMax()’:
+../src/Normalization.cpp:24:20: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int i = 0; i < inData.size(); i++) {
+                  ~~^~~~~~~~~~~~~~~
+src/subdir.mk:30: recipe for target 'src/Normalization.o' failed
+make: *** [src/Normalization.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+11:08:57 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/Normalization.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/Normalization.d" -MT"src/Normalization.o" -o "src/Normalization.o" "../src/Normalization.cpp"
+../src/Normalization.cpp: In member function ‘void Normalization::normalize()’:
+../src/Normalization.cpp:10:17: error: ‘shared’ is not valid for ‘#pragma omp for’
+ #pragma omp for shared(inData,inDataSize,num_of_features,min,max) private(i,j)
+                 ^~~~~~
+../src/Normalization.cpp:6:6: warning: unused variable ‘num_of_features’ [-Wunused-variable]
+  int num_of_features = NUM_OF_FEATURES;
+      ^~~~~~~~~~~~~~~
+../src/Normalization.cpp: In member function ‘void Normalization::findMinMax()’:
+../src/Normalization.cpp:25:20: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int i = 0; i < inData.size(); i++) {
+                  ~~^~~~~~~~~~~~~~~
+src/subdir.mk:30: recipe for target 'src/Normalization.o' failed
+make: *** [src/Normalization.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+11:09:01 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/Normalization.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/Normalization.d" -MT"src/Normalization.o" -o "src/Normalization.o" "../src/Normalization.cpp"
+../src/Normalization.cpp: In member function ‘void Normalization::normalize()’:
+../src/Normalization.cpp:10:17: error: ‘shared’ is not valid for ‘#pragma omp for’
+ #pragma omp for shared(inData,inDataSize,num_of_features,min,max) private(i,j)
+                 ^~~~~~
+../src/Normalization.cpp:6:6: warning: unused variable ‘num_of_features’ [-Wunused-variable]
+  int num_of_features = NUM_OF_FEATURES;
+      ^~~~~~~~~~~~~~~
+../src/Normalization.cpp: In member function ‘void Normalization::findMinMax()’:
+../src/Normalization.cpp:25:20: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int i = 0; i < inData.size(); i++) {
+                  ~~^~~~~~~~~~~~~~~
+src/subdir.mk:30: recipe for target 'src/Normalization.o' failed
+make: *** [src/Normalization.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+11:09:24 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/Normalization.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/Normalization.d" -MT"src/Normalization.o" -o "src/Normalization.o" "../src/Normalization.cpp"
+../src/Normalization.cpp: In member function ‘void Normalization::normalize()’:
+../src/Normalization.cpp:6:6: warning: unused variable ‘num_of_features’ [-Wunused-variable]
+  int num_of_features = NUM_OF_FEATURES;
+      ^~~~~~~~~~~~~~~
+../src/Normalization.cpp: In member function ‘void Normalization::findMinMax()’:
+../src/Normalization.cpp:25:20: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int i = 0; i < inData.size(); i++) {
+                  ~~^~~~~~~~~~~~~~~
+Finished building: ../src/Normalization.cpp
+ 
+Building target: lab1
+Invoking: Cross G++ Linker
+g++ -fopenmp -o "lab1"  ./src/FIleLoader.o ./src/KNN.o ./src/Normalization.o ./src/Standarization.o ./src/lab1.o   
+Finished building target: lab1
+ 
+11:11:50 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/Normalization.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/Normalization.d" -MT"src/Normalization.o" -o "src/Normalization.o" "../src/Normalization.cpp"
+../src/Normalization.cpp:10:26: error: stray ‘\’ in program
+ #pragma omp parallel for \default(none) shared(inData,inDataSize,num_of_features,min,max) private(i,j)
+                          ^
+../src/Normalization.cpp: In member function ‘void Normalization::normalize()’:
+../src/Normalization.cpp:6:6: warning: unused variable ‘num_of_features’ [-Wunused-variable]
+  int num_of_features = NUM_OF_FEATURES;
+      ^~~~~~~~~~~~~~~
+../src/Normalization.cpp: In member function ‘void Normalization::findMinMax()’:
+../src/Normalization.cpp:25:20: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int i = 0; i < inData.size(); i++) {
+                  ~~^~~~~~~~~~~~~~~
+make: *** [src/Normalization.o] Error 1
+src/subdir.mk:30: recipe for target 'src/Normalization.o' failed
+"make all" terminated with exit code 2. Build might be incomplete.
+11:12:00 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/Normalization.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/Normalization.d" -MT"src/Normalization.o" -o "src/Normalization.o" "../src/Normalization.cpp"
+../src/Normalization.cpp:10:26: error: stray ‘\’ in program
+ #pragma omp parallel for \default(none) shared(inData,inDataSize,num_of_features,min,max) private(i,j)
+                          ^
+../src/Normalization.cpp: In member function ‘void Normalization::normalize()’:
+../src/Normalization.cpp:6:6: warning: unused variable ‘num_of_features’ [-Wunused-variable]
+  int num_of_features = NUM_OF_FEATURES;
+      ^~~~~~~~~~~~~~~
+../src/Normalization.cpp: In member function ‘void Normalization::findMinMax()’:
+../src/Normalization.cpp:25:20: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int i = 0; i < inData.size(); i++) {
+                  ~~^~~~~~~~~~~~~~~
+src/subdir.mk:30: recipe for target 'src/Normalization.o' failed
+make: *** [src/Normalization.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+11:12:03 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/Normalization.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/Normalization.d" -MT"src/Normalization.o" -o "src/Normalization.o" "../src/Normalization.cpp"
+../src/Normalization.cpp: In member function ‘void Normalization::normalize()’:
+../src/Normalization.cpp:6:6: warning: unused variable ‘num_of_features’ [-Wunused-variable]
+  int num_of_features = NUM_OF_FEATURES;
+      ^~~~~~~~~~~~~~~
+../src/Normalization.cpp: In member function ‘void Normalization::findMinMax()’:
+../src/Normalization.cpp:25:20: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int i = 0; i < inData.size(); i++) {
+                  ~~^~~~~~~~~~~~~~~
+Finished building: ../src/Normalization.cpp
+ 
+Building target: lab1
+Invoking: Cross G++ Linker
+g++ -fopenmp -o "lab1"  ./src/FIleLoader.o ./src/KNN.o ./src/Normalization.o ./src/Standarization.o ./src/lab1.o   
+Finished building target: lab1
+ 
+11:12:26 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/Normalization.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/Normalization.d" -MT"src/Normalization.o" -o "src/Normalization.o" "../src/Normalization.cpp"
+../src/Normalization.cpp: In member function ‘void Normalization::findMinMax()’:
+../src/Normalization.cpp:25:20: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int i = 0; i < inData.size(); i++) {
+                  ~~^~~~~~~~~~~~~~~
+Finished building: ../src/Normalization.cpp
+ 
+Building target: lab1
+Invoking: Cross G++ Linker
+g++ -fopenmp -o "lab1"  ./src/FIleLoader.o ./src/KNN.o ./src/Normalization.o ./src/Standarization.o ./src/lab1.o   
+Finished building target: lab1
+ 
+11:14:21 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+make: Nothing to be done for 'all'.
+11:15:53 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+make: Nothing to be done for 'all'.
+11:16:04 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/Standarization.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/Standarization.d" -MT"src/Standarization.o" -o "src/Standarization.o" "../src/Standarization.cpp"
+../src/Standarization.cpp: In member function ‘void Standarization::standarize()’:
+../src/Standarization.cpp:10:20: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int i = 0; i < inData.size(); i++) {
+                  ~~^~~~~~~~~~~~~~~
+../src/Standarization.cpp:8:9: warning: unused variable ‘begin’ [-Wunused-variable]
+  double begin = omp_get_wtime();
+         ^~~~~
+../src/Standarization.cpp:17:9: warning: unused variable ‘end’ [-Wunused-variable]
+  double end = omp_get_wtime();
+         ^~~
+../src/Standarization.cpp: In member function ‘void Standarization::calcAverage()’:
+../src/Standarization.cpp:28:34: error: ‘size’ has not been declared
+  #pragma omp parallel for shared(size,sum,featureSize,inData,inDataSize) private(i,j)
+                                  ^~~~
+../src/Standarization.cpp: In member function ‘void Standarization::calcDeviation()’:
+../src/Standarization.cpp:48:20: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int i = 0; i < inData.size(); i++) {
+                  ~~^~~~~~~~~~~~~~~
+make: *** [src/Standarization.o] Error 1
+src/subdir.mk:30: recipe for target 'src/Standarization.o' failed
+"make all" terminated with exit code 2. Build might be incomplete.
+11:16:53 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/Standarization.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/Standarization.d" -MT"src/Standarization.o" -o "src/Standarization.o" "../src/Standarization.cpp"
+../src/Standarization.cpp: In member function ‘void Standarization::standarize()’:
+../src/Standarization.cpp:10:20: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int i = 0; i < inData.size(); i++) {
+                  ~~^~~~~~~~~~~~~~~
+../src/Standarization.cpp:8:9: warning: unused variable ‘begin’ [-Wunused-variable]
+  double begin = omp_get_wtime();
+         ^~~~~
+../src/Standarization.cpp:17:9: warning: unused variable ‘end’ [-Wunused-variable]
+  double end = omp_get_wtime();
+         ^~~
+../src/Standarization.cpp: In member function ‘void Standarization::calcAverage()’:
+../src/Standarization.cpp:28:34: error: ‘size’ has not been declared
+  #pragma omp parallel for shared(size,sum,inData,inDataSize) private(i,j)
+                                  ^~~~
+../src/Standarization.cpp: In member function ‘void Standarization::calcDeviation()’:
+../src/Standarization.cpp:48:20: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int i = 0; i < inData.size(); i++) {
+                  ~~^~~~~~~~~~~~~~~
+make: *** [src/Standarization.o] Error 1
+src/subdir.mk:30: recipe for target 'src/Standarization.o' failed
+"make all" terminated with exit code 2. Build might be incomplete.
+11:17:28 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/Standarization.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/Standarization.d" -MT"src/Standarization.o" -o "src/Standarization.o" "../src/Standarization.cpp"
+../src/Standarization.cpp: In member function ‘void Standarization::standarize()’:
+../src/Standarization.cpp:10:20: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int i = 0; i < inData.size(); i++) {
+                  ~~^~~~~~~~~~~~~~~
+../src/Standarization.cpp:8:9: warning: unused variable ‘begin’ [-Wunused-variable]
+  double begin = omp_get_wtime();
+         ^~~~~
+../src/Standarization.cpp:17:9: warning: unused variable ‘end’ [-Wunused-variable]
+  double end = omp_get_wtime();
+         ^~~
+../src/Standarization.cpp: In member function ‘void Standarization::calcAverage()’:
+../src/Standarization.cpp:28:56: error: ‘num_of_feature’ has not been declared
+  #pragma omp parallel for shared(sum,inData,inDataSize,num_of_feature) private(i,j)
+                                                        ^~~~~~~~~~~~~~
+../src/Standarization.cpp: In member function ‘void Standarization::calcDeviation()’:
+../src/Standarization.cpp:48:20: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int i = 0; i < inData.size(); i++) {
+                  ~~^~~~~~~~~~~~~~~
+make: *** [src/Standarization.o] Error 1
+src/subdir.mk:30: recipe for target 'src/Standarization.o' failed
+"make all" terminated with exit code 2. Build might be incomplete.
+11:17:37 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/Standarization.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/Standarization.d" -MT"src/Standarization.o" -o "src/Standarization.o" "../src/Standarization.cpp"
+../src/Standarization.cpp: In member function ‘void Standarization::standarize()’:
+../src/Standarization.cpp:10:20: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int i = 0; i < inData.size(); i++) {
+                  ~~^~~~~~~~~~~~~~~
+../src/Standarization.cpp:8:9: warning: unused variable ‘begin’ [-Wunused-variable]
+  double begin = omp_get_wtime();
+         ^~~~~
+../src/Standarization.cpp:17:9: warning: unused variable ‘end’ [-Wunused-variable]
+  double end = omp_get_wtime();
+         ^~~
+../src/Standarization.cpp: In member function ‘void Standarization::calcAverage()’:
+../src/Standarization.cpp:28:56: error: ‘num_of_feature’ has not been declared
+  #pragma omp parallel for shared(sum,inData,inDataSize,num_of_feature) private(i,j)
+                                                        ^~~~~~~~~~~~~~
+../src/Standarization.cpp: In member function ‘void Standarization::calcDeviation()’:
+../src/Standarization.cpp:48:20: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int i = 0; i < inData.size(); i++) {
+                  ~~^~~~~~~~~~~~~~~
+make: *** [src/Standarization.o] Error 1
+src/subdir.mk:30: recipe for target 'src/Standarization.o' failed
+"make all" terminated with exit code 2. Build might be incomplete.
+11:17:40 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/Standarization.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/Standarization.d" -MT"src/Standarization.o" -o "src/Standarization.o" "../src/Standarization.cpp"
+../src/Standarization.cpp: In member function ‘void Standarization::standarize()’:
+../src/Standarization.cpp:10:20: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int i = 0; i < inData.size(); i++) {
+                  ~~^~~~~~~~~~~~~~~
+../src/Standarization.cpp:8:9: warning: unused variable ‘begin’ [-Wunused-variable]
+  double begin = omp_get_wtime();
+         ^~~~~
+../src/Standarization.cpp:17:9: warning: unused variable ‘end’ [-Wunused-variable]
+  double end = omp_get_wtime();
+         ^~~
+../src/Standarization.cpp: In member function ‘void Standarization::calcDeviation()’:
+../src/Standarization.cpp:48:20: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int i = 0; i < inData.size(); i++) {
+                  ~~^~~~~~~~~~~~~~~
+Finished building: ../src/Standarization.cpp
+ 
+Building file: ../src/lab1.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/lab1.d" -MT"src/lab1.o" -o "src/lab1.o" "../src/lab1.cpp"
+Finished building: ../src/lab1.cpp
+ 
+Building target: lab1
+Invoking: Cross G++ Linker
+g++ -fopenmp -o "lab1"  ./src/FIleLoader.o ./src/KNN.o ./src/Normalization.o ./src/Standarization.o ./src/lab1.o   
+Finished building target: lab1
+ 
+11:20:20 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/Standarization.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/Standarization.d" -MT"src/Standarization.o" -o "src/Standarization.o" "../src/Standarization.cpp"
+../src/Standarization.cpp: In member function ‘void Standarization::standarize()’:
+../src/Standarization.cpp:10:20: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int i = 0; i < inData.size(); i++) {
+                  ~~^~~~~~~~~~~~~~~
+../src/Standarization.cpp:8:9: warning: unused variable ‘begin’ [-Wunused-variable]
+  double begin = omp_get_wtime();
+         ^~~~~
+../src/Standarization.cpp:17:9: warning: unused variable ‘end’ [-Wunused-variable]
+  double end = omp_get_wtime();
+         ^~~
+../src/Standarization.cpp: In member function ‘void Standarization::calcAverage()’:
+../src/Standarization.cpp:25:9: warning: unused variable ‘begin’ [-Wunused-variable]
+  double begin = omp_get_wtime();
+         ^~~~~
+../src/Standarization.cpp:34:9: warning: unused variable ‘end’ [-Wunused-variable]
+  double end = omp_get_wtime();
+         ^~~
+../src/Standarization.cpp: In member function ‘void Standarization::calcDeviation()’:
+../src/Standarization.cpp:46:93: error: ‘i’ has not been declared
+  #pragma omp parallel for default(none) shared(inData,variation,average,inDataSize) private(i,j)
+                                                                                             ^
+../src/Standarization.cpp:46:95: error: ‘j’ has not been declared
+  #pragma omp parallel for default(none) shared(inData,variation,average,inDataSize) private(i,j)
+                                                                                               ^
+../src/Standarization.cpp:48:21: error: ‘num_of_features’ not specified in enclosing ‘parallel’
+   for (int j = 0; j < num_of_features; j++) {
+                   ~~^~~~~~~~~~~~~~~~~
+../src/Standarization.cpp:46:10: error: enclosing ‘parallel’
+  #pragma omp parallel for default(none) shared(inData,variation,average,inDataSize) private(i,j)
+          ^~~
+src/subdir.mk:30: recipe for target 'src/Standarization.o' failed
+make: *** [src/Standarization.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+11:21:52 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/Standarization.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/Standarization.d" -MT"src/Standarization.o" -o "src/Standarization.o" "../src/Standarization.cpp"
+../src/Standarization.cpp: In member function ‘void Standarization::standarize()’:
+../src/Standarization.cpp:10:20: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int i = 0; i < inData.size(); i++) {
+                  ~~^~~~~~~~~~~~~~~
+../src/Standarization.cpp:8:9: warning: unused variable ‘begin’ [-Wunused-variable]
+  double begin = omp_get_wtime();
+         ^~~~~
+../src/Standarization.cpp:17:9: warning: unused variable ‘end’ [-Wunused-variable]
+  double end = omp_get_wtime();
+         ^~~
+../src/Standarization.cpp: In member function ‘void Standarization::calcAverage()’:
+../src/Standarization.cpp:25:9: warning: unused variable ‘begin’ [-Wunused-variable]
+  double begin = omp_get_wtime();
+         ^~~~~
+../src/Standarization.cpp:34:9: warning: unused variable ‘end’ [-Wunused-variable]
+  double end = omp_get_wtime();
+         ^~~
+Finished building: ../src/Standarization.cpp
+ 
+Building target: lab1
+Invoking: Cross G++ Linker
+g++ -fopenmp -o "lab1"  ./src/FIleLoader.o ./src/KNN.o ./src/Normalization.o ./src/Standarization.o ./src/lab1.o   
+Finished building target: lab1
+ 
+11:22:29 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/Standarization.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/Standarization.d" -MT"src/Standarization.o" -o "src/Standarization.o" "../src/Standarization.cpp"
+../src/Standarization.cpp: In member function ‘void Standarization::standarize()’:
+../src/Standarization.cpp:10:20: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int i = 0; i < inData.size(); i++) {
+                  ~~^~~~~~~~~~~~~~~
+../src/Standarization.cpp:8:9: warning: unused variable ‘begin’ [-Wunused-variable]
+  double begin = omp_get_wtime();
+         ^~~~~
+../src/Standarization.cpp:17:9: warning: unused variable ‘end’ [-Wunused-variable]
+  double end = omp_get_wtime();
+         ^~~
+../src/Standarization.cpp: In member function ‘void Standarization::calcAverage()’:
+../src/Standarization.cpp:25:9: warning: unused variable ‘begin’ [-Wunused-variable]
+  double begin = omp_get_wtime();
+         ^~~~~
+../src/Standarization.cpp:34:9: warning: unused variable ‘end’ [-Wunused-variable]
+  double end = omp_get_wtime();
+         ^~~
+Finished building: ../src/Standarization.cpp
+ 
+Building file: ../src/lab1.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/lab1.d" -MT"src/lab1.o" -o "src/lab1.o" "../src/lab1.cpp"
+Finished building: ../src/lab1.cpp
+ 
+Building target: lab1
+Invoking: Cross G++ Linker
+g++ -fopenmp -o "lab1"  ./src/FIleLoader.o ./src/KNN.o ./src/Normalization.o ./src/Standarization.o ./src/lab1.o   
+Finished building target: lab1
+ 
+11:26:14 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/Standarization.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/Standarization.d" -MT"src/Standarization.o" -o "src/Standarization.o" "../src/Standarization.cpp"
+../src/Standarization.cpp: In member function ‘void Standarization::standarize()’:
+../src/Standarization.cpp:10:20: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int i = 0; i < inData.size(); i++) {
+                  ~~^~~~~~~~~~~~~~~
+../src/Standarization.cpp:8:9: warning: unused variable ‘begin’ [-Wunused-variable]
+  double begin = omp_get_wtime();
+         ^~~~~
+../src/Standarization.cpp:17:9: warning: unused variable ‘end’ [-Wunused-variable]
+  double end = omp_get_wtime();
+         ^~~
+Finished building: ../src/Standarization.cpp
+ 
+Building target: lab1
+Invoking: Cross G++ Linker
+g++ -fopenmp -o "lab1"  ./src/FIleLoader.o ./src/KNN.o ./src/Normalization.o ./src/Standarization.o ./src/lab1.o   
+Finished building target: lab1
+ 
+11:32:06 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/Standarization.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/Standarization.d" -MT"src/Standarization.o" -o "src/Standarization.o" "../src/Standarization.cpp"
+../src/Standarization.cpp:61:0: warning: ignoring #pragma om parallel [-Wunknown-pragmas]
+  #pragma om parallel for default(none) shared(num_of_features,deviation,variation) private(j)
+ 
+../src/Standarization.cpp: In function ‘double getAverageCalcTime()’:
+../src/Standarization.cpp:78:9: error: ‘averageCalcTime’ was not declared in this scope
+  return averageCalcTime;
+         ^~~~~~~~~~~~~~~
+../src/Standarization.cpp:78:9: note: suggested alternative: ‘getAverageCalcTime’
+  return averageCalcTime;
+         ^~~~~~~~~~~~~~~
+         getAverageCalcTime
+../src/Standarization.cpp: In function ‘double getStandarizationTIme()’:
+../src/Standarization.cpp:81:9: error: ‘standarizationTime’ was not declared in this scope
+  return standarizationTime;
+         ^~~~~~~~~~~~~~~~~~
+../src/Standarization.cpp:81:9: note: suggested alternative: ‘getStandarizationTIme’
+  return standarizationTime;
+         ^~~~~~~~~~~~~~~~~~
+         getStandarizationTIme
+../src/Standarization.cpp: In member function ‘void Standarization::standarize()’:
+../src/Standarization.cpp:14:17: error: ‘num_of_features’ not specified in enclosing ‘parallel’
+   for (j = 0; j < num_of_features; j++) {
+               ~~^~~~~~~~~~~~~~~~~
+../src/Standarization.cpp:12:10: error: enclosing ‘parallel’
+  #pragma omp parallel for default(none) shared (inDataSize,inData,average,deviation) private(i,j)
+          ^~~
+make: *** [src/Standarization.o] Error 1
+src/subdir.mk:30: recipe for target 'src/Standarization.o' failed
+"make all" terminated with exit code 2. Build might be incomplete.
+11:32:22 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/Standarization.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/Standarization.d" -MT"src/Standarization.o" -o "src/Standarization.o" "../src/Standarization.cpp"
+../src/Standarization.cpp:61:0: warning: ignoring #pragma om parallel [-Wunknown-pragmas]
+  #pragma om parallel for default(none) shared(num_of_features,deviation,variation) private(j)
+ 
+../src/Standarization.cpp: In member function ‘void Standarization::standarize()’:
+../src/Standarization.cpp:14:17: error: ‘num_of_features’ not specified in enclosing ‘parallel’
+   for (j = 0; j < num_of_features; j++) {
+               ~~^~~~~~~~~~~~~~~~~
+../src/Standarization.cpp:12:10: error: enclosing ‘parallel’
+  #pragma omp parallel for default(none) shared (inDataSize,inData,average,deviation) private(i,j)
+          ^~~
+make: *** [src/Standarization.o] Error 1
+src/subdir.mk:30: recipe for target 'src/Standarization.o' failed
+"make all" terminated with exit code 2. Build might be incomplete.
+11:32:34 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/Standarization.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/Standarization.d" -MT"src/Standarization.o" -o "src/Standarization.o" "../src/Standarization.cpp"
+../src/Standarization.cpp:61:0: warning: ignoring #pragma om parallel [-Wunknown-pragmas]
+  #pragma om parallel for default(none) shared(num_of_features,deviation,variation) private(j)
+ 
+../src/Standarization.cpp: In member function ‘void Standarization::standarize()’:
+../src/Standarization.cpp:14:17: error: ‘num_of_features’ not specified in enclosing ‘parallel’
+   for (j = 0; j < num_of_features; j++) {
+               ~~^~~~~~~~~~~~~~~~~
+../src/Standarization.cpp:12:10: error: enclosing ‘parallel’
+  #pragma omp parallel for default(none) shared (inDataSize,inData,average,deviation) private(i,j)
+          ^~~
+src/subdir.mk:30: recipe for target 'src/Standarization.o' failed
+make: *** [src/Standarization.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+11:32:47 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/Standarization.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/Standarization.d" -MT"src/Standarization.o" -o "src/Standarization.o" "../src/Standarization.cpp"
+../src/Standarization.cpp: In member function ‘void Standarization::standarize()’:
+../src/Standarization.cpp:14:17: error: ‘num_of_features’ not specified in enclosing ‘parallel’
+   for (j = 0; j < num_of_features; j++) {
+               ~~^~~~~~~~~~~~~~~~~
+../src/Standarization.cpp:12:10: error: enclosing ‘parallel’
+  #pragma omp parallel for default(none) shared (inDataSize,inData,average,deviation) private(i,j)
+          ^~~
+src/subdir.mk:30: recipe for target 'src/Standarization.o' failed
+make: *** [src/Standarization.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+11:33:53 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/Normalization.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/Normalization.d" -MT"src/Normalization.o" -o "src/Normalization.o" "../src/Normalization.cpp"
+../src/Normalization.cpp: In member function ‘void Normalization::findMinMax()’:
+../src/Normalization.cpp:23:6: warning: unused variable ‘i’ [-Wunused-variable]
+  int i, j;
+      ^
+../src/Normalization.cpp:23:9: warning: unused variable ‘j’ [-Wunused-variable]
+  int i, j;
+         ^
+Finished building: ../src/Normalization.cpp
+ 
+Building file: ../src/Standarization.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/Standarization.d" -MT"src/Standarization.o" -o "src/Standarization.o" "../src/Standarization.cpp"
+../src/Standarization.cpp: In member function ‘void Standarization::standarize()’:
+../src/Standarization.cpp:14:17: error: ‘num_of_features’ not specified in enclosing ‘parallel’
+   for (j = 0; j < num_of_features; j++) {
+               ~~^~~~~~~~~~~~~~~~~
+../src/Standarization.cpp:12:10: error: enclosing ‘parallel’
+  #pragma omp parallel for default(none) shared (inDataSize,inData,average,deviation) private(i,j)
+          ^~~
+src/subdir.mk:30: recipe for target 'src/Standarization.o' failed
+make: *** [src/Standarization.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+11:34:40 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/Standarization.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/Standarization.d" -MT"src/Standarization.o" -o "src/Standarization.o" "../src/Standarization.cpp"
+../src/Standarization.cpp: In member function ‘void Standarization::standarize()’:
+../src/Standarization.cpp:12:85: error: ‘num_of_featues’ has not been declared
+  #pragma omp parallel for default(none) shared (inDataSize,inData,average,deviation,num_of_featues) private(i,j)
+                                                                                     ^~~~~~~~~~~~~~
+../src/Standarization.cpp:14:17: error: ‘num_of_features’ not specified in enclosing ‘parallel’
+   for (j = 0; j < num_of_features; j++) {
+               ~~^~~~~~~~~~~~~~~~~
+../src/Standarization.cpp:12:10: error: enclosing ‘parallel’
+  #pragma omp parallel for default(none) shared (inDataSize,inData,average,deviation,num_of_featues) private(i,j)
+          ^~~
+make: *** [src/Standarization.o] Error 1
+src/subdir.mk:30: recipe for target 'src/Standarization.o' failed
+"make all" terminated with exit code 2. Build might be incomplete.
+11:34:56 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/Standarization.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/Standarization.d" -MT"src/Standarization.o" -o "src/Standarization.o" "../src/Standarization.cpp"
+../src/Standarization.cpp: In member function ‘void Standarization::standarize()’:
+../src/Standarization.cpp:14:10: error: ‘j’ not specified in enclosing ‘parallel’
+   for (j = 0; j < num_of_features; j++) {
+        ~~^~~
+../src/Standarization.cpp:12:10: error: enclosing ‘parallel’
+  #pragma omp parallel for default(none)
+          ^~~
+../src/Standarization.cpp:14:17: error: ‘num_of_features’ not specified in enclosing ‘parallel’
+   for (j = 0; j < num_of_features; j++) {
+               ~~^~~~~~~~~~~~~~~~~
+../src/Standarization.cpp:12:10: error: enclosing ‘parallel’
+  #pragma omp parallel for default(none)
+          ^~~
+make: *** [src/Standarization.o] Error 1
+src/subdir.mk:30: recipe for target 'src/Standarization.o' failed
+"make all" terminated with exit code 2. Build might be incomplete.
+11:35:18 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/Standarization.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/Standarization.d" -MT"src/Standarization.o" -o "src/Standarization.o" "../src/Standarization.cpp"
+Finished building: ../src/Standarization.cpp
+ 
+Building file: ../src/lab1.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/lab1.d" -MT"src/lab1.o" -o "src/lab1.o" "../src/lab1.cpp"
+Finished building: ../src/lab1.cpp
+ 
+Building target: lab1
+Invoking: Cross G++ Linker
+g++ -fopenmp -o "lab1"  ./src/FIleLoader.o ./src/KNN.o ./src/Normalization.o ./src/Standarization.o ./src/lab1.o   
+Finished building target: lab1
+ 
+11:35:26 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/Standarization.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/Standarization.d" -MT"src/Standarization.o" -o "src/Standarization.o" "../src/Standarization.cpp"
+../src/Standarization.cpp: In member function ‘void Standarization::standarize()’:
+../src/Standarization.cpp:12:85: error: ‘num_of_featues’ has not been declared
+  #pragma omp parallel for default(none) shared (inDataSize,inData,average,deviation,num_of_featues) private(i,j)
+                                                                                     ^~~~~~~~~~~~~~
+../src/Standarization.cpp:14:17: error: ‘num_of_features’ not specified in enclosing ‘parallel’
+   for (j = 0; j < num_of_features; j++) {
+               ~~^~~~~~~~~~~~~~~~~
+../src/Standarization.cpp:12:10: error: enclosing ‘parallel’
+  #pragma omp parallel for default(none) shared (inDataSize,inData,average,deviation,num_of_featues) private(i,j)
+          ^~~
+make: *** [src/Standarization.o] Error 1
+src/subdir.mk:30: recipe for target 'src/Standarization.o' failed
+"make all" terminated with exit code 2. Build might be incomplete.
+11:35:44 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/Standarization.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/Standarization.d" -MT"src/Standarization.o" -o "src/Standarization.o" "../src/Standarization.cpp"
+../src/Standarization.cpp: In member function ‘void Standarization::standarize()’:
+../src/Standarization.cpp:12:85: error: ‘num_of_featues’ has not been declared
+  #pragma omp parallel for default(none) shared (inDataSize,inData,average,deviation,num_of_featues) private(i,j)
+                                                                                     ^~~~~~~~~~~~~~
+../src/Standarization.cpp:14:17: error: ‘num_of_features’ not specified in enclosing ‘parallel’
+   for (j = 0; j < num_of_features; j++) {
+               ~~^~~~~~~~~~~~~~~~~
+../src/Standarization.cpp:12:10: error: enclosing ‘parallel’
+  #pragma omp parallel for default(none) shared (inDataSize,inData,average,deviation,num_of_featues) private(i,j)
+          ^~~
+make: *** [src/Standarization.o] Error 1
+src/subdir.mk:30: recipe for target 'src/Standarization.o' failed
+"make all" terminated with exit code 2. Build might be incomplete.
+11:36:15 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/Standarization.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/Standarization.d" -MT"src/Standarization.o" -o "src/Standarization.o" "../src/Standarization.cpp"
+Finished building: ../src/Standarization.cpp
+ 
+Building target: lab1
+Invoking: Cross G++ Linker
+g++ -fopenmp -o "lab1"  ./src/FIleLoader.o ./src/KNN.o ./src/Normalization.o ./src/Standarization.o ./src/lab1.o   
+Finished building target: lab1
+ 
+11:36:27 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/Standarization.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/Standarization.d" -MT"src/Standarization.o" -o "src/Standarization.o" "../src/Standarization.cpp"
+Finished building: ../src/Standarization.cpp
+ 
+Building target: lab1
+Invoking: Cross G++ Linker
+g++ -fopenmp -o "lab1"  ./src/FIleLoader.o ./src/KNN.o ./src/Normalization.o ./src/Standarization.o ./src/lab1.o   
+Finished building target: lab1
+ 
+11:36:36 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+make: Nothing to be done for 'all'.
+11:36:37 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+make: Nothing to be done for 'all'.
+11:36:39 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/Standarization.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/Standarization.d" -MT"src/Standarization.o" -o "src/Standarization.o" "../src/Standarization.cpp"
+Finished building: ../src/Standarization.cpp
+ 
+Building target: lab1
+Invoking: Cross G++ Linker
+g++ -fopenmp -o "lab1"  ./src/FIleLoader.o ./src/KNN.o ./src/Normalization.o ./src/Standarization.o ./src/lab1.o   
+Finished building target: lab1
+ 
+11:37:06 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/Standarization.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/Standarization.d" -MT"src/Standarization.o" -o "src/Standarization.o" "../src/Standarization.cpp"
+Finished building: ../src/Standarization.cpp
+ 
+Building target: lab1
+Invoking: Cross G++ Linker
+g++ -fopenmp -o "lab1"  ./src/FIleLoader.o ./src/KNN.o ./src/Normalization.o ./src/Standarization.o ./src/lab1.o   
+Finished building target: lab1
+ 
+11:37:15 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/Standarization.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/Standarization.d" -MT"src/Standarization.o" -o "src/Standarization.o" "../src/Standarization.cpp"
+Finished building: ../src/Standarization.cpp
+ 
+Building target: lab1
+Invoking: Cross G++ Linker
+g++ -fopenmp -o "lab1"  ./src/FIleLoader.o ./src/KNN.o ./src/Normalization.o ./src/Standarization.o ./src/lab1.o   
+Finished building target: lab1
+ 
+11:37:25 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/Standarization.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/Standarization.d" -MT"src/Standarization.o" -o "src/Standarization.o" "../src/Standarization.cpp"
+Finished building: ../src/Standarization.cpp
+ 
+Building target: lab1
+Invoking: Cross G++ Linker
+g++ -fopenmp -o "lab1"  ./src/FIleLoader.o ./src/KNN.o ./src/Normalization.o ./src/Standarization.o ./src/lab1.o   
+Finished building target: lab1
+ 
+11:37:42 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/Standarization.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/Standarization.d" -MT"src/Standarization.o" -o "src/Standarization.o" "../src/Standarization.cpp"
+Finished building: ../src/Standarization.cpp
+ 
+Building target: lab1
+Invoking: Cross G++ Linker
+g++ -fopenmp -o "lab1"  ./src/FIleLoader.o ./src/KNN.o ./src/Normalization.o ./src/Standarization.o ./src/lab1.o   
+Finished building target: lab1
+ 
+11:45:20 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/Standarization.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/Standarization.d" -MT"src/Standarization.o" -o "src/Standarization.o" "../src/Standarization.cpp"
+../src/Standarization.cpp:70:38: error: no ‘double Standarization::getMinMaxTime()’ member function declared in class ‘Standarization’
+ double Standarization::getMinMaxTime(){
+                                      ^
+src/subdir.mk:30: recipe for target 'src/Standarization.o' failed
+make: *** [src/Standarization.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+11:47:09 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/Standarization.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/Standarization.d" -MT"src/Standarization.o" -o "src/Standarization.o" "../src/Standarization.cpp"
+Finished building: ../src/Standarization.cpp
+ 
+Building file: ../src/lab1.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/lab1.d" -MT"src/lab1.o" -o "src/lab1.o" "../src/lab1.cpp"
+../src/lab1.cpp:41:10: warning: character constant too long for its type
+  cout << 'Accuracy : ' << knn.getAccuracy();
+          ^~~~~~~~~~~~~
+Finished building: ../src/lab1.cpp
+ 
+Building target: lab1
+Invoking: Cross G++ Linker
+g++ -fopenmp -o "lab1"  ./src/FIleLoader.o ./src/KNN.o ./src/Normalization.o ./src/Standarization.o ./src/lab1.o   
+Finished building target: lab1
+ 
+11:47:22 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/lab1.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/lab1.d" -MT"src/lab1.o" -o "src/lab1.o" "../src/lab1.cpp"
+../src/lab1.cpp:42:10: warning: character constant too long for its type
+  cout << 'Accuracy : ' << knn.getAccuracy();
+          ^~~~~~~~~~~~~
+Finished building: ../src/lab1.cpp
+ 
+Building target: lab1
+Invoking: Cross G++ Linker
+g++ -fopenmp -o "lab1"  ./src/FIleLoader.o ./src/KNN.o ./src/Normalization.o ./src/Standarization.o ./src/lab1.o   
+Finished building target: lab1
+ 
+11:48:23 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/lab1.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/lab1.d" -MT"src/lab1.o" -o "src/lab1.o" "../src/lab1.cpp"
+../src/lab1.cpp:42:23: warning: missing terminating " character
+  cout << "Accuracy : "" << knn.getAccuracy();
+                       ^
+../src/lab1.cpp:42:23: error: missing terminating " character
+  cout << "Accuracy : "" << knn.getAccuracy();
+                       ^~~~~~~~~~~~~~~~~~~~~~~
+../src/lab1.cpp: In function ‘int main()’:
+../src/lab1.cpp:43:2: error: expected ‘;’ before ‘return’
+  return 0;
+  ^~~~~~
+src/subdir.mk:30: recipe for target 'src/lab1.o' failed
+make: *** [src/lab1.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+11:48:25 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/lab1.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/lab1.d" -MT"src/lab1.o" -o "src/lab1.o" "../src/lab1.cpp"
+../src/lab1.cpp:42:23: warning: missing terminating " character
+  cout << "Accuracy : "" << knn.getAccuracy();
+                       ^
+../src/lab1.cpp:42:23: error: missing terminating " character
+  cout << "Accuracy : "" << knn.getAccuracy();
+                       ^~~~~~~~~~~~~~~~~~~~~~~
+../src/lab1.cpp: In function ‘int main()’:
+../src/lab1.cpp:43:2: error: expected ‘;’ before ‘return’
+  return 0;
+  ^~~~~~
+src/subdir.mk:30: recipe for target 'src/lab1.o' failed
+make: *** [src/lab1.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+11:48:32 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/lab1.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/lab1.d" -MT"src/lab1.o" -o "src/lab1.o" "../src/lab1.cpp"
+Finished building: ../src/lab1.cpp
+ 
+Building target: lab1
+Invoking: Cross G++ Linker
+g++ -fopenmp -o "lab1"  ./src/FIleLoader.o ./src/KNN.o ./src/Normalization.o ./src/Standarization.o ./src/lab1.o   
+Finished building target: lab1
+ 
+11:48:36 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+make: Nothing to be done for 'all'.

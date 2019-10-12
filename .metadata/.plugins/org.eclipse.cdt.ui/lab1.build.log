@@ -1,27 +1,6 @@
-21:20:24 **** Incremental Build of configuration Debug for project lab1 ****
+11:48:36 **** Incremental Build of configuration Debug for project lab1 ****
 make all 
-Building file: ../src/KNN.cpp
-Invoking: Cross G++ Compiler
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNN.d" -MT"src/KNN.o" -o "src/KNN.o" "../src/KNN.cpp"
-../src/KNN.cpp: In member function ‘void KNN::knn()’:
-../src/KNN.cpp:29:20: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
-  for (int i = 0; i < testingSet.size(); i++) {
-                  ~~^~~~~~~~~~~~~~~~~~~
-../src/KNN.cpp: In member function ‘double KNN::getAccuracy()’:
-../src/KNN.cpp:38:20: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
-  for (int i = 0; i < testingSet.size(); i++) {
-                  ~~^~~~~~~~~~~~~~~~~~~
-../src/KNN.cpp: In member function ‘int KNN::calculatePrediction(std::priority_queue<Row, std::vector<Row>, CompareRows>, Row, int)’:
-../src/KNN.cpp:52:20: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
-  for (int j = 0; j < trainingSet.size(); j++) {
-                  ~~^~~~~~~~~~~~~~~~~~~~
-Finished building: ../src/KNN.cpp
- 
-Building target: lab1
-Invoking: Cross G++ Linker
-g++ -fopenmp -o "lab1"  ./src/FIleLoader.o ./src/KNN.o ./src/Normalization.o ./src/Standarization.o ./src/lab1.o   
-Finished building target: lab1
- 
+make: Nothing to be done for 'all'.
 
-21:20:26 Build Finished. 0 errors, 3 warnings. (took 2s.201ms)
+11:48:36 Build Finished. 0 errors, 0 warnings. (took 365ms)
 
