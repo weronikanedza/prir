@@ -1,4 +1,4 @@
-13:45:56 **** Incremental Build of configuration Debug for project lab1 ****
+13:53:30 **** Incremental Build of configuration Debug for project lab1 ****
 make all 
 Building file: ../src/FIleLoader.cpp
 Invoking: Cross G++ Compiler
@@ -11,5 +11,5 @@ g++ -fopenmp -o "lab1"  ./src/FIleLoader.o ./src/KNN.o ./src/Normalization.o ./s
 Finished building target: lab1
  
 
-13:45:57 Build Finished. 0 errors, 0 warnings. (took 1s.281ms)
+13:53:32 Build Finished. 0 errors, 0 warnings. (took 1s.643ms)
 

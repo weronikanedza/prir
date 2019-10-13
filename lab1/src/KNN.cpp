@@ -21,7 +21,7 @@ void KNN::createSets() {
 
 void KNN::knn() {
 	//number of neighbours
-	int K = 3;
+	int K = 1;
 
 	priority_queue<Row, vector<Row>, CompareRows> neighbours;
 
@@ -80,7 +80,7 @@ string KNN::votePrediction(
 		}
 	}
 
-	string maxVotesCategory = "draw";
+	string maxVotesCategory = "Iris-setosa";
 	int votesNumber = 0;
 	map<string, int>::iterator it;
 

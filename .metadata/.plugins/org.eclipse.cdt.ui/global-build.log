@@ -2054,3 +2054,448 @@ Invoking: Cross G++ Linker
 g++ -fopenmp -o "lab1"  ./src/FIleLoader.o ./src/KNN.o ./src/Normalization.o ./src/Standarization.o ./src/lab1.o   
 Finished building target: lab1
  
+12:14:23 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/FIleLoader.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/FIleLoader.d" -MT"src/FIleLoader.o" -o "src/FIleLoader.o" "../src/FIleLoader.cpp"
+Finished building: ../src/FIleLoader.cpp
+ 
+Building file: ../src/KNN.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNN.d" -MT"src/KNN.o" -o "src/KNN.o" "../src/KNN.cpp"
+../src/KNN.cpp: In member function ‘double KNN::getAccuracy()’:
+../src/KNN.cpp:42:20: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int i = 0; i < testingSet.size(); i++) {
+                  ~~^~~~~~~~~~~~~~~~~~~
+../src/KNN.cpp: In member function ‘std::__cxx11::string KNN::calculatePrediction(std::priority_queue<Row, std::vector<Row>, CompareRows>, Row, int)’:
+../src/KNN.cpp:56:20: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int j = 0; j < trainingSet.size(); j++) {
+                  ~~^~~~~~~~~~~~~~~~~~~~
+Finished building: ../src/KNN.cpp
+ 
+Building file: ../src/Normalization.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/Normalization.d" -MT"src/Normalization.o" -o "src/Normalization.o" "../src/Normalization.cpp"
+Finished building: ../src/Normalization.cpp
+ 
+Building file: ../src/Standarization.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/Standarization.d" -MT"src/Standarization.o" -o "src/Standarization.o" "../src/Standarization.cpp"
+Finished building: ../src/Standarization.cpp
+ 
+Building file: ../src/lab1.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/lab1.d" -MT"src/lab1.o" -o "src/lab1.o" "../src/lab1.cpp"
+Finished building: ../src/lab1.cpp
+ 
+Building target: lab1
+Invoking: Cross G++ Linker
+g++ -fopenmp -o "lab1"  ./src/FIleLoader.o ./src/KNN.o ./src/Normalization.o ./src/Standarization.o ./src/lab1.o   
+Finished building target: lab1
+ 
+12:14:32 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+make: Nothing to be done for 'all'.
+12:17:39 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+make: Nothing to be done for 'all'.
+12:18:37 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNN.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNN.d" -MT"src/KNN.o" -o "src/KNN.o" "../src/KNN.cpp"
+../src/KNN.cpp: In member function ‘double KNN::getAccuracy()’:
+../src/KNN.cpp:42:20: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int i = 0; i < testingSet.size(); i++) {
+                  ~~^~~~~~~~~~~~~~~~~~~
+../src/KNN.cpp: In member function ‘std::__cxx11::string KNN::calculatePrediction(std::priority_queue<Row, std::vector<Row>, CompareRows>, Row, int)’:
+../src/KNN.cpp:56:20: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int j = 0; j < trainingSet.size(); j++) {
+                  ~~^~~~~~~~~~~~~~~~~~~~
+Finished building: ../src/KNN.cpp
+ 
+Building target: lab1
+Invoking: Cross G++ Linker
+g++ -fopenmp -o "lab1"  ./src/FIleLoader.o ./src/KNN.o ./src/Normalization.o ./src/Standarization.o ./src/lab1.o   
+Finished building target: lab1
+ 
+12:18:40 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+make: Nothing to be done for 'all'.
+12:27:13 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/FIleLoader.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/FIleLoader.d" -MT"src/FIleLoader.o" -o "src/FIleLoader.o" "../src/FIleLoader.cpp"
+Finished building: ../src/FIleLoader.cpp
+ 
+Building target: lab1
+Invoking: Cross G++ Linker
+g++ -fopenmp -o "lab1"  ./src/FIleLoader.o ./src/KNN.o ./src/Normalization.o ./src/Standarization.o ./src/lab1.o   
+Finished building target: lab1
+ 
+12:27:21 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+make: Nothing to be done for 'all'.
+12:28:05 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNN.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNN.d" -MT"src/KNN.o" -o "src/KNN.o" "../src/KNN.cpp"
+../src/KNN.cpp: In member function ‘double KNN::getAccuracy()’:
+../src/KNN.cpp:42:20: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int i = 0; i < testingSet.size(); i++) {
+                  ~~^~~~~~~~~~~~~~~~~~~
+../src/KNN.cpp: In member function ‘std::__cxx11::string KNN::calculatePrediction(std::priority_queue<Row, std::vector<Row>, CompareRows>, Row, int)’:
+../src/KNN.cpp:56:20: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int j = 0; j < trainingSet.size(); j++) {
+                  ~~^~~~~~~~~~~~~~~~~~~~
+Finished building: ../src/KNN.cpp
+ 
+Building target: lab1
+Invoking: Cross G++ Linker
+g++ -fopenmp -o "lab1"  ./src/FIleLoader.o ./src/KNN.o ./src/Normalization.o ./src/Standarization.o ./src/lab1.o   
+Finished building target: lab1
+ 
+12:28:09 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+make: Nothing to be done for 'all'.
+12:45:38 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/FIleLoader.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/FIleLoader.d" -MT"src/FIleLoader.o" -o "src/FIleLoader.o" "../src/FIleLoader.cpp"
+Finished building: ../src/FIleLoader.cpp
+ 
+Building file: ../src/KNN.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNN.d" -MT"src/KNN.o" -o "src/KNN.o" "../src/KNN.cpp"
+../src/KNN.cpp: In member function ‘double KNN::getAccuracy()’:
+../src/KNN.cpp:42:20: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int i = 0; i < testingSet.size(); i++) {
+                  ~~^~~~~~~~~~~~~~~~~~~
+../src/KNN.cpp: In member function ‘std::__cxx11::string KNN::calculatePrediction(std::priority_queue<Row, std::vector<Row>, CompareRows>, Row, int)’:
+../src/KNN.cpp:56:20: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int j = 0; j < trainingSet.size(); j++) {
+                  ~~^~~~~~~~~~~~~~~~~~~~
+Finished building: ../src/KNN.cpp
+ 
+Building file: ../src/Normalization.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/Normalization.d" -MT"src/Normalization.o" -o "src/Normalization.o" "../src/Normalization.cpp"
+Finished building: ../src/Normalization.cpp
+ 
+Building file: ../src/Standarization.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/Standarization.d" -MT"src/Standarization.o" -o "src/Standarization.o" "../src/Standarization.cpp"
+Finished building: ../src/Standarization.cpp
+ 
+Building file: ../src/lab1.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/lab1.d" -MT"src/lab1.o" -o "src/lab1.o" "../src/lab1.cpp"
+Finished building: ../src/lab1.cpp
+ 
+Building target: lab1
+Invoking: Cross G++ Linker
+g++ -fopenmp -o "lab1"  ./src/FIleLoader.o ./src/KNN.o ./src/Normalization.o ./src/Standarization.o ./src/lab1.o   
+Finished building target: lab1
+ 
+12:46:15 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNN.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNN.d" -MT"src/KNN.o" -o "src/KNN.o" "../src/KNN.cpp"
+../src/KNN.cpp: In member function ‘double KNN::getAccuracy()’:
+../src/KNN.cpp:42:20: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int i = 0; i < testingSet.size(); i++) {
+                  ~~^~~~~~~~~~~~~~~~~~~
+../src/KNN.cpp: In member function ‘std::__cxx11::string KNN::calculatePrediction(std::priority_queue<Row, std::vector<Row>, CompareRows>, Row, int)’:
+../src/KNN.cpp:56:20: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int j = 0; j < trainingSet.size(); j++) {
+                  ~~^~~~~~~~~~~~~~~~~~~~
+Finished building: ../src/KNN.cpp
+ 
+Building target: lab1
+Invoking: Cross G++ Linker
+g++ -fopenmp -o "lab1"  ./src/FIleLoader.o ./src/KNN.o ./src/Normalization.o ./src/Standarization.o ./src/lab1.o   
+Finished building target: lab1
+ 
+12:46:19 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+make: Nothing to be done for 'all'.
+12:46:39 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+make: Nothing to be done for 'all'.
+12:49:08 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/FIleLoader.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/FIleLoader.d" -MT"src/FIleLoader.o" -o "src/FIleLoader.o" "../src/FIleLoader.cpp"
+Finished building: ../src/FIleLoader.cpp
+ 
+Building target: lab1
+Invoking: Cross G++ Linker
+g++ -fopenmp -o "lab1"  ./src/FIleLoader.o ./src/KNN.o ./src/Normalization.o ./src/Standarization.o ./src/lab1.o   
+Finished building target: lab1
+ 
+12:49:32 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/FIleLoader.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/FIleLoader.d" -MT"src/FIleLoader.o" -o "src/FIleLoader.o" "../src/FIleLoader.cpp"
+Finished building: ../src/FIleLoader.cpp
+ 
+Building target: lab1
+Invoking: Cross G++ Linker
+g++ -fopenmp -o "lab1"  ./src/FIleLoader.o ./src/KNN.o ./src/Normalization.o ./src/Standarization.o ./src/lab1.o   
+Finished building target: lab1
+ 
+12:52:55 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/FIleLoader.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/FIleLoader.d" -MT"src/FIleLoader.o" -o "src/FIleLoader.o" "../src/FIleLoader.cpp"
+Finished building: ../src/FIleLoader.cpp
+ 
+Building file: ../src/KNN.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNN.d" -MT"src/KNN.o" -o "src/KNN.o" "../src/KNN.cpp"
+../src/KNN.cpp: In member function ‘double KNN::getAccuracy()’:
+../src/KNN.cpp:42:20: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int i = 0; i < testingSet.size(); i++) {
+                  ~~^~~~~~~~~~~~~~~~~~~
+../src/KNN.cpp: In member function ‘std::__cxx11::string KNN::calculatePrediction(std::priority_queue<Row, std::vector<Row>, CompareRows>, Row, int)’:
+../src/KNN.cpp:56:20: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int j = 0; j < trainingSet.size(); j++) {
+                  ~~^~~~~~~~~~~~~~~~~~~~
+Finished building: ../src/KNN.cpp
+ 
+Building file: ../src/Normalization.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/Normalization.d" -MT"src/Normalization.o" -o "src/Normalization.o" "../src/Normalization.cpp"
+Finished building: ../src/Normalization.cpp
+ 
+Building file: ../src/Standarization.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/Standarization.d" -MT"src/Standarization.o" -o "src/Standarization.o" "../src/Standarization.cpp"
+Finished building: ../src/Standarization.cpp
+ 
+Building file: ../src/lab1.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/lab1.d" -MT"src/lab1.o" -o "src/lab1.o" "../src/lab1.cpp"
+Finished building: ../src/lab1.cpp
+ 
+Building target: lab1
+Invoking: Cross G++ Linker
+g++ -fopenmp -o "lab1"  ./src/FIleLoader.o ./src/KNN.o ./src/Normalization.o ./src/Standarization.o ./src/lab1.o   
+Finished building target: lab1
+ 
+12:53:10 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+make: Nothing to be done for 'all'.
+12:53:48 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/FIleLoader.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/FIleLoader.d" -MT"src/FIleLoader.o" -o "src/FIleLoader.o" "../src/FIleLoader.cpp"
+Finished building: ../src/FIleLoader.cpp
+ 
+Building target: lab1
+Invoking: Cross G++ Linker
+g++ -fopenmp -o "lab1"  ./src/FIleLoader.o ./src/KNN.o ./src/Normalization.o ./src/Standarization.o ./src/lab1.o   
+Finished building target: lab1
+ 
+12:54:05 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+make: Nothing to be done for 'all'.
+12:54:52 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+make: Nothing to be done for 'all'.
+12:56:08 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+make: Nothing to be done for 'all'.
+12:57:54 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/FIleLoader.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/FIleLoader.d" -MT"src/FIleLoader.o" -o "src/FIleLoader.o" "../src/FIleLoader.cpp"
+Finished building: ../src/FIleLoader.cpp
+ 
+Building target: lab1
+Invoking: Cross G++ Linker
+g++ -fopenmp -o "lab1"  ./src/FIleLoader.o ./src/KNN.o ./src/Normalization.o ./src/Standarization.o ./src/lab1.o   
+Finished building target: lab1
+ 
+12:58:40 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+make: Nothing to be done for 'all'.
+12:59:01 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+make: Nothing to be done for 'all'.
+13:01:03 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNN.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNN.d" -MT"src/KNN.o" -o "src/KNN.o" "../src/KNN.cpp"
+../src/KNN.cpp: In member function ‘double KNN::getAccuracy()’:
+../src/KNN.cpp:42:20: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int i = 0; i < testingSet.size(); i++) {
+                  ~~^~~~~~~~~~~~~~~~~~~
+../src/KNN.cpp: In member function ‘std::__cxx11::string KNN::calculatePrediction(std::priority_queue<Row, std::vector<Row>, CompareRows>, Row, int)’:
+../src/KNN.cpp:56:20: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int j = 0; j < trainingSet.size(); j++) {
+                  ~~^~~~~~~~~~~~~~~~~~~~
+Finished building: ../src/KNN.cpp
+ 
+Building target: lab1
+Invoking: Cross G++ Linker
+g++ -fopenmp -o "lab1"  ./src/FIleLoader.o ./src/KNN.o ./src/Normalization.o ./src/Standarization.o ./src/lab1.o   
+Finished building target: lab1
+ 
+13:03:50 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNN.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNN.d" -MT"src/KNN.o" -o "src/KNN.o" "../src/KNN.cpp"
+../src/KNN.cpp: In member function ‘double KNN::getAccuracy()’:
+../src/KNN.cpp:42:20: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int i = 0; i < testingSet.size(); i++) {
+                  ~~^~~~~~~~~~~~~~~~~~~
+../src/KNN.cpp: In member function ‘std::__cxx11::string KNN::calculatePrediction(std::priority_queue<Row, std::vector<Row>, CompareRows>, Row, int)’:
+../src/KNN.cpp:56:20: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int j = 0; j < trainingSet.size(); j++) {
+                  ~~^~~~~~~~~~~~~~~~~~~~
+Finished building: ../src/KNN.cpp
+ 
+Building target: lab1
+Invoking: Cross G++ Linker
+g++ -fopenmp -o "lab1"  ./src/FIleLoader.o ./src/KNN.o ./src/Normalization.o ./src/Standarization.o ./src/lab1.o   
+Finished building target: lab1
+ 
+13:16:34 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNN.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNN.d" -MT"src/KNN.o" -o "src/KNN.o" "../src/KNN.cpp"
+../src/KNN.cpp: In member function ‘double KNN::getAccuracy()’:
+../src/KNN.cpp:42:20: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int i = 0; i < testingSet.size(); i++) {
+                  ~~^~~~~~~~~~~~~~~~~~~
+../src/KNN.cpp: In member function ‘std::__cxx11::string KNN::calculatePrediction(std::priority_queue<Row, std::vector<Row>, CompareRows>, Row, int)’:
+../src/KNN.cpp:56:20: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int j = 0; j < trainingSet.size(); j++) {
+                  ~~^~~~~~~~~~~~~~~~~~~~
+Finished building: ../src/KNN.cpp
+ 
+Building target: lab1
+Invoking: Cross G++ Linker
+g++ -fopenmp -o "lab1"  ./src/FIleLoader.o ./src/KNN.o ./src/Normalization.o ./src/Standarization.o ./src/lab1.o   
+Finished building target: lab1
+ 
+13:27:07 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/lab1.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/lab1.d" -MT"src/lab1.o" -o "src/lab1.o" "../src/lab1.cpp"
+Finished building: ../src/lab1.cpp
+ 
+Building target: lab1
+Invoking: Cross G++ Linker
+g++ -fopenmp -o "lab1"  ./src/FIleLoader.o ./src/KNN.o ./src/Normalization.o ./src/Standarization.o ./src/lab1.o   
+Finished building target: lab1
+ 
+13:41:59 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/lab1.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/lab1.d" -MT"src/lab1.o" -o "src/lab1.o" "../src/lab1.cpp"
+Finished building: ../src/lab1.cpp
+ 
+Building target: lab1
+Invoking: Cross G++ Linker
+g++ -fopenmp -o "lab1"  ./src/FIleLoader.o ./src/KNN.o ./src/Normalization.o ./src/Standarization.o ./src/lab1.o   
+Finished building target: lab1
+ 
+13:42:54 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+make: Nothing to be done for 'all'.
+13:43:24 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/FIleLoader.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/FIleLoader.d" -MT"src/FIleLoader.o" -o "src/FIleLoader.o" "../src/FIleLoader.cpp"
+Finished building: ../src/FIleLoader.cpp
+ 
+Building target: lab1
+Invoking: Cross G++ Linker
+g++ -fopenmp -o "lab1"  ./src/FIleLoader.o ./src/KNN.o ./src/Normalization.o ./src/Standarization.o ./src/lab1.o   
+Finished building target: lab1
+ 
+13:44:13 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/lab1.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/lab1.d" -MT"src/lab1.o" -o "src/lab1.o" "../src/lab1.cpp"
+Finished building: ../src/lab1.cpp
+ 
+Building target: lab1
+Invoking: Cross G++ Linker
+g++ -fopenmp -o "lab1"  ./src/FIleLoader.o ./src/KNN.o ./src/Normalization.o ./src/Standarization.o ./src/lab1.o   
+Finished building target: lab1
+ 
+13:44:33 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+make: Nothing to be done for 'all'.
+13:50:27 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/FIleLoader.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/FIleLoader.d" -MT"src/FIleLoader.o" -o "src/FIleLoader.o" "../src/FIleLoader.cpp"
+Finished building: ../src/FIleLoader.cpp
+ 
+Building file: ../src/KNN.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNN.d" -MT"src/KNN.o" -o "src/KNN.o" "../src/KNN.cpp"
+../src/KNN.cpp: In member function ‘double KNN::getAccuracy()’:
+../src/KNN.cpp:42:20: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int i = 0; i < testingSet.size(); i++) {
+                  ~~^~~~~~~~~~~~~~~~~~~
+../src/KNN.cpp: In member function ‘std::__cxx11::string KNN::calculatePrediction(std::priority_queue<Row, std::vector<Row>, CompareRows>, Row, int)’:
+../src/KNN.cpp:56:20: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int j = 0; j < trainingSet.size(); j++) {
+                  ~~^~~~~~~~~~~~~~~~~~~~
+Finished building: ../src/KNN.cpp
+ 
+Building file: ../src/Normalization.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/Normalization.d" -MT"src/Normalization.o" -o "src/Normalization.o" "../src/Normalization.cpp"
+Finished building: ../src/Normalization.cpp
+ 
+Building file: ../src/Standarization.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/Standarization.d" -MT"src/Standarization.o" -o "src/Standarization.o" "../src/Standarization.cpp"
+Finished building: ../src/Standarization.cpp
+ 
+Building file: ../src/lab1.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/lab1.d" -MT"src/lab1.o" -o "src/lab1.o" "../src/lab1.cpp"
+Finished building: ../src/lab1.cpp
+ 
+Building target: lab1
+Invoking: Cross G++ Linker
+g++ -fopenmp -o "lab1"  ./src/FIleLoader.o ./src/KNN.o ./src/Normalization.o ./src/Standarization.o ./src/lab1.o   
+Finished building target: lab1
+ 
+13:53:30 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/FIleLoader.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/FIleLoader.d" -MT"src/FIleLoader.o" -o "src/FIleLoader.o" "../src/FIleLoader.cpp"
+Finished building: ../src/FIleLoader.cpp
+ 
+Building target: lab1
+Invoking: Cross G++ Linker
+g++ -fopenmp -o "lab1"  ./src/FIleLoader.o ./src/KNN.o ./src/Normalization.o ./src/Standarization.o ./src/lab1.o   
+Finished building target: lab1
+ 

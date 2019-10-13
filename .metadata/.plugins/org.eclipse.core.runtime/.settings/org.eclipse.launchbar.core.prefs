@@ -10,4 +10,4 @@ org.eclipse.cdt.debug.core.coreBuildDescriptorType\:hello/activeLaunchMode=run
 org.eclipse.cdt.debug.core.coreBuildDescriptorType\:hello/activeLaunchTarget=org.eclipse.launchbar.core.launchTargetType.local\:Local
 org.eclipse.launchbar.core.descriptorType.default\:hello\ Configuration/activeLaunchMode=run
 org.eclipse.launchbar.core.descriptorType.default\:hello\ Configuration/activeLaunchTarget=org.eclipse.launchbar.core.launchTargetType.local\:Local
-org.eclipse.launchbar.core.descriptorType.default\:lab1/activeLaunchMode=run
+org.eclipse.launchbar.core.descriptorType.default\:lab1/activeLaunchMode=debug

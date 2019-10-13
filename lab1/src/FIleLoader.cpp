@@ -27,7 +27,7 @@ Row FileLoader::loadRow(string line) {
 	for (int i = 0; i < NUM_OF_FEATURES; i++) {
 		getline(s, word, ',');
 		string preparedWord = prepareData(word);
-		features.push_back(atoi(preparedWord.c_str()));
+		features.push_back(atof(preparedWord.c_str()));
 	}
 
 	getline(s, word, ',');
@@ -55,6 +55,14 @@ string FileLoader::prepareData(string word) {
 	}else if(word.compare("h")==0){
 		return "8";
 	}
+
+//	if (word.compare("M")==0) {
+//		return "1";
+//	} else if (word.compare("F")==0) {
+//		return "2";
+//	} else if (word.compare("I")==0) {
+//		return "3";
+//	}
 
 	return word;
 }
