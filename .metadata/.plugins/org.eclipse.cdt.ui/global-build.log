@@ -2499,3 +2499,1861 @@ Invoking: Cross G++ Linker
 g++ -fopenmp -o "lab1"  ./src/FIleLoader.o ./src/KNN.o ./src/Normalization.o ./src/Standarization.o ./src/lab1.o   
 Finished building target: lab1
  
+20:00:36 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/FIleLoader.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/FIleLoader.d" -MT"src/FIleLoader.o" -o "src/FIleLoader.o" "../src/FIleLoader.cpp"
+Finished building: ../src/FIleLoader.cpp
+ 
+Building file: ../src/KNN.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNN.d" -MT"src/KNN.o" -o "src/KNN.o" "../src/KNN.cpp"
+../src/KNN.cpp: In member function ‘double KNN::getAccuracy()’:
+../src/KNN.cpp:42:20: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int i = 0; i < testingSet.size(); i++) {
+                  ~~^~~~~~~~~~~~~~~~~~~
+../src/KNN.cpp: In member function ‘std::__cxx11::string KNN::calculatePrediction(std::priority_queue<Row, std::vector<Row>, CompareRows>, Row, int)’:
+../src/KNN.cpp:56:20: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int j = 0; j < trainingSet.size(); j++) {
+                  ~~^~~~~~~~~~~~~~~~~~~~
+Finished building: ../src/KNN.cpp
+ 
+Building file: ../src/Normalization.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/Normalization.d" -MT"src/Normalization.o" -o "src/Normalization.o" "../src/Normalization.cpp"
+Finished building: ../src/Normalization.cpp
+ 
+Building file: ../src/Standarization.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/Standarization.d" -MT"src/Standarization.o" -o "src/Standarization.o" "../src/Standarization.cpp"
+Finished building: ../src/Standarization.cpp
+ 
+Building file: ../src/lab1.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/lab1.d" -MT"src/lab1.o" -o "src/lab1.o" "../src/lab1.cpp"
+Finished building: ../src/lab1.cpp
+ 
+Building target: lab1
+Invoking: Cross G++ Linker
+g++ -fopenmp -o "lab1"  ./src/FIleLoader.o ./src/KNN.o ./src/Normalization.o ./src/Standarization.o ./src/lab1.o   
+Finished building target: lab1
+ 
+20:07:06 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNN.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNN.d" -MT"src/KNN.o" -o "src/KNN.o" "../src/KNN.cpp"
+../src/KNN.cpp: In member function ‘double KNN::getAccuracy()’:
+../src/KNN.cpp:43:73: error: ‘neighbours’ has not been declared
+ #pragma omp parallel for default(none) shared(testingSetSize,testingSet,neighbours,K) private(i) reduction(+:correct)
+                                                                         ^~~~~~~~~~
+../src/KNN.cpp:43:84: error: ‘K’ has not been declared
+ #pragma omp parallel for default(none) shared(testingSetSize,testingSet,neighbours,K) private(i) reduction(+:correct)
+                                                                                    ^
+../src/KNN.cpp:43:95: error: ‘i’ has not been declared
+ #pragma omp parallel for default(none) shared(testingSetSize,testingSet,neighbours,K) private(i) reduction(+:correct)
+                                                                                               ^
+../src/KNN.cpp: In member function ‘std::__cxx11::string KNN::calculatePrediction(std::priority_queue<Row, std::vector<Row>, CompareRows>, Row, int)’:
+../src/KNN.cpp:57:20: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int j = 0; j < trainingSet.size(); j++) {
+                  ~~^~~~~~~~~~~~~~~~~~~~
+src/subdir.mk:30: recipe for target 'src/KNN.o' failed
+make: *** [src/KNN.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+20:07:25 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNN.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNN.d" -MT"src/KNN.o" -o "src/KNN.o" "../src/KNN.cpp"
+../src/KNN.cpp: In member function ‘double KNN::getAccuracy()’:
+../src/KNN.cpp:44:73: error: ‘neighbours’ has not been declared
+ #pragma omp parallel for default(none) shared(testingSetSize,testingSet,neighbours,K) private(i) reduction(+:correct)
+                                                                         ^~~~~~~~~~
+../src/KNN.cpp:44:84: error: ‘K’ has not been declared
+ #pragma omp parallel for default(none) shared(testingSetSize,testingSet,neighbours,K) private(i) reduction(+:correct)
+                                                                                    ^
+../src/KNN.cpp: In member function ‘std::__cxx11::string KNN::calculatePrediction(std::priority_queue<Row, std::vector<Row>, CompareRows>, Row, int)’:
+../src/KNN.cpp:58:20: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int j = 0; j < trainingSet.size(); j++) {
+                  ~~^~~~~~~~~~~~~~~~~~~~
+make: *** [src/KNN.o] Error 1
+src/subdir.mk:30: recipe for target 'src/KNN.o' failed
+"make all" terminated with exit code 2. Build might be incomplete.
+20:07:56 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNN.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNN.d" -MT"src/KNN.o" -o "src/KNN.o" "../src/KNN.cpp"
+../src/KNN.cpp: In member function ‘std::__cxx11::string KNN::calculatePrediction(std::priority_queue<Row, std::vector<Row>, CompareRows>, Row, int)’:
+../src/KNN.cpp:58:20: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int j = 0; j < trainingSet.size(); j++) {
+                  ~~^~~~~~~~~~~~~~~~~~~~
+Finished building: ../src/KNN.cpp
+ 
+Building file: ../src/Standarization.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/Standarization.d" -MT"src/Standarization.o" -o "src/Standarization.o" "../src/Standarization.cpp"
+Finished building: ../src/Standarization.cpp
+ 
+Building target: lab1
+Invoking: Cross G++ Linker
+g++ -fopenmp -o "lab1"  ./src/FIleLoader.o ./src/KNN.o ./src/Normalization.o ./src/Standarization.o ./src/lab1.o   
+Finished building target: lab1
+ 
+20:11:38 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNN.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNN.d" -MT"src/KNN.o" -o "src/KNN.o" "../src/KNN.cpp"
+../src/KNN.cpp: In member function ‘std::__cxx11::string KNN::calculatePrediction(std::priority_queue<Row, std::vector<Row>, CompareRows>, Row, int)’:
+../src/KNN.cpp:60:108: error: ‘j’ has not been declared
+  #pragma omp parallel for default(none) shared(trainingSetSize,testingVal,trainingSet,neighbours ) private(j)
+                                                                                                            ^
+make: *** [src/KNN.o] Error 1
+src/subdir.mk:30: recipe for target 'src/KNN.o' failed
+"make all" terminated with exit code 2. Build might be incomplete.
+20:37:34 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNN.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNN.d" -MT"src/KNN.o" -o "src/KNN.o" "../src/KNN.cpp"
+../src/KNN.cpp: In member function ‘std::__cxx11::string KNN::calculatePrediction(std::priority_queue<Row, std::vector<Row>, CompareRows>, Row, int)’:
+../src/KNN.cpp:60:108: error: ‘j’ has not been declared
+  #pragma omp parallel for default(none) shared(trainingSetSize,testingVal,trainingSet,neighbours ) private(j)
+                                                                                                            ^
+src/subdir.mk:30: recipe for target 'src/KNN.o' failed
+make: *** [src/KNN.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+20:37:53 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNN.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNN.d" -MT"src/KNN.o" -o "src/KNN.o" "../src/KNN.cpp"
+Finished building: ../src/KNN.cpp
+ 
+Building target: lab1
+Invoking: Cross G++ Linker
+g++ -fopenmp -o "lab1"  ./src/FIleLoader.o ./src/KNN.o ./src/Normalization.o ./src/Standarization.o ./src/lab1.o   
+Finished building target: lab1
+ 
+20:43:47 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNN.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNN.d" -MT"src/KNN.o" -o "src/KNN.o" "../src/KNN.cpp"
+../src/KNN.cpp: In member function ‘void KNN::knn()’:
+../src/KNN.cpp:31:98: error: ‘prediction’ has not been declared
+  #pragma omp parallel for default(none) shared(testingSetSize,testingSet,neighbours,K) private(i,prediction)
+                                                                                                  ^~~~~~~~~~
+../src/KNN.cpp: In member function ‘std::__cxx11::string KNN::calculatePrediction(std::priority_queue<Row, std::vector<Row>, CompareRows>, Row, int)’:
+../src/KNN.cpp:61:108: error: ‘dist’ has not been declared
+  #pragma omp parallel for default(none) shared(trainingSetSize,testingVal,trainingSet,neighbours ) private(dist,j)
+                                                                                                            ^~~~
+../src/KNN.cpp: In member function ‘std::__cxx11::string KNN::votePrediction(std::priority_queue<Row, std::vector<Row>, CompareRows>, int)’:
+../src/KNN.cpp:76:75: error: ‘category’ has not been declared
+ #pragma omp parallel for default(none) shared(K,neighbours,votes) private(category,v)
+                                                                           ^~~~~~~~
+../src/KNN.cpp:76:84: error: ‘v’ has not been declared
+ #pragma omp parallel for default(none) shared(K,neighbours,votes) private(category,v)
+                                                                                    ^
+src/subdir.mk:30: recipe for target 'src/KNN.o' failed
+make: *** [src/KNN.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+20:43:53 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNN.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNN.d" -MT"src/KNN.o" -o "src/KNN.o" "../src/KNN.cpp"
+../src/KNN.cpp: In member function ‘void KNN::knn()’:
+../src/KNN.cpp:31:98: error: ‘prediction’ has not been declared
+  #pragma omp parallel for default(none) shared(testingSetSize,testingSet,neighbours,K) private(i,prediction)
+                                                                                                  ^~~~~~~~~~
+../src/KNN.cpp: In member function ‘std::__cxx11::string KNN::calculatePrediction(std::priority_queue<Row, std::vector<Row>, CompareRows>, Row, int)’:
+../src/KNN.cpp:61:108: error: ‘dist’ has not been declared
+  #pragma omp parallel for default(none) shared(trainingSetSize,testingVal,trainingSet,neighbours ) private(dist,j)
+                                                                                                            ^~~~
+../src/KNN.cpp: In member function ‘std::__cxx11::string KNN::votePrediction(std::priority_queue<Row, std::vector<Row>, CompareRows>, int)’:
+../src/KNN.cpp:76:75: error: ‘category’ has not been declared
+ #pragma omp parallel for default(none) shared(K,neighbours,votes) private(category,v)
+                                                                           ^~~~~~~~
+../src/KNN.cpp:76:84: error: ‘v’ has not been declared
+ #pragma omp parallel for default(none) shared(K,neighbours,votes) private(category,v)
+                                                                                    ^
+make: *** [src/KNN.o] Error 1
+src/subdir.mk:30: recipe for target 'src/KNN.o' failed
+"make all" terminated with exit code 2. Build might be incomplete.
+20:44:13 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNN.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNN.d" -MT"src/KNN.o" -o "src/KNN.o" "../src/KNN.cpp"
+../src/KNN.cpp: In member function ‘void KNN::knn()’:
+../src/KNN.cpp:31:98: error: ‘prediction’ has not been declared
+  #pragma omp parallel for default(none) shared(testingSetSize,testingSet,neighbours,K) private(i,prediction)
+                                                                                                  ^~~~~~~~~~
+../src/KNN.cpp: In member function ‘std::__cxx11::string KNN::calculatePrediction(std::priority_queue<Row, std::vector<Row>, CompareRows>, Row, int)’:
+../src/KNN.cpp:61:108: error: ‘dist’ has not been declared
+  #pragma omp parallel for default(none) shared(trainingSetSize,testingVal,trainingSet,neighbours ) private(dist,j)
+                                                                                                            ^~~~
+../src/KNN.cpp: In member function ‘std::__cxx11::string KNN::votePrediction(std::priority_queue<Row, std::vector<Row>, CompareRows>, int)’:
+../src/KNN.cpp:76:75: error: ‘category’ has not been declared
+ #pragma omp parallel for default(none) shared(K,neighbours,votes) private(category)
+                                                                           ^~~~~~~~
+src/subdir.mk:30: recipe for target 'src/KNN.o' failed
+make: *** [src/KNN.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+20:45:21 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNN.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNN.d" -MT"src/KNN.o" -o "src/KNN.o" "../src/KNN.cpp"
+../src/KNN.cpp: In member function ‘void KNN::knn()’:
+../src/KNN.cpp:31:98: error: ‘prediction’ has not been declared
+  #pragma omp parallel for default(none) shared(testingSetSize,testingSet,neighbours,K) private(i,prediction)
+                                                                                                  ^~~~~~~~~~
+../src/KNN.cpp: In member function ‘std::__cxx11::string KNN::votePrediction(std::priority_queue<Row, std::vector<Row>, CompareRows>, int)’:
+../src/KNN.cpp:77:75: error: ‘category’ has not been declared
+ #pragma omp parallel for default(none) shared(K,neighbours,votes) private(category)
+                                                                           ^~~~~~~~
+src/subdir.mk:30: recipe for target 'src/KNN.o' failed
+make: *** [src/KNN.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+20:45:38 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNN.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNN.d" -MT"src/KNN.o" -o "src/KNN.o" "../src/KNN.cpp"
+../src/KNN.cpp: In member function ‘std::__cxx11::string KNN::votePrediction(std::priority_queue<Row, std::vector<Row>, CompareRows>, int)’:
+../src/KNN.cpp:78:75: error: ‘category’ has not been declared
+ #pragma omp parallel for default(none) shared(K,neighbours,votes) private(category)
+                                                                           ^~~~~~~~
+make: *** [src/KNN.o] Error 1
+src/subdir.mk:30: recipe for target 'src/KNN.o' failed
+"make all" terminated with exit code 2. Build might be incomplete.
+20:45:42 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNN.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNN.d" -MT"src/KNN.o" -o "src/KNN.o" "../src/KNN.cpp"
+../src/KNN.cpp: In member function ‘std::__cxx11::string KNN::votePrediction(std::priority_queue<Row, std::vector<Row>, CompareRows>, int)’:
+../src/KNN.cpp:78:75: error: ‘category’ has not been declared
+ #pragma omp parallel for default(none) shared(K,neighbours,votes) private(category)
+                                                                           ^~~~~~~~
+make: *** [src/KNN.o] Error 1
+src/subdir.mk:30: recipe for target 'src/KNN.o' failed
+"make all" terminated with exit code 2. Build might be incomplete.
+20:46:02 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNN.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNN.d" -MT"src/KNN.o" -o "src/KNN.o" "../src/KNN.cpp"
+Finished building: ../src/KNN.cpp
+ 
+Building target: lab1
+Invoking: Cross G++ Linker
+g++ -fopenmp -o "lab1"  ./src/FIleLoader.o ./src/KNN.o ./src/Normalization.o ./src/Standarization.o ./src/lab1.o   
+Finished building target: lab1
+ 
+20:46:04 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+make: Nothing to be done for 'all'.
+20:51:22 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNN.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNN.d" -MT"src/KNN.o" -o "src/KNN.o" "../src/KNN.cpp"
+../src/KNN.cpp: In member function ‘std::__cxx11::string KNN::votePrediction(std::priority_queue<Row, std::vector<Row>, CompareRows>, int)’:
+../src/KNN.cpp:97:27: error: cannot convert ‘std::map<std::__cxx11::basic_string<char>, int>::iterator {aka std::_Rb_tree_iterator<std::pair<const std::__cxx11::basic_string<char>, int> >}’ to ‘int’ in initialization
+  int endVotes = votes.end();
+                           ^
+../src/KNN.cpp:98:31: error: cannot convert ‘std::map<std::__cxx11::basic_string<char>, int>::iterator {aka std::_Rb_tree_iterator<std::pair<const std::__cxx11::basic_string<char>, int> >}’ to ‘int’ in initialization
+  int startVotes = votes.begin();
+                               ^
+../src/KNN.cpp:101:12: error: no match for ‘operator=’ (operand types are ‘std::map<std::__cxx11::basic_string<char>, int>::iterator {aka std::_Rb_tree_iterator<std::pair<const std::__cxx11::basic_string<char>, int> >}’ and ‘int’)
+  for (it = startVotes; it != endVotes; it++) {
+            ^~~~~~~~~~
+In file included from /usr/include/c++/7/map:60:0,
+                 from ../src/KNN.cpp:3:
+/usr/include/c++/7/bits/stl_tree.h:256:12: note: candidate: constexpr std::_Rb_tree_iterator<std::pair<const std::__cxx11::basic_string<char>, int> >& std::_Rb_tree_iterator<std::pair<const std::__cxx11::basic_string<char>, int> >::operator=(const std::_Rb_tree_iterator<std::pair<const std::__cxx11::basic_string<char>, int> >&)
+     struct _Rb_tree_iterator
+            ^~~~~~~~~~~~~~~~~
+/usr/include/c++/7/bits/stl_tree.h:256:12: note:   no known conversion for argument 1 from ‘int’ to ‘const std::_Rb_tree_iterator<std::pair<const std::__cxx11::basic_string<char>, int> >&’
+/usr/include/c++/7/bits/stl_tree.h:256:12: note: candidate: constexpr std::_Rb_tree_iterator<std::pair<const std::__cxx11::basic_string<char>, int> >& std::_Rb_tree_iterator<std::pair<const std::__cxx11::basic_string<char>, int> >::operator=(std::_Rb_tree_iterator<std::pair<const std::__cxx11::basic_string<char>, int> >&&)
+/usr/include/c++/7/bits/stl_tree.h:256:12: note:   no known conversion for argument 1 from ‘int’ to ‘std::_Rb_tree_iterator<std::pair<const std::__cxx11::basic_string<char>, int> >&&’
+../src/KNN.cpp:101:2: error: invalid controlling predicate
+  for (it = startVotes; it != endVotes; it++) {
+  ^~~
+make: *** [src/KNN.o] Error 1
+src/subdir.mk:30: recipe for target 'src/KNN.o' failed
+"make all" terminated with exit code 2. Build might be incomplete.
+20:51:41 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNN.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNN.d" -MT"src/KNN.o" -o "src/KNN.o" "../src/KNN.cpp"
+../src/KNN.cpp: In member function ‘std::__cxx11::string KNN::votePrediction(std::priority_queue<Row, std::vector<Row>, CompareRows>, int)’:
+../src/KNN.cpp:101:2: error: invalid controlling predicate
+  for (it = startVotes; it != endVotes; it++) {
+  ^~~
+make: *** [src/KNN.o] Error 1
+src/subdir.mk:30: recipe for target 'src/KNN.o' failed
+"make all" terminated with exit code 2. Build might be incomplete.
+20:51:56 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNN.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNN.d" -MT"src/KNN.o" -o "src/KNN.o" "../src/KNN.cpp"
+../src/KNN.cpp: In member function ‘std::__cxx11::string KNN::votePrediction(std::priority_queue<Row, std::vector<Row>, CompareRows>, int)’:
+../src/KNN.cpp:101:2: error: invalid controlling predicate
+  for (it = startVotes; it != endVotes; it++) {
+  ^~~
+src/subdir.mk:30: recipe for target 'src/KNN.o' failed
+make: *** [src/KNN.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+20:53:28 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNN.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNN.d" -MT"src/KNN.o" -o "src/KNN.o" "../src/KNN.cpp"
+../src/KNN.cpp: In member function ‘std::__cxx11::string KNN::votePrediction(std::priority_queue<Row, std::vector<Row>, CompareRows>, int)’:
+../src/KNN.cpp:101:2: error: invalid controlling predicate
+  for (it = startVotes; it != endVotes; it++) {
+  ^~~
+make: *** [src/KNN.o] Error 1
+src/subdir.mk:30: recipe for target 'src/KNN.o' failed
+"make all" terminated with exit code 2. Build might be incomplete.
+20:53:38 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNN.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNN.d" -MT"src/KNN.o" -o "src/KNN.o" "../src/KNN.cpp"
+Finished building: ../src/KNN.cpp
+ 
+Building target: lab1
+Invoking: Cross G++ Linker
+g++ -fopenmp -o "lab1"  ./src/FIleLoader.o ./src/KNN.o ./src/Normalization.o ./src/Standarization.o ./src/lab1.o   
+Finished building target: lab1
+ 
+20:53:50 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNN.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNN.d" -MT"src/KNN.o" -o "src/KNN.o" "../src/KNN.cpp"
+../src/KNN.cpp: In member function ‘std::__cxx11::string KNN::votePrediction(std::priority_queue<Row, std::vector<Row>, CompareRows>, int)’:
+../src/KNN.cpp:100:2: error: invalid controlling predicate
+  for (it = startVotes; it != endVotes; it++) {
+  ^~~
+make: *** [src/KNN.o] Error 1
+src/subdir.mk:30: recipe for target 'src/KNN.o' failed
+"make all" terminated with exit code 2. Build might be incomplete.
+20:54:03 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNN.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNN.d" -MT"src/KNN.o" -o "src/KNN.o" "../src/KNN.cpp"
+../src/KNN.cpp: In member function ‘std::__cxx11::string KNN::votePrediction(std::priority_queue<Row, std::vector<Row>, CompareRows>, int)’:
+../src/KNN.cpp:100:2: error: invalid controlling predicate
+  for (it = startVotes; it != endVotes; it++) {
+  ^~~
+src/subdir.mk:30: recipe for target 'src/KNN.o' failed
+make: *** [src/KNN.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+20:54:11 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNN.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNN.d" -MT"src/KNN.o" -o "src/KNN.o" "../src/KNN.cpp"
+Finished building: ../src/KNN.cpp
+ 
+Building target: lab1
+Invoking: Cross G++ Linker
+g++ -fopenmp -o "lab1"  ./src/FIleLoader.o ./src/KNN.o ./src/Normalization.o ./src/Standarization.o ./src/lab1.o   
+Finished building target: lab1
+ 
+20:55:33 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNN.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNN.d" -MT"src/KNN.o" -o "src/KNN.o" "../src/KNN.cpp"
+../src/KNN.cpp: In member function ‘double KNN::calculateEuclideanDist(Row, Row)’:
+../src/KNN.cpp:114:97: error: ‘k’ has not been declared
+ #pragma omp parallel for default(none) shared(testingRow,trainingRow,num_of_feaqtures) private (k) reduction(+:dist)
+                                                                                                 ^
+make: *** [src/KNN.o] Error 1
+src/subdir.mk:30: recipe for target 'src/KNN.o' failed
+"make all" terminated with exit code 2. Build might be incomplete.
+20:55:44 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNN.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNN.d" -MT"src/KNN.o" -o "src/KNN.o" "../src/KNN.cpp"
+../src/KNN.cpp: In member function ‘double KNN::calculateEuclideanDist(Row, Row)’:
+../src/KNN.cpp:114:9: warning: ‘dist’ is used uninitialized in this function [-Wuninitialized]
+ #pragma omp parallel for default(none) shared(testingRow,trainingRow,num_of_feaqtures) private (k) reduction(+:dist)
+         ^~~
+Finished building: ../src/KNN.cpp
+ 
+Building target: lab1
+Invoking: Cross G++ Linker
+g++ -fopenmp -o "lab1"  ./src/FIleLoader.o ./src/KNN.o ./src/Normalization.o ./src/Standarization.o ./src/lab1.o   
+Finished building target: lab1
+ 
+20:56:00 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNN.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNN.d" -MT"src/KNN.o" -o "src/KNN.o" "../src/KNN.cpp"
+../src/KNN.cpp: In member function ‘double KNN::calculateEuclideanDist(Row, Row)’:
+../src/KNN.cpp:115:9: warning: ‘dist’ is used uninitialized in this function [-Wuninitialized]
+ #pragma omp parallel for default(none) shared(testingRow,trainingRow,num_of_feaqtures) private (k) reduction(+:dist)
+         ^~~
+Finished building: ../src/KNN.cpp
+ 
+Building target: lab1
+Invoking: Cross G++ Linker
+g++ -fopenmp -o "lab1"  ./src/FIleLoader.o ./src/KNN.o ./src/Normalization.o ./src/Standarization.o ./src/lab1.o   
+Finished building target: lab1
+ 
+20:56:10 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNN.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNN.d" -MT"src/KNN.o" -o "src/KNN.o" "../src/KNN.cpp"
+Finished building: ../src/KNN.cpp
+ 
+Building target: lab1
+Invoking: Cross G++ Linker
+g++ -fopenmp -o "lab1"  ./src/FIleLoader.o ./src/KNN.o ./src/Normalization.o ./src/Standarization.o ./src/lab1.o   
+Finished building target: lab1
+ 
+20:56:45 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNN.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNN.d" -MT"src/KNN.o" -o "src/KNN.o" "../src/KNN.cpp"
+Finished building: ../src/KNN.cpp
+ 
+Building target: lab1
+Invoking: Cross G++ Linker
+g++ -fopenmp -o "lab1"  ./src/FIleLoader.o ./src/KNN.o ./src/Normalization.o ./src/Standarization.o ./src/lab1.o   
+Finished building target: lab1
+ 
+20:57:13 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+make: Nothing to be done for 'all'.
+20:57:22 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/FIleLoader.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/FIleLoader.d" -MT"src/FIleLoader.o" -o "src/FIleLoader.o" "../src/FIleLoader.cpp"
+Finished building: ../src/FIleLoader.cpp
+ 
+Building target: lab1
+Invoking: Cross G++ Linker
+g++ -fopenmp -o "lab1"  ./src/FIleLoader.o ./src/KNN.o ./src/Normalization.o ./src/Standarization.o ./src/lab1.o   
+Finished building target: lab1
+ 
+20:58:53 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNN.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNN.d" -MT"src/KNN.o" -o "src/KNN.o" "../src/KNN.cpp"
+../src/KNN.cpp: In member function ‘std::__cxx11::string KNN::votePrediction(std::priority_queue<Row, std::vector<Row>, CompareRows>, int)’:
+../src/KNN.cpp:100:2: error: invalid controlling predicate
+  for (it = startVotes; it != endVotes; it++) {
+  ^~~
+make: *** [src/KNN.o] Error 1
+src/subdir.mk:30: recipe for target 'src/KNN.o' failed
+"make all" terminated with exit code 2. Build might be incomplete.
+20:59:38 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNN.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNN.d" -MT"src/KNN.o" -o "src/KNN.o" "../src/KNN.cpp"
+../src/KNN.cpp: In member function ‘std::__cxx11::string KNN::votePrediction(std::priority_queue<Row, std::vector<Row>, CompareRows>, int)’:
+../src/KNN.cpp:100:2: error: invalid controlling predicate
+  for (it = startVotes; it != endVotes; it++) {
+  ^~~
+make: *** [src/KNN.o] Error 1
+src/subdir.mk:30: recipe for target 'src/KNN.o' failed
+"make all" terminated with exit code 2. Build might be incomplete.
+20:59:44 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNN.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNN.d" -MT"src/KNN.o" -o "src/KNN.o" "../src/KNN.cpp"
+../src/KNN.cpp: In member function ‘std::__cxx11::string KNN::votePrediction(std::priority_queue<Row, std::vector<Row>, CompareRows>, int)’:
+../src/KNN.cpp:100:2: error: invalid controlling predicate
+  for (it = startVotes; it != endVotes; it++) {
+  ^~~
+make: *** [src/KNN.o] Error 1
+src/subdir.mk:30: recipe for target 'src/KNN.o' failed
+"make all" terminated with exit code 2. Build might be incomplete.
+21:01:01 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNN.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNN.d" -MT"src/KNN.o" -o "src/KNN.o" "../src/KNN.cpp"
+../src/KNN.cpp: In member function ‘std::__cxx11::string KNN::votePrediction(std::priority_queue<Row, std::vector<Row>, CompareRows>, int)’:
+../src/KNN.cpp:100:2: error: invalid controlling predicate
+  for (it = startVotes; it != endVotes; it++) {
+  ^~~
+src/subdir.mk:30: recipe for target 'src/KNN.o' failed
+make: *** [src/KNN.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+21:01:58 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNN.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNN.d" -MT"src/KNN.o" -o "src/KNN.o" "../src/KNN.cpp"
+../src/KNN.cpp:99:0: warning: ignoring #pragma openmp for [-Wunknown-pragmas]
+  #pragma openmp for
+ 
+Finished building: ../src/KNN.cpp
+ 
+Building target: lab1
+Invoking: Cross G++ Linker
+g++ -fopenmp -o "lab1"  ./src/FIleLoader.o ./src/KNN.o ./src/Normalization.o ./src/Standarization.o ./src/lab1.o   
+Finished building target: lab1
+ 
+21:03:16 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNN.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNN.d" -MT"src/KNN.o" -o "src/KNN.o" "../src/KNN.cpp"
+../src/KNN.cpp:103:0: warning: ignoring #pragma openmp for [-Wunknown-pragmas]
+ #pragma openmp for
+ 
+Finished building: ../src/KNN.cpp
+ 
+Building target: lab1
+Invoking: Cross G++ Linker
+g++ -fopenmp -o "lab1"  ./src/FIleLoader.o ./src/KNN.o ./src/Normalization.o ./src/Standarization.o ./src/lab1.o   
+Finished building target: lab1
+ 
+21:03:36 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNN.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNN.d" -MT"src/KNN.o" -o "src/KNN.o" "../src/KNN.cpp"
+../src/KNN.cpp: In member function ‘std::__cxx11::string KNN::votePrediction(std::priority_queue<Row, std::vector<Row>, CompareRows>, int)’:
+../src/KNN.cpp:104:3: error: invalid controlling predicate
+   for (it = startVotes; it != endVotes; it++) {
+   ^~~
+make: *** [src/KNN.o] Error 1
+src/subdir.mk:30: recipe for target 'src/KNN.o' failed
+"make all" terminated with exit code 2. Build might be incomplete.
+21:04:17 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNN.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNN.d" -MT"src/KNN.o" -o "src/KNN.o" "../src/KNN.cpp"
+../src/KNN.cpp: In member function ‘std::__cxx11::string KNN::votePrediction(std::priority_queue<Row, std::vector<Row>, CompareRows>, int)’:
+../src/KNN.cpp:104:3: error: invalid controlling predicate
+   for (it = startVotes; it != endVotes; it++) {
+   ^~~
+make: *** [src/KNN.o] Error 1
+src/subdir.mk:30: recipe for target 'src/KNN.o' failed
+"make all" terminated with exit code 2. Build might be incomplete.
+21:04:33 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNN.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNN.d" -MT"src/KNN.o" -o "src/KNN.o" "../src/KNN.cpp"
+Finished building: ../src/KNN.cpp
+ 
+Building target: lab1
+Invoking: Cross G++ Linker
+g++ -fopenmp -o "lab1"  ./src/FIleLoader.o ./src/KNN.o ./src/Normalization.o ./src/Standarization.o ./src/lab1.o   
+Finished building target: lab1
+ 
+21:04:45 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNN.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNN.d" -MT"src/KNN.o" -o "src/KNN.o" "../src/KNN.cpp"
+Finished building: ../src/KNN.cpp
+ 
+Building target: lab1
+Invoking: Cross G++ Linker
+g++ -fopenmp -o "lab1"  ./src/FIleLoader.o ./src/KNN.o ./src/Normalization.o ./src/Standarization.o ./src/lab1.o   
+Finished building target: lab1
+ 
+21:05:06 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNN.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNN.d" -MT"src/KNN.o" -o "src/KNN.o" "../src/KNN.cpp"
+../src/KNN.cpp: In member function ‘std::__cxx11::string KNN::votePrediction(std::priority_queue<Row, std::vector<Row>, CompareRows>, int)’:
+../src/KNN.cpp:101:2: error: invalid controlling predicate
+  for (it = startVotes; it != endVotes; it++) {
+  ^~~
+src/subdir.mk:30: recipe for target 'src/KNN.o' failed
+make: *** [src/KNN.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+21:06:11 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNN.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNN.d" -MT"src/KNN.o" -o "src/KNN.o" "../src/KNN.cpp"
+../src/KNN.cpp: In member function ‘std::__cxx11::string KNN::votePrediction(std::priority_queue<Row, std::vector<Row>, CompareRows>, int)’:
+../src/KNN.cpp:98:21: error: expected ‘#pragma omp’ clause before ‘{’ token
+ #pragma omp parallel{
+                     ^
+../src/KNN.cpp:104:30: error: ‘endVotes’ was not declared in this scope
+  for (it = startVotes; it != endVotes; it++) {
+                              ^~~~~~~~
+../src/KNN.cpp:104:30: note: suggested alternative: ‘votes’
+  for (it = startVotes; it != endVotes; it++) {
+                              ^~~~~~~~
+                              votes
+../src/KNN.cpp:104:2: error: invalid controlling predicate
+  for (it = startVotes; it != endVotes; it++) {
+  ^~~
+../src/KNN.cpp:112:1: warning: no return statement in function returning non-void [-Wreturn-type]
+ }
+ ^
+../src/KNN.cpp: At global scope:
+../src/KNN.cpp:114:2: error: expected unqualified-id before ‘return’
+  return maxVotesCategory;
+  ^~~~~~
+../src/KNN.cpp:115:1: error: expected declaration before ‘}’ token
+ }
+ ^
+make: *** [src/KNN.o] Error 1
+src/subdir.mk:30: recipe for target 'src/KNN.o' failed
+"make all" terminated with exit code 2. Build might be incomplete.
+21:06:22 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNN.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNN.d" -MT"src/KNN.o" -o "src/KNN.o" "../src/KNN.cpp"
+../src/KNN.cpp: In member function ‘std::__cxx11::string KNN::votePrediction(std::priority_queue<Row, std::vector<Row>, CompareRows>, int)’:
+../src/KNN.cpp:105:2: error: invalid controlling predicate
+  for (it = startVotes; it != endVotes; it++) {
+  ^~~
+make: *** [src/KNN.o] Error 1
+src/subdir.mk:30: recipe for target 'src/KNN.o' failed
+"make all" terminated with exit code 2. Build might be incomplete.
+21:06:25 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNN.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNN.d" -MT"src/KNN.o" -o "src/KNN.o" "../src/KNN.cpp"
+../src/KNN.cpp: In member function ‘std::__cxx11::string KNN::votePrediction(std::priority_queue<Row, std::vector<Row>, CompareRows>, int)’:
+../src/KNN.cpp:105:2: error: invalid controlling predicate
+  for (it = startVotes; it != endVotes; it++) {
+  ^~~
+src/subdir.mk:30: recipe for target 'src/KNN.o' failed
+make: *** [src/KNN.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+21:06:34 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNN.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNN.d" -MT"src/KNN.o" -o "src/KNN.o" "../src/KNN.cpp"
+../src/KNN.cpp: In member function ‘std::__cxx11::string KNN::votePrediction(std::priority_queue<Row, std::vector<Row>, CompareRows>, int)’:
+../src/KNN.cpp:104:3: error: invalid controlling predicate
+   for (it = startVotes; it != endVotes; it++) {
+   ^~~
+src/subdir.mk:30: recipe for target 'src/KNN.o' failed
+make: *** [src/KNN.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+21:10:12 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNN.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNN.d" -MT"src/KNN.o" -o "src/KNN.o" "../src/KNN.cpp"
+Finished building: ../src/KNN.cpp
+ 
+Building target: lab1
+Invoking: Cross G++ Linker
+g++ -fopenmp -o "lab1"  ./src/FIleLoader.o ./src/KNN.o ./src/Normalization.o ./src/Standarization.o ./src/lab1.o   
+Finished building target: lab1
+ 
+21:10:41 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNN.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNN.d" -MT"src/KNN.o" -o "src/KNN.o" "../src/KNN.cpp"
+Finished building: ../src/KNN.cpp
+ 
+Building target: lab1
+Invoking: Cross G++ Linker
+g++ -fopenmp -o "lab1"  ./src/FIleLoader.o ./src/KNN.o ./src/Normalization.o ./src/Standarization.o ./src/lab1.o   
+Finished building target: lab1
+ 
+21:11:10 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNN.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNN.d" -MT"src/KNN.o" -o "src/KNN.o" "../src/KNN.cpp"
+Finished building: ../src/KNN.cpp
+ 
+Building target: lab1
+Invoking: Cross G++ Linker
+g++ -fopenmp -o "lab1"  ./src/FIleLoader.o ./src/KNN.o ./src/Normalization.o ./src/Standarization.o ./src/lab1.o   
+Finished building target: lab1
+ 
+21:11:15 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+make: Nothing to be done for 'all'.
+21:12:12 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNN.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNN.d" -MT"src/KNN.o" -o "src/KNN.o" "../src/KNN.cpp"
+../src/KNN.cpp: In member function ‘void KNN::knn()’:
+../src/KNN.cpp:33:9: warning: unused variable ‘begin’ [-Wunused-variable]
+  double begin = omp_get_wtime();
+         ^~~~~
+../src/KNN.cpp:41:9: warning: unused variable ‘end’ [-Wunused-variable]
+  double end = omp_get_wtime();
+         ^~~
+Finished building: ../src/KNN.cpp
+ 
+Building target: lab1
+Invoking: Cross G++ Linker
+g++ -fopenmp -o "lab1"  ./src/FIleLoader.o ./src/KNN.o ./src/Normalization.o ./src/Standarization.o ./src/lab1.o   
+Finished building target: lab1
+ 
+21:13:15 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNN.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNN.d" -MT"src/KNN.o" -o "src/KNN.o" "../src/KNN.cpp"
+../src/KNN.cpp: In member function ‘void KNN::knn()’:
+../src/KNN.cpp:42:2: error: ‘knnTime’ was not declared in this scope
+  knnTime = end - begin;
+  ^~~~~~~
+make: *** [src/KNN.o] Error 1
+src/subdir.mk:30: recipe for target 'src/KNN.o' failed
+"make all" terminated with exit code 2. Build might be incomplete.
+21:14:17 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNN.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNN.d" -MT"src/KNN.o" -o "src/KNN.o" "../src/KNN.cpp"
+Finished building: ../src/KNN.cpp
+ 
+Building file: ../src/lab1.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/lab1.d" -MT"src/lab1.o" -o "src/lab1.o" "../src/lab1.cpp"
+Finished building: ../src/lab1.cpp
+ 
+Building target: lab1
+Invoking: Cross G++ Linker
+g++ -fopenmp -o "lab1"  ./src/FIleLoader.o ./src/KNN.o ./src/Normalization.o ./src/Standarization.o ./src/lab1.o   
+./src/lab1.o: In function `main':
+/home/weronika/eclipse-workspace/lab1/Debug/../src/lab1.cpp:35: undefined reference to `KNN::getKnnTime()'
+collect2: error: ld returned 1 exit status
+makefile:45: recipe for target 'lab1' failed
+make: *** [lab1] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+21:14:44 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNN.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNN.d" -MT"src/KNN.o" -o "src/KNN.o" "../src/KNN.cpp"
+Finished building: ../src/KNN.cpp
+ 
+Building file: ../src/lab1.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/lab1.d" -MT"src/lab1.o" -o "src/lab1.o" "../src/lab1.cpp"
+Finished building: ../src/lab1.cpp
+ 
+Building target: lab1
+Invoking: Cross G++ Linker
+g++ -fopenmp -o "lab1"  ./src/FIleLoader.o ./src/KNN.o ./src/Normalization.o ./src/Standarization.o ./src/lab1.o   
+Finished building target: lab1
+ 
+21:15:08 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNN.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNN.d" -MT"src/KNN.o" -o "src/KNN.o" "../src/KNN.cpp"
+Finished building: ../src/KNN.cpp
+ 
+Building target: lab1
+Invoking: Cross G++ Linker
+g++ -fopenmp -o "lab1"  ./src/FIleLoader.o ./src/KNN.o ./src/Normalization.o ./src/Standarization.o ./src/lab1.o   
+Finished building target: lab1
+ 
+21:17:23 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNN.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNN.d" -MT"src/KNN.o" -o "src/KNN.o" "../src/KNN.cpp"
+../src/KNN.cpp: In member function ‘void KNN::knn()’:
+../src/KNN.cpp:35:2: error: ‘cout’ was not declared in this scope
+  cout<< "KNN";
+  ^~~~
+../src/KNN.cpp:35:2: note: suggested alternative: ‘cosl’
+  cout<< "KNN";
+  ^~~~
+  cosl
+make: *** [src/KNN.o] Error 1
+src/subdir.mk:30: recipe for target 'src/KNN.o' failed
+"make all" terminated with exit code 2. Build might be incomplete.
+21:17:31 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNN.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNN.d" -MT"src/KNN.o" -o "src/KNN.o" "../src/KNN.cpp"
+../src/KNN.cpp: In member function ‘void KNN::knn()’:
+../src/KNN.cpp:35:2: error: ‘cout’ was not declared in this scope
+  cout<< "KNN"<<endl;
+  ^~~~
+../src/KNN.cpp:35:2: note: suggested alternative: ‘cosl’
+  cout<< "KNN"<<endl;
+  ^~~~
+  cosl
+../src/KNN.cpp:35:16: error: ‘endl’ was not declared in this scope
+  cout<< "KNN"<<endl;
+                ^~~~
+../src/KNN.cpp:35:16: note: suggested alternative: ‘ynl’
+  cout<< "KNN"<<endl;
+                ^~~~
+                ynl
+make: *** [src/KNN.o] Error 1
+src/subdir.mk:30: recipe for target 'src/KNN.o' failed
+"make all" terminated with exit code 2. Build might be incomplete.
+21:17:45 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNN.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNN.d" -MT"src/KNN.o" -o "src/KNN.o" "../src/KNN.cpp"
+Finished building: ../src/KNN.cpp
+ 
+Building target: lab1
+Invoking: Cross G++ Linker
+g++ -fopenmp -o "lab1"  ./src/FIleLoader.o ./src/KNN.o ./src/Normalization.o ./src/Standarization.o ./src/lab1.o   
+Finished building target: lab1
+ 
+21:18:12 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNN.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNN.d" -MT"src/KNN.o" -o "src/KNN.o" "../src/KNN.cpp"
+Finished building: ../src/KNN.cpp
+ 
+Building target: lab1
+Invoking: Cross G++ Linker
+g++ -fopenmp -o "lab1"  ./src/FIleLoader.o ./src/KNN.o ./src/Normalization.o ./src/Standarization.o ./src/lab1.o   
+Finished building target: lab1
+ 
+21:18:32 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNN.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNN.d" -MT"src/KNN.o" -o "src/KNN.o" "../src/KNN.cpp"
+Finished building: ../src/KNN.cpp
+ 
+Building target: lab1
+Invoking: Cross G++ Linker
+g++ -fopenmp -o "lab1"  ./src/FIleLoader.o ./src/KNN.o ./src/Normalization.o ./src/Standarization.o ./src/lab1.o   
+Finished building target: lab1
+ 
+21:18:43 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+make: Nothing to be done for 'all'.
+21:18:46 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+make: Nothing to be done for 'all'.
+21:19:23 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNN.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNN.d" -MT"src/KNN.o" -o "src/KNN.o" "../src/KNN.cpp"
+Finished building: ../src/KNN.cpp
+ 
+Building target: lab1
+Invoking: Cross G++ Linker
+g++ -fopenmp -o "lab1"  ./src/FIleLoader.o ./src/KNN.o ./src/Normalization.o ./src/Standarization.o ./src/lab1.o   
+Finished building target: lab1
+ 
+21:26:17 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNN.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNN.d" -MT"src/KNN.o" -o "src/KNN.o" "../src/KNN.cpp"
+Finished building: ../src/KNN.cpp
+ 
+Building target: lab1
+Invoking: Cross G++ Linker
+g++ -fopenmp -o "lab1"  ./src/FIleLoader.o ./src/KNN.o ./src/Normalization.o ./src/Standarization.o ./src/lab1.o   
+Finished building target: lab1
+ 
+21:26:47 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNN.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNN.d" -MT"src/KNN.o" -o "src/KNN.o" "../src/KNN.cpp"
+Finished building: ../src/KNN.cpp
+ 
+Building target: lab1
+Invoking: Cross G++ Linker
+g++ -fopenmp -o "lab1"  ./src/FIleLoader.o ./src/KNN.o ./src/Normalization.o ./src/Standarization.o ./src/lab1.o   
+Finished building target: lab1
+ 
+21:36:55 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/Normalization.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/Normalization.d" -MT"src/Normalization.o" -o "src/Normalization.o" "../src/Normalization.cpp"
+../src/Normalization.cpp: In member function ‘void Normalization::findMinMax()’:
+../src/Normalization.cpp:44:9: error: ‘cout’ not specified in enclosing ‘parallel’
+   cout<<"thread"<<omp_get_thread_num()<<endl;
+         ^~~~~~~~
+../src/Normalization.cpp:33:10: error: enclosing ‘parallel’
+  #pragma omp parallel for default(none) shared(inData,min,max,num_of_features,inDataSize) private(i,j)
+          ^~~
+src/subdir.mk:30: recipe for target 'src/Normalization.o' failed
+make: *** [src/Normalization.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+21:37:02 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/Normalization.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/Normalization.d" -MT"src/Normalization.o" -o "src/Normalization.o" "../src/Normalization.cpp"
+../src/Normalization.cpp: In member function ‘void Normalization::findMinMax()’:
+../src/Normalization.cpp:44:9: error: ‘cout’ not specified in enclosing ‘parallel’
+   cout<<"thread"<<omp_get_thread_num()<<endl;
+         ^~~~~~~~
+../src/Normalization.cpp:33:10: error: enclosing ‘parallel’
+  #pragma omp parallel for default(none) shared(inData,min,max,num_of_features,inDataSize) private(i,j)
+          ^~~
+make: *** [src/Normalization.o] Error 1
+src/subdir.mk:30: recipe for target 'src/Normalization.o' failed
+"make all" terminated with exit code 2. Build might be incomplete.
+21:38:05 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/Normalization.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/Normalization.d" -MT"src/Normalization.o" -o "src/Normalization.o" "../src/Normalization.cpp"
+Finished building: ../src/Normalization.cpp
+ 
+Building file: ../src/lab1.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/lab1.d" -MT"src/lab1.o" -o "src/lab1.o" "../src/lab1.cpp"
+Finished building: ../src/lab1.cpp
+ 
+Building target: lab1
+Invoking: Cross G++ Linker
+g++ -fopenmp -o "lab1"  ./src/FIleLoader.o ./src/KNN.o ./src/Normalization.o ./src/Standarization.o ./src/lab1.o   
+Finished building target: lab1
+ 
+21:38:14 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/Normalization.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/Normalization.d" -MT"src/Normalization.o" -o "src/Normalization.o" "../src/Normalization.cpp"
+../src/Normalization.cpp: In member function ‘void Normalization::findMinMax()’:
+../src/Normalization.cpp:45:14: error: ‘cout’ not specified in enclosing ‘parallel’
+   std::cout<<"thread"<<omp_get_thread_num()<<endl;
+              ^~~~~~~~
+../src/Normalization.cpp:34:10: error: enclosing ‘parallel’
+  #pragma omp parallel for default(none) shared(inData,min,max,num_of_features,inDataSize) private(i,j)
+          ^~~
+src/subdir.mk:30: recipe for target 'src/Normalization.o' failed
+make: *** [src/Normalization.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+21:40:25 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/Normalization.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/Normalization.d" -MT"src/Normalization.o" -o "src/Normalization.o" "../src/Normalization.cpp"
+Finished building: ../src/Normalization.cpp
+ 
+Building target: lab1
+Invoking: Cross G++ Linker
+g++ -fopenmp -o "lab1"  ./src/FIleLoader.o ./src/KNN.o ./src/Normalization.o ./src/Standarization.o ./src/lab1.o   
+Finished building target: lab1
+ 
+21:40:28 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+make: Nothing to be done for 'all'.
+21:40:58 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNN.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNN.d" -MT"src/KNN.o" -o "src/KNN.o" "../src/KNN.cpp"
+../src/KNN.cpp: In member function ‘std::__cxx11::string KNN::votePrediction(std::priority_queue<Row, std::vector<Row>, CompareRows>, int)’:
+../src/KNN.cpp:91:29: error: ‘neighbours’ not specified in enclosing ‘parallel’
+   category = neighbours.top().category;
+                             ^
+../src/KNN.cpp:89:11: error: enclosing ‘parallel’
+   #pragma omp parallel for default(none) shared(K,votes) private(category)
+           ^~~
+src/subdir.mk:30: recipe for target 'src/KNN.o' failed
+make: *** [src/KNN.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+21:41:04 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNN.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNN.d" -MT"src/KNN.o" -o "src/KNN.o" "../src/KNN.cpp"
+../src/KNN.cpp: In member function ‘std::__cxx11::string KNN::votePrediction(std::priority_queue<Row, std::vector<Row>, CompareRows>, int)’:
+../src/KNN.cpp:91:29: error: ‘neighbours’ not specified in enclosing ‘parallel’
+   category = neighbours.top().category;
+                             ^
+../src/KNN.cpp:89:11: error: enclosing ‘parallel’
+   #pragma omp parallel for default(none) shared(K,votes) private(category)
+           ^~~
+make: *** [src/KNN.o] Error 1
+src/subdir.mk:30: recipe for target 'src/KNN.o' failed
+"make all" terminated with exit code 2. Build might be incomplete.
+21:41:20 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNN.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNN.d" -MT"src/KNN.o" -o "src/KNN.o" "../src/KNN.cpp"
+../src/KNN.cpp: In member function ‘std::__cxx11::string KNN::votePrediction(std::priority_queue<Row, std::vector<Row>, CompareRows>, int)’:
+../src/KNN.cpp:91:29: error: ‘neighbours’ not specified in enclosing ‘parallel’
+   category = neighbours.top().category;
+                             ^
+../src/KNN.cpp:89:11: error: enclosing ‘parallel’
+   #pragma omp parallel for default(none) shared(K,votes) private(category)
+           ^~~
+make: *** [src/KNN.o] Error 1
+src/subdir.mk:30: recipe for target 'src/KNN.o' failed
+"make all" terminated with exit code 2. Build might be incomplete.
+21:41:24 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNN.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNN.d" -MT"src/KNN.o" -o "src/KNN.o" "../src/KNN.cpp"
+../src/KNN.cpp: In member function ‘std::__cxx11::string KNN::votePrediction(std::priority_queue<Row, std::vector<Row>, CompareRows>, int)’:
+../src/KNN.cpp:90:29: error: ‘neighbours’ not specified in enclosing ‘parallel’
+   category = neighbours.top().category;
+                             ^
+../src/KNN.cpp:88:11: error: enclosing ‘parallel’
+   #pragma omp parallel for default(none) shared(K,votes) private(category)
+           ^~~
+make: *** [src/KNN.o] Error 1
+src/subdir.mk:30: recipe for target 'src/KNN.o' failed
+"make all" terminated with exit code 2. Build might be incomplete.
+21:41:36 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNN.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNN.d" -MT"src/KNN.o" -o "src/KNN.o" "../src/KNN.cpp"
+../src/KNN.cpp: In member function ‘std::__cxx11::string KNN::votePrediction(std::priority_queue<Row, std::vector<Row>, CompareRows>, int)’:
+../src/KNN.cpp:91:29: error: ‘neighbours’ not specified in enclosing ‘parallel’
+   category = neighbours.top().category;
+                             ^
+../src/KNN.cpp:88:11: error: enclosing ‘parallel’
+   #pragma omp parallel for default(none) shared(K,votes) private(category)
+           ^~~
+src/subdir.mk:30: recipe for target 'src/KNN.o' failed
+make: *** [src/KNN.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+21:41:49 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNN.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNN.d" -MT"src/KNN.o" -o "src/KNN.o" "../src/KNN.cpp"
+Finished building: ../src/KNN.cpp
+ 
+Building target: lab1
+Invoking: Cross G++ Linker
+g++ -fopenmp -o "lab1"  ./src/FIleLoader.o ./src/KNN.o ./src/Normalization.o ./src/Standarization.o ./src/lab1.o   
+Finished building target: lab1
+ 
+21:41:56 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNN.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNN.d" -MT"src/KNN.o" -o "src/KNN.o" "../src/KNN.cpp"
+../src/KNN.cpp: In member function ‘std::__cxx11::string KNN::votePrediction(std::priority_queue<Row, std::vector<Row>, CompareRows>, int)’:
+../src/KNN.cpp:91:29: error: ‘neighbours’ not specified in enclosing ‘parallel’
+   category = neighbours.top().category;
+                             ^
+../src/KNN.cpp:88:11: error: enclosing ‘parallel’
+   #pragma omp parallel for default(none) shared(K,votes)
+           ^~~
+../src/KNN.cpp:91:31: error: ‘category’ not specified in enclosing ‘parallel’
+   category = neighbours.top().category;
+                               ^~~~~~~~
+../src/KNN.cpp:88:11: error: enclosing ‘parallel’
+   #pragma omp parallel for default(none) shared(K,votes)
+           ^~~
+make: *** [src/KNN.o] Error 1
+src/subdir.mk:30: recipe for target 'src/KNN.o' failed
+"make all" terminated with exit code 2. Build might be incomplete.
+21:42:05 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNN.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNN.d" -MT"src/KNN.o" -o "src/KNN.o" "../src/KNN.cpp"
+../src/KNN.cpp: In member function ‘std::__cxx11::string KNN::votePrediction(std::priority_queue<Row, std::vector<Row>, CompareRows>, int)’:
+../src/KNN.cpp:91:29: error: ‘neighbours’ not specified in enclosing ‘parallel’
+   category = neighbours.top().category;
+                             ^
+../src/KNN.cpp:88:11: error: enclosing ‘parallel’
+   #pragma omp parallel for default(none) shared(K)
+           ^~~
+../src/KNN.cpp:91:31: error: ‘category’ not specified in enclosing ‘parallel’
+   category = neighbours.top().category;
+                               ^~~~~~~~
+../src/KNN.cpp:88:11: error: enclosing ‘parallel’
+   #pragma omp parallel for default(none) shared(K)
+           ^~~
+../src/KNN.cpp:93:60: error: ‘votes’ not specified in enclosing ‘parallel’
+   map<string, int>::iterator iterator = votes.find(category);
+                                                            ^
+../src/KNN.cpp:88:11: error: enclosing ‘parallel’
+   #pragma omp parallel for default(none) shared(K)
+           ^~~
+make: *** [src/KNN.o] Error 1
+src/subdir.mk:30: recipe for target 'src/KNN.o' failed
+"make all" terminated with exit code 2. Build might be incomplete.
+21:42:23 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNN.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNN.d" -MT"src/KNN.o" -o "src/KNN.o" "../src/KNN.cpp"
+../src/KNN.cpp: In member function ‘std::__cxx11::string KNN::votePrediction(std::priority_queue<Row, std::vector<Row>, CompareRows>, int)’:
+../src/KNN.cpp:88:60: error: ‘i’ has not been declared
+   #pragma omp parallel for default(none) shared(K) private(i)
+                                                            ^
+../src/KNN.cpp:91:29: error: ‘neighbours’ not specified in enclosing ‘parallel’
+   category = neighbours.top().category;
+                             ^
+../src/KNN.cpp:88:11: error: enclosing ‘parallel’
+   #pragma omp parallel for default(none) shared(K) private(i)
+           ^~~
+../src/KNN.cpp:91:31: error: ‘category’ not specified in enclosing ‘parallel’
+   category = neighbours.top().category;
+                               ^~~~~~~~
+../src/KNN.cpp:88:11: error: enclosing ‘parallel’
+   #pragma omp parallel for default(none) shared(K) private(i)
+           ^~~
+../src/KNN.cpp:93:60: error: ‘votes’ not specified in enclosing ‘parallel’
+   map<string, int>::iterator iterator = votes.find(category);
+                                                            ^
+../src/KNN.cpp:88:11: error: enclosing ‘parallel’
+   #pragma omp parallel for default(none) shared(K) private(i)
+           ^~~
+src/subdir.mk:30: recipe for target 'src/KNN.o' failed
+make: *** [src/KNN.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+21:42:45 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNN.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNN.d" -MT"src/KNN.o" -o "src/KNN.o" "../src/KNN.cpp"
+../src/KNN.cpp: In member function ‘std::__cxx11::string KNN::votePrediction(std::priority_queue<Row, std::vector<Row>, CompareRows>, int)’:
+../src/KNN.cpp:88:60: error: ‘i’ has not been declared
+   #pragma omp parallel for default(none) shared(K) private(i,category)
+                                                            ^
+../src/KNN.cpp:91:29: error: ‘neighbours’ not specified in enclosing ‘parallel’
+   category = neighbours.top().category;
+                             ^
+../src/KNN.cpp:88:11: error: enclosing ‘parallel’
+   #pragma omp parallel for default(none) shared(K) private(i,category)
+           ^~~
+../src/KNN.cpp:93:60: error: ‘votes’ not specified in enclosing ‘parallel’
+   map<string, int>::iterator iterator = votes.find(category);
+                                                            ^
+../src/KNN.cpp:88:11: error: enclosing ‘parallel’
+   #pragma omp parallel for default(none) shared(K) private(i,category)
+           ^~~
+make: *** [src/KNN.o] Error 1
+src/subdir.mk:30: recipe for target 'src/KNN.o' failed
+"make all" terminated with exit code 2. Build might be incomplete.
+21:42:51 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNN.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNN.d" -MT"src/KNN.o" -o "src/KNN.o" "../src/KNN.cpp"
+../src/KNN.cpp: In member function ‘std::__cxx11::string KNN::votePrediction(std::priority_queue<Row, std::vector<Row>, CompareRows>, int)’:
+../src/KNN.cpp:88:60: error: ‘i’ has not been declared
+   #pragma omp parallel for default(none) shared(K) private(i,category)
+                                                            ^
+../src/KNN.cpp:90:29: error: ‘neighbours’ not specified in enclosing ‘parallel’
+   category = neighbours.top().category;
+                             ^
+../src/KNN.cpp:88:11: error: enclosing ‘parallel’
+   #pragma omp parallel for default(none) shared(K) private(i,category)
+           ^~~
+../src/KNN.cpp:92:60: error: ‘votes’ not specified in enclosing ‘parallel’
+   map<string, int>::iterator iterator = votes.find(category);
+                                                            ^
+../src/KNN.cpp:88:11: error: enclosing ‘parallel’
+   #pragma omp parallel for default(none) shared(K) private(i,category)
+           ^~~
+src/subdir.mk:30: recipe for target 'src/KNN.o' failed
+make: *** [src/KNN.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+21:42:56 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNN.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNN.d" -MT"src/KNN.o" -o "src/KNN.o" "../src/KNN.cpp"
+../src/KNN.cpp: In member function ‘std::__cxx11::string KNN::votePrediction(std::priority_queue<Row, std::vector<Row>, CompareRows>, int)’:
+../src/KNN.cpp:88:63: error: ‘i’ has not been declared
+      #pragma omp parallel for default(none) shared(K) private(i,category)
+                                                               ^
+../src/KNN.cpp:90:29: error: ‘neighbours’ not specified in enclosing ‘parallel’
+   category = neighbours.top().category;
+                             ^
+../src/KNN.cpp:88:14: error: enclosing ‘parallel’
+      #pragma omp parallel for default(none) shared(K) private(i,category)
+              ^~~
+../src/KNN.cpp:92:60: error: ‘votes’ not specified in enclosing ‘parallel’
+   map<string, int>::iterator iterator = votes.find(category);
+                                                            ^
+../src/KNN.cpp:88:14: error: enclosing ‘parallel’
+      #pragma omp parallel for default(none) shared(K) private(i,category)
+              ^~~
+make: *** [src/KNN.o] Error 1
+src/subdir.mk:30: recipe for target 'src/KNN.o' failed
+"make all" terminated with exit code 2. Build might be incomplete.
+21:43:01 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNN.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNN.d" -MT"src/KNN.o" -o "src/KNN.o" "../src/KNN.cpp"
+../src/KNN.cpp: In member function ‘std::__cxx11::string KNN::votePrediction(std::priority_queue<Row, std::vector<Row>, CompareRows>, int)’:
+../src/KNN.cpp:88:63: error: ‘i’ has not been declared
+      #pragma omp parallel for default(none) shared(K) private(i,category)
+                                                               ^
+../src/KNN.cpp:90:29: error: ‘neighbours’ not specified in enclosing ‘parallel’
+   category = neighbours.top().category;
+                             ^
+../src/KNN.cpp:88:14: error: enclosing ‘parallel’
+      #pragma omp parallel for default(none) shared(K) private(i,category)
+              ^~~
+../src/KNN.cpp:92:60: error: ‘votes’ not specified in enclosing ‘parallel’
+   map<string, int>::iterator iterator = votes.find(category);
+                                                            ^
+../src/KNN.cpp:88:14: error: enclosing ‘parallel’
+      #pragma omp parallel for default(none) shared(K) private(i,category)
+              ^~~
+src/subdir.mk:30: recipe for target 'src/KNN.o' failed
+make: *** [src/KNN.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+21:43:33 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNN.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNN.d" -MT"src/KNN.o" -o "src/KNN.o" "../src/KNN.cpp"
+../src/KNN.cpp: In member function ‘std::__cxx11::string KNN::votePrediction(std::priority_queue<Row, std::vector<Row>, CompareRows>, int)’:
+../src/KNN.cpp:89:2: error: ‘K’ not specified in enclosing ‘parallel’
+  for (int i = 0; i < K; i++) {
+  ^~~
+../src/KNN.cpp:88:14: error: enclosing ‘parallel’
+      #pragma omp parallel for default(none) shared(neighbours)
+              ^~~
+../src/KNN.cpp:90:31: error: ‘category’ not specified in enclosing ‘parallel’
+   category = neighbours.top().category;
+                               ^~~~~~~~
+../src/KNN.cpp:88:14: error: enclosing ‘parallel’
+      #pragma omp parallel for default(none) shared(neighbours)
+              ^~~
+../src/KNN.cpp:92:60: error: ‘votes’ not specified in enclosing ‘parallel’
+   map<string, int>::iterator iterator = votes.find(category);
+                                                            ^
+../src/KNN.cpp:88:14: error: enclosing ‘parallel’
+      #pragma omp parallel for default(none) shared(neighbours)
+              ^~~
+src/subdir.mk:30: recipe for target 'src/KNN.o' failed
+make: *** [src/KNN.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+21:43:39 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNN.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNN.d" -MT"src/KNN.o" -o "src/KNN.o" "../src/KNN.cpp"
+../src/KNN.cpp: In member function ‘std::__cxx11::string KNN::votePrediction(std::priority_queue<Row, std::vector<Row>, CompareRows>, int)’:
+../src/KNN.cpp:89:2: error: ‘K’ not specified in enclosing ‘parallel’
+  for (int i = 0; i < K; i++) {
+  ^~~
+../src/KNN.cpp:88:14: error: enclosing ‘parallel’
+      #pragma omp parallel for default(none)
+              ^~~
+../src/KNN.cpp:90:29: error: ‘neighbours’ not specified in enclosing ‘parallel’
+   category = neighbours.top().category;
+                             ^
+../src/KNN.cpp:88:14: error: enclosing ‘parallel’
+      #pragma omp parallel for default(none)
+              ^~~
+../src/KNN.cpp:90:31: error: ‘category’ not specified in enclosing ‘parallel’
+   category = neighbours.top().category;
+                               ^~~~~~~~
+../src/KNN.cpp:88:14: error: enclosing ‘parallel’
+      #pragma omp parallel for default(none)
+              ^~~
+../src/KNN.cpp:92:60: error: ‘votes’ not specified in enclosing ‘parallel’
+   map<string, int>::iterator iterator = votes.find(category);
+                                                            ^
+../src/KNN.cpp:88:14: error: enclosing ‘parallel’
+      #pragma omp parallel for default(none)
+              ^~~
+make: *** [src/KNN.o] Error 1
+src/subdir.mk:30: recipe for target 'src/KNN.o' failed
+"make all" terminated with exit code 2. Build might be incomplete.
+21:43:46 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNN.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNN.d" -MT"src/KNN.o" -o "src/KNN.o" "../src/KNN.cpp"
+Finished building: ../src/KNN.cpp
+ 
+Building file: ../src/lab1.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/lab1.d" -MT"src/lab1.o" -o "src/lab1.o" "../src/lab1.cpp"
+Finished building: ../src/lab1.cpp
+ 
+Building target: lab1
+Invoking: Cross G++ Linker
+g++ -fopenmp -o "lab1"  ./src/FIleLoader.o ./src/KNN.o ./src/Normalization.o ./src/Standarization.o ./src/lab1.o   
+Finished building target: lab1
+ 
+21:43:56 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNN.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNN.d" -MT"src/KNN.o" -o "src/KNN.o" "../src/KNN.cpp"
+../src/KNN.cpp: In member function ‘std::__cxx11::string KNN::votePrediction(std::priority_queue<Row, std::vector<Row>, CompareRows>, int)’:
+../src/KNN.cpp:89:2: error: ‘K’ not specified in enclosing ‘parallel’
+  for (int i = 0; i < K; i++) {
+  ^~~
+../src/KNN.cpp:88:12: error: enclosing ‘parallel’
+    #pragma omp parallel for default(none)
+            ^~~
+../src/KNN.cpp:90:29: error: ‘neighbours’ not specified in enclosing ‘parallel’
+   category = neighbours.top().category;
+                             ^
+../src/KNN.cpp:88:12: error: enclosing ‘parallel’
+    #pragma omp parallel for default(none)
+            ^~~
+../src/KNN.cpp:90:31: error: ‘category’ not specified in enclosing ‘parallel’
+   category = neighbours.top().category;
+                               ^~~~~~~~
+../src/KNN.cpp:88:12: error: enclosing ‘parallel’
+    #pragma omp parallel for default(none)
+            ^~~
+../src/KNN.cpp:92:60: error: ‘votes’ not specified in enclosing ‘parallel’
+   map<string, int>::iterator iterator = votes.find(category);
+                                                            ^
+../src/KNN.cpp:88:12: error: enclosing ‘parallel’
+    #pragma omp parallel for default(none)
+            ^~~
+src/subdir.mk:30: recipe for target 'src/KNN.o' failed
+make: *** [src/KNN.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+21:44:20 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNN.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNN.d" -MT"src/KNN.o" -o "src/KNN.o" "../src/KNN.cpp"
+../src/KNN.cpp: In member function ‘std::__cxx11::string KNN::votePrediction(std::priority_queue<Row, std::vector<Row>, CompareRows>, int)’:
+../src/KNN.cpp:89:2: error: ‘K’ not specified in enclosing ‘parallel’
+  for (int i = 0; i < K; i++) {
+  ^~~
+../src/KNN.cpp:88:12: error: enclosing ‘parallel’
+    #pragma omp parallel for default(none)
+            ^~~
+../src/KNN.cpp:90:29: error: ‘neighbours’ not specified in enclosing ‘parallel’
+   category = neighbours.top().category;
+                             ^
+../src/KNN.cpp:88:12: error: enclosing ‘parallel’
+    #pragma omp parallel for default(none)
+            ^~~
+../src/KNN.cpp:90:31: error: ‘category’ not specified in enclosing ‘parallel’
+   category = neighbours.top().category;
+                               ^~~~~~~~
+../src/KNN.cpp:88:12: error: enclosing ‘parallel’
+    #pragma omp parallel for default(none)
+            ^~~
+../src/KNN.cpp:92:60: error: ‘votes’ not specified in enclosing ‘parallel’
+   map<string, int>::iterator iterator = votes.find(category);
+src/subdir.mk:30: recipe for target 'src/KNN.o' failed
+                                                            ^
+../src/KNN.cpp:88:12: error: enclosing ‘parallel’
+    #pragma omp parallel for default(none)
+            ^~~
+make: *** [src/KNN.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+21:44:45 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNN.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNN.d" -MT"src/KNN.o" -o "src/KNN.o" "../src/KNN.cpp"
+../src/KNN.cpp: In member function ‘std::__cxx11::string KNN::votePrediction(std::priority_queue<Row, std::vector<Row>, CompareRows>, int)’:
+../src/KNN.cpp:89:36: error: ‘neighbours’ not specified in enclosing ‘parallel’
+   string category = neighbours.top().category;
+                                    ^
+../src/KNN.cpp:87:12: error: enclosing ‘parallel’
+    #pragma omp parallel for default(none) shared(K)
+            ^~~
+../src/KNN.cpp:91:60: error: ‘votes’ not specified in enclosing ‘parallel’
+   map<string, int>::iterator iterator = votes.find(category);
+                                                            ^
+../src/KNN.cpp:87:12: error: enclosing ‘parallel’
+    #pragma omp parallel for default(none) shared(K)
+            ^~~
+src/subdir.mk:30: recipe for target 'src/KNN.o' failed
+make: *** [src/KNN.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+21:44:49 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNN.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNN.d" -MT"src/KNN.o" -o "src/KNN.o" "../src/KNN.cpp"
+../src/KNN.cpp: In member function ‘std::__cxx11::string KNN::votePrediction(std::priority_queue<Row, std::vector<Row>, CompareRows>, int)’:
+../src/KNN.cpp:89:36: error: ‘neighbours’ not specified in enclosing ‘parallel’
+   string category = neighbours.top().category;
+                                    ^
+../src/KNN.cpp:87:12: error: enclosing ‘parallel’
+    #pragma omp parallel for default(none) shared(K)
+            ^~~
+../src/KNN.cpp:91:60: error: ‘votes’ not specified in enclosing ‘parallel’
+   map<string, int>::iterator iterator = votes.find(category);
+                                                            ^
+../src/KNN.cpp:87:12: error: enclosing ‘parallel’
+    #pragma omp parallel for default(none) shared(K)
+            ^~~
+src/subdir.mk:30: recipe for target 'src/KNN.o' failed
+make: *** [src/KNN.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+21:45:09 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNN.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNN.d" -MT"src/KNN.o" -o "src/KNN.o" "../src/KNN.cpp"
+../src/KNN.cpp: In member function ‘std::__cxx11::string KNN::votePrediction(std::priority_queue<Row, std::vector<Row>, CompareRows>, int)’:
+../src/KNN.cpp:89:36: error: ‘neighbours’ not specified in enclosing ‘parallel’
+   string category = neighbours.top().category;
+                                    ^
+../src/KNN.cpp:87:12: error: enclosing ‘parallel’
+    #pragma omp parallel for default(none) shared(K,votes)
+            ^~~
+make: *** [src/KNN.o] Error 1
+src/subdir.mk:30: recipe for target 'src/KNN.o' failed
+"make all" terminated with exit code 2. Build might be incomplete.
+21:46:02 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNN.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNN.d" -MT"src/KNN.o" -o "src/KNN.o" "../src/KNN.cpp"
+Finished building: ../src/KNN.cpp
+ 
+Building target: lab1
+Invoking: Cross G++ Linker
+g++ -fopenmp -o "lab1"  ./src/FIleLoader.o ./src/KNN.o ./src/Normalization.o ./src/Standarization.o ./src/lab1.o   
+Finished building target: lab1
+ 
+21:46:19 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNN.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNN.d" -MT"src/KNN.o" -o "src/KNN.o" "../src/KNN.cpp"
+Finished building: ../src/KNN.cpp
+ 
+Building target: lab1
+Invoking: Cross G++ Linker
+g++ -fopenmp -o "lab1"  ./src/FIleLoader.o ./src/KNN.o ./src/Normalization.o ./src/Standarization.o ./src/lab1.o   
+Finished building target: lab1
+ 
+21:46:44 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNN.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNN.d" -MT"src/KNN.o" -o "src/KNN.o" "../src/KNN.cpp"
+Finished building: ../src/KNN.cpp
+ 
+Building target: lab1
+Invoking: Cross G++ Linker
+g++ -fopenmp -o "lab1"  ./src/FIleLoader.o ./src/KNN.o ./src/Normalization.o ./src/Standarization.o ./src/lab1.o   
+Finished building target: lab1
+ 
+21:46:51 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNN.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNN.d" -MT"src/KNN.o" -o "src/KNN.o" "../src/KNN.cpp"
+Finished building: ../src/KNN.cpp
+ 
+Building target: lab1
+Invoking: Cross G++ Linker
+g++ -fopenmp -o "lab1"  ./src/FIleLoader.o ./src/KNN.o ./src/Normalization.o ./src/Standarization.o ./src/lab1.o   
+Finished building target: lab1
+ 
+21:46:55 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNN.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNN.d" -MT"src/KNN.o" -o "src/KNN.o" "../src/KNN.cpp"
+Finished building: ../src/KNN.cpp
+ 
+Building target: lab1
+Invoking: Cross G++ Linker
+g++ -fopenmp -o "lab1"  ./src/FIleLoader.o ./src/KNN.o ./src/Normalization.o ./src/Standarization.o ./src/lab1.o   
+Finished building target: lab1
+ 
+21:47:05 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNN.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNN.d" -MT"src/KNN.o" -o "src/KNN.o" "../src/KNN.cpp"
+Finished building: ../src/KNN.cpp
+ 
+Building target: lab1
+Invoking: Cross G++ Linker
+g++ -fopenmp -o "lab1"  ./src/FIleLoader.o ./src/KNN.o ./src/Normalization.o ./src/Standarization.o ./src/lab1.o   
+Finished building target: lab1
+ 
+21:47:17 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+make: Nothing to be done for 'all'.
+21:47:57 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/Normalization.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/Normalization.d" -MT"src/Normalization.o" -o "src/Normalization.o" "../src/Normalization.cpp"
+Finished building: ../src/Normalization.cpp
+ 
+Building target: lab1
+Invoking: Cross G++ Linker
+g++ -fopenmp -o "lab1"  ./src/FIleLoader.o ./src/KNN.o ./src/Normalization.o ./src/Standarization.o ./src/lab1.o   
+Finished building target: lab1
+ 
+21:48:00 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+make: Nothing to be done for 'all'.
+21:48:08 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/Normalization.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/Normalization.d" -MT"src/Normalization.o" -o "src/Normalization.o" "../src/Normalization.cpp"
+Finished building: ../src/Normalization.cpp
+ 
+Building target: lab1
+Invoking: Cross G++ Linker
+g++ -fopenmp -o "lab1"  ./src/FIleLoader.o ./src/KNN.o ./src/Normalization.o ./src/Standarization.o ./src/lab1.o   
+Finished building target: lab1
+ 
+21:48:19 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/lab1.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/lab1.d" -MT"src/lab1.o" -o "src/lab1.o" "../src/lab1.cpp"
+Finished building: ../src/lab1.cpp
+ 
+Building target: lab1
+Invoking: Cross G++ Linker
+g++ -fopenmp -o "lab1"  ./src/FIleLoader.o ./src/KNN.o ./src/Normalization.o ./src/Standarization.o ./src/lab1.o   
+Finished building target: lab1
+ 
+21:49:03 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/lab1.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/lab1.d" -MT"src/lab1.o" -o "src/lab1.o" "../src/lab1.cpp"
+Finished building: ../src/lab1.cpp
+ 
+Building target: lab1
+Invoking: Cross G++ Linker
+g++ -fopenmp -o "lab1"  ./src/FIleLoader.o ./src/KNN.o ./src/Normalization.o ./src/Standarization.o ./src/lab1.o   
+Finished building target: lab1
+ 
+21:51:50 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNN.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNN.d" -MT"src/KNN.o" -o "src/KNN.o" "../src/KNN.cpp"
+Finished building: ../src/KNN.cpp
+ 
+Building target: lab1
+Invoking: Cross G++ Linker
+g++ -fopenmp -o "lab1"  ./src/FIleLoader.o ./src/KNN.o ./src/Normalization.o ./src/Standarization.o ./src/lab1.o   
+Finished building target: lab1
+ 
+21:51:56 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+make: Nothing to be done for 'all'.
+21:52:06 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+make: Nothing to be done for 'all'.
+21:52:08 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+make: Nothing to be done for 'all'.
+21:53:33 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+make: Nothing to be done for 'all'.
+21:53:42 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNN.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNN.d" -MT"src/KNN.o" -o "src/KNN.o" "../src/KNN.cpp"
+Finished building: ../src/KNN.cpp
+ 
+Building target: lab1
+Invoking: Cross G++ Linker
+g++ -fopenmp -o "lab1"  ./src/FIleLoader.o ./src/KNN.o ./src/Normalization.o ./src/Standarization.o ./src/lab1.o   
+Finished building target: lab1
+ 
+21:54:11 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNN.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNN.d" -MT"src/KNN.o" -o "src/KNN.o" "../src/KNN.cpp"
+../src/KNN.cpp: In member function ‘std::__cxx11::string KNN::votePrediction(std::priority_queue<Row, std::vector<Row>, CompareRows>, int)’:
+../src/KNN.cpp:87:36: error: ‘neighbours’ not specified in enclosing ‘parallel’
+   string category = neighbours.top().category;
+                                    ^
+../src/KNN.cpp:85:12: error: enclosing ‘parallel’
+    #pragma omp parallel for default(none) shared(K,votes)
+            ^~~
+make: *** [src/KNN.o] Error 1
+src/subdir.mk:30: recipe for target 'src/KNN.o' failed
+"make all" terminated with exit code 2. Build might be incomplete.
+21:54:17 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNN.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNN.d" -MT"src/KNN.o" -o "src/KNN.o" "../src/KNN.cpp"
+Finished building: ../src/KNN.cpp
+ 
+Building target: lab1
+Invoking: Cross G++ Linker
+g++ -fopenmp -o "lab1"  ./src/FIleLoader.o ./src/KNN.o ./src/Normalization.o ./src/Standarization.o ./src/lab1.o   
+Finished building target: lab1
+ 
+21:54:21 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+make: Nothing to be done for 'all'.
+21:57:30 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNN.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNN.d" -MT"src/KNN.o" -o "src/KNN.o" "../src/KNN.cpp"
+Finished building: ../src/KNN.cpp
+ 
+Building target: lab1
+Invoking: Cross G++ Linker
+g++ -fopenmp -o "lab1"  ./src/FIleLoader.o ./src/KNN.o ./src/Normalization.o ./src/Standarization.o ./src/lab1.o   
+Finished building target: lab1
+ 
+21:57:44 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNN.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNN.d" -MT"src/KNN.o" -o "src/KNN.o" "../src/KNN.cpp"
+../src/KNN.cpp: In member function ‘std::__cxx11::string KNN::votePrediction(std::priority_queue<Row, std::vector<Row>, CompareRows>, int)’:
+../src/KNN.cpp:87:36: error: ‘neighbours’ not specified in enclosing ‘parallel’
+   string category = neighbours.top().category;
+                                    ^
+../src/KNN.cpp:85:12: error: enclosing ‘parallel’
+    #pragma omp parallel for default(none) shared(K,votes)
+            ^~~
+make: *** [src/KNN.o] Error 1
+src/subdir.mk:30: recipe for target 'src/KNN.o' failed
+"make all" terminated with exit code 2. Build might be incomplete.
+22:02:48 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNN.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNN.d" -MT"src/KNN.o" -o "src/KNN.o" "../src/KNN.cpp"
+../src/KNN.cpp: In member function ‘std::__cxx11::string KNN::votePrediction(std::priority_queue<Row, std::vector<Row>, CompareRows>, int)’:
+../src/KNN.cpp:86:21: error: expected ‘#pragma omp’ clause before ‘{’ token
+ #pragma omp parallel{
+                     ^
+../src/KNN.cpp:90:20: error: ‘default’ is not valid for ‘#pragma omp for’
+    #pragma omp for default(none) shared(K)
+                    ^~~~~~~
+../src/KNN.cpp:90:34: error: ‘shared’ is not valid for ‘#pragma omp for’
+    #pragma omp for default(none) shared(K)
+                                  ^~~~~~
+../src/KNN.cpp:103:1: warning: no return statement in function returning non-void [-Wreturn-type]
+ }
+ ^
+../src/KNN.cpp: At global scope:
+../src/KNN.cpp:110:18: error: ‘votes’ was not declared in this scope
+  auto endVotes = votes.end();
+                  ^~~~~
+../src/KNN.cpp:111:20: error: ‘votes’ was not declared in this scope
+  auto startVotes = votes.begin();
+                    ^~~~~
+../src/KNN.cpp:113:2: error: expected unqualified-id before ‘for’
+  for (it = startVotes; it != endVotes; it++) {
+  ^~~
+../src/KNN.cpp:113:24: error: ‘it’ does not name a type
+  for (it = startVotes; it != endVotes; it++) {
+                        ^~
+../src/KNN.cpp:113:40: error: ‘it’ does not name a type
+  for (it = startVotes; it != endVotes; it++) {
+                                        ^~
+../src/KNN.cpp:121:2: error: expected unqualified-id before ‘return’
+  return maxVotesCategory;
+  ^~~~~~
+../src/KNN.cpp:122:1: error: expected declaration before ‘}’ token
+ }
+ ^
+src/subdir.mk:30: recipe for target 'src/KNN.o' failed
+make: *** [src/KNN.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+22:02:55 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNN.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNN.d" -MT"src/KNN.o" -o "src/KNN.o" "../src/KNN.cpp"
+../src/KNN.cpp: In member function ‘std::__cxx11::string KNN::votePrediction(std::priority_queue<Row, std::vector<Row>, CompareRows>, int)’:
+../src/KNN.cpp:86:21: error: expected ‘#pragma omp’ clause before ‘{’ token
+ #pragma omp parallel{
+                     ^
+../src/KNN.cpp:103:1: warning: no return statement in function returning non-void [-Wreturn-type]
+ }
+ ^
+../src/KNN.cpp: At global scope:
+../src/KNN.cpp:110:18: error: ‘votes’ was not declared in this scope
+  auto endVotes = votes.end();
+                  ^~~~~
+../src/KNN.cpp:111:20: error: ‘votes’ was not declared in this scope
+  auto startVotes = votes.begin();
+                    ^~~~~
+../src/KNN.cpp:113:2: error: expected unqualified-id before ‘for’
+  for (it = startVotes; it != endVotes; it++) {
+  ^~~
+../src/KNN.cpp:113:24: error: ‘it’ does not name a type
+  for (it = startVotes; it != endVotes; it++) {
+                        ^~
+../src/KNN.cpp:113:40: error: ‘it’ does not name a type
+  for (it = startVotes; it != endVotes; it++) {
+                                        ^~
+../src/KNN.cpp:121:2: error: expected unqualified-id before ‘return’
+  return maxVotesCategory;
+  ^~~~~~
+../src/KNN.cpp:122:1: error: expected declaration before ‘}’ token
+ }
+ ^
+make: *** [src/KNN.o] Error 1
+src/subdir.mk:30: recipe for target 'src/KNN.o' failed
+"make all" terminated with exit code 2. Build might be incomplete.
+22:03:02 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNN.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNN.d" -MT"src/KNN.o" -o "src/KNN.o" "../src/KNN.cpp"
+Finished building: ../src/KNN.cpp
+ 
+Building target: lab1
+Invoking: Cross G++ Linker
+g++ -fopenmp -o "lab1"  ./src/FIleLoader.o ./src/KNN.o ./src/Normalization.o ./src/Standarization.o ./src/lab1.o   
+Finished building target: lab1
+ 
+22:03:20 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNN.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNN.d" -MT"src/KNN.o" -o "src/KNN.o" "../src/KNN.cpp"
+../src/KNN.cpp: In member function ‘std::__cxx11::string KNN::votePrediction(std::priority_queue<Row, std::vector<Row>, CompareRows>, int)’:
+../src/KNN.cpp:91:20: error: ‘default’ is not valid for ‘#pragma omp for’
+    #pragma omp for default(none) shared(votes,K)
+                    ^~~~~~~
+../src/KNN.cpp:91:34: error: ‘shared’ is not valid for ‘#pragma omp for’
+    #pragma omp for default(none) shared(votes,K)
+                                  ^~~~~~
+make: *** [src/KNN.o] Error 1
+src/subdir.mk:30: recipe for target 'src/KNN.o' failed
+"make all" terminated with exit code 2. Build might be incomplete.
+22:03:31 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNN.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNN.d" -MT"src/KNN.o" -o "src/KNN.o" "../src/KNN.cpp"
+../src/KNN.cpp: In member function ‘std::__cxx11::string KNN::votePrediction(std::priority_queue<Row, std::vector<Row>, CompareRows>, int)’:
+../src/KNN.cpp:91:20: error: ‘shared’ is not valid for ‘#pragma omp for’
+    #pragma omp for shared(votes,K)
+                    ^~~~~~
+src/subdir.mk:30: recipe for target 'src/KNN.o' failed
+make: *** [src/KNN.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+22:03:40 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNN.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNN.d" -MT"src/KNN.o" -o "src/KNN.o" "../src/KNN.cpp"
+Finished building: ../src/KNN.cpp
+ 
+Building target: lab1
+Invoking: Cross G++ Linker
+g++ -fopenmp -o "lab1"  ./src/FIleLoader.o ./src/KNN.o ./src/Normalization.o ./src/Standarization.o ./src/lab1.o   
+Finished building target: lab1
+ 
+22:03:49 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNN.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNN.d" -MT"src/KNN.o" -o "src/KNN.o" "../src/KNN.cpp"
+Finished building: ../src/KNN.cpp
+ 
+Building target: lab1
+Invoking: Cross G++ Linker
+g++ -fopenmp -o "lab1"  ./src/FIleLoader.o ./src/KNN.o ./src/Normalization.o ./src/Standarization.o ./src/lab1.o   
+Finished building target: lab1
+ 
+22:04:00 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNN.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNN.d" -MT"src/KNN.o" -o "src/KNN.o" "../src/KNN.cpp"
+../src/KNN.cpp: In member function ‘std::__cxx11::string KNN::votePrediction(std::priority_queue<Row, std::vector<Row>, CompareRows>, int)’:
+../src/KNN.cpp:89:24: error: ‘neighbours’ not specified in enclosing ‘parallel’
+  auto tempNeighbours = neighbours;
+                        ^~~~~~~~~~
+../src/KNN.cpp:86:9: error: enclosing ‘parallel’
+ #pragma omp parallel default(none) shared(K)
+         ^~~
+../src/KNN.cpp:95:60: error: ‘votes’ not specified in enclosing ‘parallel’
+   map<string, int>::iterator iterator = votes.find(category);
+                                                            ^
+../src/KNN.cpp:86:9: error: enclosing ‘parallel’
+ #pragma omp parallel default(none) shared(K)
+         ^~~
+src/subdir.mk:30: recipe for target 'src/KNN.o' failed
+make: *** [src/KNN.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+22:04:34 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNN.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNN.d" -MT"src/KNN.o" -o "src/KNN.o" "../src/KNN.cpp"
+../src/KNN.cpp: In member function ‘std::__cxx11::string KNN::votePrediction(std::priority_queue<Row, std::vector<Row>, CompareRows>, int)’:
+../src/KNN.cpp:86:47: error: ‘i’ has not been declared
+ #pragma omp parallel  shared(K,votes) private(i)
+                                               ^
+make: *** [src/KNN.o] Error 1
+src/subdir.mk:30: recipe for target 'src/KNN.o' failed
+"make all" terminated with exit code 2. Build might be incomplete.
+22:04:38 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNN.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNN.d" -MT"src/KNN.o" -o "src/KNN.o" "../src/KNN.cpp"
+../src/KNN.cpp: In member function ‘std::__cxx11::string KNN::votePrediction(std::priority_queue<Row, std::vector<Row>, CompareRows>, int)’:
+../src/KNN.cpp:86:47: error: ‘i’ has not been declared
+ #pragma omp parallel  shared(K,votes) private(i)
+                                               ^
+make: *** [src/KNN.o] Error 1
+src/subdir.mk:30: recipe for target 'src/KNN.o' failed
+"make all" terminated with exit code 2. Build might be incomplete.
+22:04:43 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNN.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNN.d" -MT"src/KNN.o" -o "src/KNN.o" "../src/KNN.cpp"
+Finished building: ../src/KNN.cpp
+ 
+Building target: lab1
+Invoking: Cross G++ Linker
+g++ -fopenmp -o "lab1"  ./src/FIleLoader.o ./src/KNN.o ./src/Normalization.o ./src/Standarization.o ./src/lab1.o   
+Finished building target: lab1
+ 
+22:04:47 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+make: Nothing to be done for 'all'.

@@ -35,7 +35,7 @@ void Standarization::calcAverage() {
 		}
 	}
 
-	#pragma omp parallel for default(none) shared(sum,average,num_of_features) private(j)
+	#pragma omp parallel for default(none) shared(sum,average,num_of_features,inDataSize) private(j)
 	for (j = 0; j < num_of_features; j++) {
 		average[j] = sum[j] / inDataSize;
 	}

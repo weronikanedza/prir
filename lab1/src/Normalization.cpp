@@ -1,5 +1,7 @@
 #include "Normalization.hpp"
 #include<limits>
+#include<iostream>
+using namespace std;
 
 void Normalization::normalize() {
 	findMinMax();
@@ -40,6 +42,7 @@ void Normalization::findMinMax() {
 				max[j] = inData[i].features[j];
 			}
 		}
+
 	}
 
 	double end = omp_get_wtime();

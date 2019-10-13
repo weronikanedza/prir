@@ -1,15 +1,6 @@
-13:53:30 **** Incremental Build of configuration Debug for project lab1 ****
+22:04:47 **** Incremental Build of configuration Debug for project lab1 ****
 make all 
-Building file: ../src/FIleLoader.cpp
-Invoking: Cross G++ Compiler
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/FIleLoader.d" -MT"src/FIleLoader.o" -o "src/FIleLoader.o" "../src/FIleLoader.cpp"
-Finished building: ../src/FIleLoader.cpp
- 
-Building target: lab1
-Invoking: Cross G++ Linker
-g++ -fopenmp -o "lab1"  ./src/FIleLoader.o ./src/KNN.o ./src/Normalization.o ./src/Standarization.o ./src/lab1.o   
-Finished building target: lab1
- 
+make: Nothing to be done for 'all'.
 
-13:53:32 Build Finished. 0 errors, 0 warnings. (took 1s.643ms)
+22:04:47 Build Finished. 0 errors, 0 warnings. (took 424ms)
 

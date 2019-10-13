@@ -56,13 +56,5 @@ string FileLoader::prepareData(string word) {
 		return "8";
 	}
 
-//	if (word.compare("M")==0) {
-//		return "1";
-//	} else if (word.compare("F")==0) {
-//		return "2";
-//	} else if (word.compare("I")==0) {
-//		return "3";
-//	}
-
 	return word;
 }

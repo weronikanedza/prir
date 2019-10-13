@@ -7,6 +7,7 @@ private:
 	vector<Row> testingSet;
 	vector<Row> inData;
 	int inDataSize;
+	double knnTime;
 public:
 	KNN(vector<Row> inData) :
 			inData(inData), inDataSize(inData.size()) {
@@ -21,4 +22,5 @@ public:
 	string votePrediction(
 			priority_queue<Row, vector<Row>, CompareRows> neighbours, int K);
 	double getAccuracy();
+	double getKnnTime();
 };
