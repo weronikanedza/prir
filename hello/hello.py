@@ -58,7 +58,7 @@ print ('standarization : ' , end-start)
 
 start = time.time()
 X_train, X_test, y_train, y_test = train_test_split(X, Y, random_state=1)
-knn = KNeighborsClassifier(n_neighbors=3, metric='euclidean')
+knn = KNeighborsClassifier(n_neighbors=3, metric='euclidean',algorithm="kd_tree")
 knn.fit(X_train, y_train)
 y_pred = knn.predict(X_test)
 end = time.time()
