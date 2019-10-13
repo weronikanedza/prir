@@ -16,7 +16,7 @@ int main() {
 
 
 	//set threads num
-	omp_set_num_threads(1);
+	omp_set_num_threads(2);
 
 	//normalization.normalize();
 	//standarization.standarize();
