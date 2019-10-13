@@ -9,7 +9,7 @@ private:
 	double normalizationTime;
 	double minMaxTime;
 	int inDataSize;
-	double min[NUM_OF_FEATURES] = {100,100,100,100};
+	double min[NUM_OF_FEATURES];
 	double max[NUM_OF_FEATURES];
 public:
 	Normalization(vector<Row> inData) :

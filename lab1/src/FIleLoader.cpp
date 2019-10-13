@@ -5,11 +5,9 @@
 #include <sstream>
 #include <iomanip>
 
-#define NUM_OF_FEATURE 4
-
 vector<Row> FileLoader::readFile() {
 
-	ifstream file("iris.csv", ios::in);
+	ifstream file("krkopt.csv", ios::in);
 	string line;
 	vector<Row> rows;
 
@@ -26,26 +24,37 @@ Row FileLoader::loadRow(string line) {
 	string word;
 	stringstream s(line);
 
-	for (int i = 0; i < NUM_OF_FEATURE; i++) {
+	for (int i = 0; i < NUM_OF_FEATURES; i++) {
 		getline(s, word, ',');
-		features.push_back(atof(word.c_str()));
+		string preparedWord = prepareData(word);
+		features.push_back(atoi(preparedWord.c_str()));
 	}
 
 	getline(s, word, ',');
-	return prepareData(features, word);
+	return Row(features, word);
 
 }
 
-Row FileLoader::prepareData(vector<double> features, string category) {
-	int categoryTmp = 2;
+string FileLoader::prepareData(string word) {
 
-	if (category.compare("Iris-setosa")==0) {
-		categoryTmp = 0;
+
+	if(word.compare("a")==0){
+		return "1";
+	}else if(word.compare("b")==0){
+		return "2";
+	}else if(word.compare("c")==0){
+		return "3";
+	}else if(word.compare("d")==0){
+		return "4";
+	}else if(word.compare("e")==0){
+		return "5";
+	}else if(word.compare("f")==0){
+		return "6";
+	}else if(word.compare("g")==0){
+		return "7";
+	}else if(word.compare("h")==0){
+		return "8";
 	}
 
-	if (category.compare("Iris-versicolor")==0) {
-		categoryTmp = 1;
-	}
-
-	return Row(features, categoryTmp);
+	return word;
 }

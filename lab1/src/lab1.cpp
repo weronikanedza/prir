@@ -14,8 +14,8 @@ int main() {
 	Standarization standarization = Standarization(rows);
 	KNN knn = KNN(rows);
 
-	normalization.normalize();
-	standarization.standarize();
+	//normalization.normalize();
+	//standarization.standarize();
 	knn.createSets();
 	knn.knn();
 
@@ -38,6 +38,10 @@ int main() {
 			<< standarization.getAverageCalcTime()
 					+ standarization.getDeviationTime()
 					+ standarization.getStandarizationTIme() << endl << endl;
+
+
+	cout << "********KNN*******"<<endl;
+
 
 	cout << "Accuracy : " << knn.getAccuracy();
 	return 0;

@@ -1,4 +1,5 @@
 #include "Normalization.hpp"
+#include<limits>
 
 void Normalization::normalize() {
 	findMinMax();
@@ -24,9 +25,13 @@ void Normalization::findMinMax() {
 	int num_of_features = NUM_OF_FEATURES;
 	double begin = omp_get_wtime();
 
+	for( i=0;i<num_of_features;i++){
+		min[i]= numeric_limits<int>::max();
+	}
+
 	#pragma omp parallel for default(none) shared(inData,min,max,num_of_features,inDataSize) private(i,j)
-	for (int i = 0; i < inDataSize; i++) {
-		for (int j = 0; j < num_of_features; j++) {
+	for ( i = 0; i < inDataSize; i++) {
+		for ( j = 0; j < num_of_features; j++) {
 			if (min[j] > inData[i].features[j]) {
 				min[j] = inData[i].features[j];
 			}

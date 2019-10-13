@@ -2,17 +2,17 @@
 
 #include <string>
 #include <vector>
-#define NUM_OF_FEATURES 4
+#define NUM_OF_FEATURES 6
 
 using namespace std;
 
 class Row {
 public:
 	vector<double> features;
-	int category;
+	string category;
 	double distance;
-	int prediction;
-	Row(vector<double> m_features, int m_category) :
+	string prediction;
+	Row(vector<double> m_features, string m_category) :
 			features(m_features), category(m_category) {
 	}
 	;

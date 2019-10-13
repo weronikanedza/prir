@@ -22,7 +22,7 @@ void Standarization::standarize() {
 }
 
 void Standarization::calcAverage() {
-	double sum[4];
+	double sum[NUM_OF_FEATURES];
 	int num_of_features = NUM_OF_FEATURES;
 	int i, j;
 
@@ -45,7 +45,7 @@ void Standarization::calcAverage() {
 }
 
 void Standarization::calcDeviation() {
-	double variation[4];
+	double variation[NUM_OF_FEATURES];
 	int num_of_features = NUM_OF_FEATURES;
 	int i, j;
 	double begin = omp_get_wtime();
