@@ -11,7 +11,7 @@ public:
 	vector<double> features;
 	int category;
 	double distance;
-	string prediction;
+	int prediction;
 	Row(vector<double> m_features, int m_category) :
 			features(m_features), category(m_category) {
 	}

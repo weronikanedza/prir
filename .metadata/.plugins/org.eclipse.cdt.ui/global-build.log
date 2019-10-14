@@ -1320,3 +1320,993 @@ Invoking: Cross G++ Linker
 g++ -fopenmp -o "lab1"  ./src/CrossValidator.o ./src/FIleLoader.o ./src/KNNBeta.o ./src/Normalization.o ./src/Standarization.o ./src/lab1.o   
 Finished building target: lab1
  
+21:45:15 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/lab1.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/lab1.d" -MT"src/lab1.o" -o "src/lab1.o" "../src/lab1.cpp"
+Finished building: ../src/lab1.cpp
+ 
+Building target: lab1
+Invoking: Cross G++ Linker
+g++ -fopenmp -o "lab1"  ./src/CrossValidator.o ./src/FIleLoader.o ./src/KNNBeta.o ./src/Normalization.o ./src/Standarization.o ./src/lab1.o   
+Finished building target: lab1
+ 
+21:45:18 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+make: Nothing to be done for 'all'.
+21:51:05 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/CrossValidator.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/CrossValidator.d" -MT"src/CrossValidator.o" -o "src/CrossValidator.o" "../src/CrossValidator.cpp"
+Finished building: ../src/CrossValidator.cpp
+ 
+Building file: ../src/FIleLoader.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/FIleLoader.d" -MT"src/FIleLoader.o" -o "src/FIleLoader.o" "../src/FIleLoader.cpp"
+Finished building: ../src/FIleLoader.cpp
+ 
+Building file: ../src/KNNBeta.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNNBeta.d" -MT"src/KNNBeta.o" -o "src/KNNBeta.o" "../src/KNNBeta.cpp"
+../src/KNNBeta.cpp: In member function ‘void KNNBeta::splitData(std::vector<Row>)’:
+../src/KNNBeta.cpp:95:28: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int i = trainSize; i < inData.size(); i++) {
+                          ~~^~~~~~~~~~~~~~~
+Finished building: ../src/KNNBeta.cpp
+ 
+Building file: ../src/Normalization.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/Normalization.d" -MT"src/Normalization.o" -o "src/Normalization.o" "../src/Normalization.cpp"
+Finished building: ../src/Normalization.cpp
+ 
+Building file: ../src/Standarization.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/Standarization.d" -MT"src/Standarization.o" -o "src/Standarization.o" "../src/Standarization.cpp"
+Finished building: ../src/Standarization.cpp
+ 
+Building file: ../src/lab1.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/lab1.d" -MT"src/lab1.o" -o "src/lab1.o" "../src/lab1.cpp"
+Finished building: ../src/lab1.cpp
+ 
+Building target: lab1
+Invoking: Cross G++ Linker
+g++ -fopenmp -o "lab1"  ./src/CrossValidator.o ./src/FIleLoader.o ./src/KNNBeta.o ./src/Normalization.o ./src/Standarization.o ./src/lab1.o   
+Finished building target: lab1
+ 
+21:51:30 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+make: Nothing to be done for 'all'.
+21:52:24 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+make: Nothing to be done for 'all'.
+21:54:07 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+make: Nothing to be done for 'all'.
+21:55:16 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+make: Nothing to be done for 'all'.
+21:55:32 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+make: Nothing to be done for 'all'.
+21:56:35 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+make: Nothing to be done for 'all'.
+21:58:19 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+make: Nothing to be done for 'all'.
+21:59:10 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNNBeta.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNNBeta.d" -MT"src/KNNBeta.o" -o "src/KNNBeta.o" "../src/KNNBeta.cpp"
+../src/KNNBeta.cpp:40:5: error: prototype for ‘int KNNBeta::calcPrediction(Row, int)’ does not match any in class ‘KNNBeta’
+ int KNNBeta::calcPrediction(Row testVal, int K) {
+     ^~~~~~~
+In file included from ../src/KNNBeta.cpp:1:0:
+../src/KNNBeta.hpp:13:6: error: candidate is: int KNNBeta::calcPrediction(Test, int)
+  int calcPrediction(Test testVal, int K);
+      ^~~~~~~~~~~~~~
+../src/KNNBeta.cpp:45:87: error: expected declaration before end of line
+ #pragma omp parallel for default(none) shared(trainSize,testVal,neighbours) private(j)
+                                                                                       ^
+make: *** [src/KNNBeta.o] Error 1
+src/subdir.mk:33: recipe for target 'src/KNNBeta.o' failed
+"make all" terminated with exit code 2. Build might be incomplete.
+22:01:16 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNNBeta.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNNBeta.d" -MT"src/KNNBeta.o" -o "src/KNNBeta.o" "../src/KNNBeta.cpp"
+../src/KNNBeta.cpp: In member function ‘int KNNBeta::calcPrediction(Test, int)’:
+../src/KNNBeta.cpp:42:9: warning: unused variable ‘min’ [-Wunused-variable]
+  double min = 1000000;
+         ^~~
+../src/KNNBeta.cpp: In member function ‘void KNNBeta::splitData(std::vector<Row>)’:
+../src/KNNBeta.cpp:102:28: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int i = trainSize; i < inData.size(); i++) {
+                          ~~^~~~~~~~~~~~~~~
+Finished building: ../src/KNNBeta.cpp
+ 
+Building file: ../src/lab1.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/lab1.d" -MT"src/lab1.o" -o "src/lab1.o" "../src/lab1.cpp"
+Finished building: ../src/lab1.cpp
+ 
+Building target: lab1
+Invoking: Cross G++ Linker
+g++ -fopenmp -o "lab1"  ./src/CrossValidator.o ./src/FIleLoader.o ./src/KNNBeta.o ./src/Normalization.o ./src/Standarization.o ./src/lab1.o   
+Finished building target: lab1
+ 
+22:01:25 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+make: Nothing to be done for 'all'.
+22:01:40 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+make: Nothing to be done for 'all'.
+22:02:14 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNNBeta.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNNBeta.d" -MT"src/KNNBeta.o" -o "src/KNNBeta.o" "../src/KNNBeta.cpp"
+../src/KNNBeta.cpp: In member function ‘int KNNBeta::calcPrediction(Test, int)’:
+../src/KNNBeta.cpp:41:9: warning: unused variable ‘min’ [-Wunused-variable]
+  double min = 1000000;
+         ^~~
+../src/KNNBeta.cpp: In member function ‘void KNNBeta::splitData(std::vector<Row>)’:
+../src/KNNBeta.cpp:102:28: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int i = trainSize; i < inData.size(); i++) {
+                          ~~^~~~~~~~~~~~~~~
+Finished building: ../src/KNNBeta.cpp
+ 
+Building target: lab1
+Invoking: Cross G++ Linker
+g++ -fopenmp -o "lab1"  ./src/CrossValidator.o ./src/FIleLoader.o ./src/KNNBeta.o ./src/Normalization.o ./src/Standarization.o ./src/lab1.o   
+Finished building target: lab1
+ 
+22:02:21 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+make: Nothing to be done for 'all'.
+22:02:46 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNNBeta.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNNBeta.d" -MT"src/KNNBeta.o" -o "src/KNNBeta.o" "../src/KNNBeta.cpp"
+../src/KNNBeta.cpp: In member function ‘int KNNBeta::calcPrediction(Test, int)’:
+../src/KNNBeta.cpp:41:9: warning: unused variable ‘min’ [-Wunused-variable]
+  double min = 1000000;
+         ^~~
+../src/KNNBeta.cpp: In member function ‘void KNNBeta::splitData(std::vector<Row>)’:
+../src/KNNBeta.cpp:102:28: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int i = trainSize; i < inData.size(); i++) {
+                          ~~^~~~~~~~~~~~~~~
+../src/KNNBeta.cpp: In member function ‘double KNNBeta::calcDist(Test, Test)’:
+../src/KNNBeta.cpp:79:50: error: ‘train’ not specified in enclosing ‘parallel’
+   dist += pow(test.features[k] - train.features[k], 2);
+                                  ~~~~~~~~~~~~~~~~^
+../src/KNNBeta.cpp:77:10: error: enclosing ‘parallel’
+  #pragma omp parallel for default(none) shared(test,num_of_feaqtures) private (k) reduction(+:dist)
+          ^~~
+src/subdir.mk:33: recipe for target 'src/KNNBeta.o' failed
+make: *** [src/KNNBeta.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+22:03:04 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNNBeta.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNNBeta.d" -MT"src/KNNBeta.o" -o "src/KNNBeta.o" "../src/KNNBeta.cpp"
+../src/KNNBeta.cpp: In member function ‘int KNNBeta::calcPrediction(Test, int)’:
+../src/KNNBeta.cpp:41:9: warning: unused variable ‘min’ [-Wunused-variable]
+  double min = 1000000;
+         ^~~
+../src/KNNBeta.cpp: In member function ‘void KNNBeta::splitData(std::vector<Row>)’:
+../src/KNNBeta.cpp:102:28: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int i = trainSize; i < inData.size(); i++) {
+                          ~~^~~~~~~~~~~~~~~
+Finished building: ../src/KNNBeta.cpp
+ 
+Building file: ../src/lab1.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/lab1.d" -MT"src/lab1.o" -o "src/lab1.o" "../src/lab1.cpp"
+Finished building: ../src/lab1.cpp
+ 
+Building target: lab1
+Invoking: Cross G++ Linker
+g++ -fopenmp -o "lab1"  ./src/CrossValidator.o ./src/FIleLoader.o ./src/KNNBeta.o ./src/Normalization.o ./src/Standarization.o ./src/lab1.o   
+Finished building target: lab1
+ 
+22:03:16 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNNBeta.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNNBeta.d" -MT"src/KNNBeta.o" -o "src/KNNBeta.o" "../src/KNNBeta.cpp"
+../src/KNNBeta.cpp: In member function ‘int KNNBeta::calcPrediction(Test, int)’:
+../src/KNNBeta.cpp:41:9: warning: unused variable ‘min’ [-Wunused-variable]
+  double min = 1000000;
+         ^~~
+../src/KNNBeta.cpp: In member function ‘double KNNBeta::calcDist(Test, Test)’:
+../src/KNNBeta.cpp:77:59: error: ‘num_of_feaqturesnum_of_feaqtures’ has not been declared
+  #pragma omp parallel for default(none) shared(test,train,num_of_feaqturesnum_of_feaqtures) private (k) reduction(+:dist)
+                                                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/KNNBeta.cpp: In member function ‘void KNNBeta::splitData(std::vector<Row>)’:
+../src/KNNBeta.cpp:102:28: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int i = trainSize; i < inData.size(); i++) {
+                          ~~^~~~~~~~~~~~~~~
+../src/KNNBeta.cpp: In member function ‘double KNNBeta::calcDist(Test, Test)’:
+../src/KNNBeta.cpp:78:2: error: ‘num_of_feaqtures’ not specified in enclosing ‘parallel’
+  for (k = 0; k < num_of_feaqtures; k++) {
+  ^~~
+../src/KNNBeta.cpp:77:10: error: enclosing ‘parallel’
+  #pragma omp parallel for default(none) shared(test,train,num_of_feaqturesnum_of_feaqtures) private (k) reduction(+:dist)
+          ^~~
+src/subdir.mk:33: recipe for target 'src/KNNBeta.o' failed
+make: *** [src/KNNBeta.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+22:03:35 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNNBeta.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNNBeta.d" -MT"src/KNNBeta.o" -o "src/KNNBeta.o" "../src/KNNBeta.cpp"
+../src/KNNBeta.cpp: In member function ‘int KNNBeta::calcPrediction(Test, int)’:
+../src/KNNBeta.cpp:41:9: warning: unused variable ‘min’ [-Wunused-variable]
+  double min = 1000000;
+         ^~~
+../src/KNNBeta.cpp: In member function ‘void KNNBeta::splitData(std::vector<Row>)’:
+../src/KNNBeta.cpp:102:28: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int i = trainSize; i < inData.size(); i++) {
+                          ~~^~~~~~~~~~~~~~~
+Finished building: ../src/KNNBeta.cpp
+ 
+Building target: lab1
+Invoking: Cross G++ Linker
+g++ -fopenmp -o "lab1"  ./src/CrossValidator.o ./src/FIleLoader.o ./src/KNNBeta.o ./src/Normalization.o ./src/Standarization.o ./src/lab1.o   
+Finished building target: lab1
+ 
+22:03:38 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+make: Nothing to be done for 'all'.
+22:05:22 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNNBeta.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNNBeta.d" -MT"src/KNNBeta.o" -o "src/KNNBeta.o" "../src/KNNBeta.cpp"
+../src/KNNBeta.cpp: In member function ‘int KNNBeta::calcPrediction(Test, int)’:
+../src/KNNBeta.cpp:41:9: warning: unused variable ‘min’ [-Wunused-variable]
+  double min = 1000000;
+         ^~~
+../src/KNNBeta.cpp: In member function ‘void KNNBeta::splitData(std::vector<Row>)’:
+../src/KNNBeta.cpp:102:28: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int i = trainSize; i < inData.size(); i++) {
+                          ~~^~~~~~~~~~~~~~~
+Finished building: ../src/KNNBeta.cpp
+ 
+Building target: lab1
+Invoking: Cross G++ Linker
+g++ -fopenmp -o "lab1"  ./src/CrossValidator.o ./src/FIleLoader.o ./src/KNNBeta.o ./src/Normalization.o ./src/Standarization.o ./src/lab1.o   
+Finished building target: lab1
+ 
+22:05:27 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/lab1.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/lab1.d" -MT"src/lab1.o" -o "src/lab1.o" "../src/lab1.cpp"
+Finished building: ../src/lab1.cpp
+ 
+Building target: lab1
+Invoking: Cross G++ Linker
+g++ -fopenmp -o "lab1"  ./src/CrossValidator.o ./src/FIleLoader.o ./src/KNNBeta.o ./src/Normalization.o ./src/Standarization.o ./src/lab1.o   
+Finished building target: lab1
+ 
+22:05:31 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+make: Nothing to be done for 'all'.
+22:06:06 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNNBeta.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNNBeta.d" -MT"src/KNNBeta.o" -o "src/KNNBeta.o" "../src/KNNBeta.cpp"
+../src/KNNBeta.cpp: In member function ‘int KNNBeta::calcPrediction(Test, int)’:
+../src/KNNBeta.cpp:41:9: warning: unused variable ‘min’ [-Wunused-variable]
+  double min = 1000000;
+         ^~~
+../src/KNNBeta.cpp: In member function ‘void KNNBeta::splitData(std::vector<Row>)’:
+../src/KNNBeta.cpp:102:28: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int i = trainSize; i < inData.size(); i++) {
+                          ~~^~~~~~~~~~~~~~~
+../src/KNNBeta.cpp: In member function ‘void KNNBeta::knn(std::vector<Row>)’:
+../src/KNNBeta.cpp:30:12: error: ‘correct’ not specified in enclosing ‘parallel’
+    correct += 1;
+    ~~~~~~~~^~~~
+../src/KNNBeta.cpp:27:12: error: enclosing ‘parallel’
+    #pragma omp parallel for default(none) shared(testSet,testSize) private(i)
+            ^~~
+src/subdir.mk:33: recipe for target 'src/KNNBeta.o' failed
+make: *** [src/KNNBeta.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+22:06:11 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNNBeta.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNNBeta.d" -MT"src/KNNBeta.o" -o "src/KNNBeta.o" "../src/KNNBeta.cpp"
+../src/KNNBeta.cpp: In member function ‘int KNNBeta::calcPrediction(Test, int)’:
+../src/KNNBeta.cpp:41:9: warning: unused variable ‘min’ [-Wunused-variable]
+  double min = 1000000;
+         ^~~
+../src/KNNBeta.cpp: In member function ‘void KNNBeta::splitData(std::vector<Row>)’:
+../src/KNNBeta.cpp:102:28: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int i = trainSize; i < inData.size(); i++) {
+                          ~~^~~~~~~~~~~~~~~
+Finished building: ../src/KNNBeta.cpp
+ 
+Building target: lab1
+Invoking: Cross G++ Linker
+g++ -fopenmp -o "lab1"  ./src/CrossValidator.o ./src/FIleLoader.o ./src/KNNBeta.o ./src/Normalization.o ./src/Standarization.o ./src/lab1.o   
+Finished building target: lab1
+ 
+22:06:16 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+make: Nothing to be done for 'all'.
+22:08:14 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNNBeta.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNNBeta.d" -MT"src/KNNBeta.o" -o "src/KNNBeta.o" "../src/KNNBeta.cpp"
+../src/KNNBeta.cpp: In member function ‘int KNNBeta::calcPrediction(Test, int)’:
+../src/KNNBeta.cpp:43:9: warning: unused variable ‘min’ [-Wunused-variable]
+  double min = 1000000;
+         ^~~
+../src/KNNBeta.cpp: In member function ‘void KNNBeta::splitData(std::vector<Row>)’:
+../src/KNNBeta.cpp:104:28: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int i = trainSize; i < inData.size(); i++) {
+                          ~~^~~~~~~~~~~~~~~
+Finished building: ../src/KNNBeta.cpp
+ 
+Building target: lab1
+Invoking: Cross G++ Linker
+g++ -fopenmp -o "lab1"  ./src/CrossValidator.o ./src/FIleLoader.o ./src/KNNBeta.o ./src/Normalization.o ./src/Standarization.o ./src/lab1.o   
+Finished building target: lab1
+ 
+22:08:21 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+make: Nothing to be done for 'all'.
+22:08:40 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNNBeta.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNNBeta.d" -MT"src/KNNBeta.o" -o "src/KNNBeta.o" "../src/KNNBeta.cpp"
+../src/KNNBeta.cpp: In member function ‘int KNNBeta::calcPrediction(Test, int)’:
+../src/KNNBeta.cpp:43:9: warning: unused variable ‘min’ [-Wunused-variable]
+  double min = 1000000;
+         ^~~
+../src/KNNBeta.cpp: In member function ‘void KNNBeta::splitData(std::vector<Row>)’:
+../src/KNNBeta.cpp:104:28: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int i = trainSize; i < inData.size(); i++) {
+                          ~~^~~~~~~~~~~~~~~
+Finished building: ../src/KNNBeta.cpp
+ 
+Building target: lab1
+Invoking: Cross G++ Linker
+g++ -fopenmp -o "lab1"  ./src/CrossValidator.o ./src/FIleLoader.o ./src/KNNBeta.o ./src/Normalization.o ./src/Standarization.o ./src/lab1.o   
+Finished building target: lab1
+ 
+22:08:45 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+make: Nothing to be done for 'all'.
+22:16:41 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNNBeta.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNNBeta.d" -MT"src/KNNBeta.o" -o "src/KNNBeta.o" "../src/KNNBeta.cpp"
+../src/KNNBeta.cpp: In member function ‘int KNNBeta::calcPrediction(Test, int)’:
+../src/KNNBeta.cpp:43:9: warning: unused variable ‘min’ [-Wunused-variable]
+  double min = 1000000;
+         ^~~
+../src/KNNBeta.cpp: In member function ‘void KNNBeta::splitData(std::vector<Row>)’:
+../src/KNNBeta.cpp:103:28: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int i = trainSize; i < inData.size(); i++) {
+                          ~~^~~~~~~~~~~~~~~
+Finished building: ../src/KNNBeta.cpp
+ 
+Building target: lab1
+Invoking: Cross G++ Linker
+g++ -fopenmp -o "lab1"  ./src/CrossValidator.o ./src/FIleLoader.o ./src/KNNBeta.o ./src/Normalization.o ./src/Standarization.o ./src/lab1.o   
+Finished building target: lab1
+ 
+22:16:52 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+make: Nothing to be done for 'all'.
+22:17:12 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+make: Nothing to be done for 'all'.
+22:17:15 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+make: Nothing to be done for 'all'.
+22:22:12 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+make: Nothing to be done for 'all'.
+22:22:41 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNNBeta.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNNBeta.d" -MT"src/KNNBeta.o" -o "src/KNNBeta.o" "../src/KNNBeta.cpp"
+../src/KNNBeta.cpp: In member function ‘void KNNBeta::splitData(std::vector<Row>)’:
+../src/KNNBeta.cpp:102:28: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int i = trainSize; i < inData.size(); i++) {
+                          ~~^~~~~~~~~~~~~~~
+Finished building: ../src/KNNBeta.cpp
+ 
+Building target: lab1
+Invoking: Cross G++ Linker
+g++ -fopenmp -o "lab1"  ./src/CrossValidator.o ./src/FIleLoader.o ./src/KNNBeta.o ./src/Normalization.o ./src/Standarization.o ./src/lab1.o   
+Finished building target: lab1
+ 
+22:23:51 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNNBeta.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNNBeta.d" -MT"src/KNNBeta.o" -o "src/KNNBeta.o" "../src/KNNBeta.cpp"
+../src/KNNBeta.cpp: In member function ‘void KNNBeta::splitData(std::vector<Row>)’:
+../src/KNNBeta.cpp:101:28: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int i = trainSize; i < inData.size(); i++) {
+                          ~~^~~~~~~~~~~~~~~
+Finished building: ../src/KNNBeta.cpp
+ 
+Building target: lab1
+Invoking: Cross G++ Linker
+g++ -fopenmp -o "lab1"  ./src/CrossValidator.o ./src/FIleLoader.o ./src/KNNBeta.o ./src/Normalization.o ./src/Standarization.o ./src/lab1.o   
+Finished building target: lab1
+ 
+22:23:54 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+make: Nothing to be done for 'all'.
+22:26:51 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNNBeta.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNNBeta.d" -MT"src/KNNBeta.o" -o "src/KNNBeta.o" "../src/KNNBeta.cpp"
+In file included from ../src/KNNBeta.hpp:1:0,
+                 from ../src/KNNBeta.cpp:1:
+../src/Test.hpp:15:25: error: ‘Test’ does not name a type
+  bool operator ()(const Test &row1, Test  &row2) {
+                         ^~~~
+../src/Test.hpp:15:37: error: ‘Test’ has not been declared
+  bool operator ()(const Test &row1, Test  &row2) {
+                                     ^~~~
+../src/Test.hpp: In member function ‘bool CompareTest::operator()(const int&, int&)’:
+../src/Test.hpp:17:12: error: request for member ‘distance’ in ‘row1’, which is of non-class type ‘const int’
+   if (row1.distance > row2.distance)
+            ^~~~~~~~
+../src/Test.hpp:17:28: error: request for member ‘distance’ in ‘row2’, which is of non-class type ‘int’
+   if (row1.distance > row2.distance)
+                            ^~~~~~~~
+../src/Test.hpp:20:12: error: request for member ‘distance’ in ‘row1’, which is of non-class type ‘const int’
+   if (row1.distance < row2.distance)
+            ^~~~~~~~
+../src/Test.hpp:20:28: error: request for member ‘distance’ in ‘row2’, which is of non-class type ‘int’
+   if (row1.distance < row2.distance)
+                            ^~~~~~~~
+In file included from ../src/KNNBeta.cpp:1:0:
+../src/KNNBeta.hpp: At global scope:
+../src/KNNBeta.hpp:7:2: error: ‘Test’ does not name a type
+  Test *test;
+  ^~~~
+../src/KNNBeta.hpp:8:2: error: ‘Test’ does not name a type
+  Test *train;
+  ^~~~
+../src/KNNBeta.hpp:9:9: error: ‘Test’ was not declared in this scope
+  vector<Test> trainSet;
+         ^~~~
+../src/KNNBeta.hpp:9:13: error: template argument 1 is invalid
+  vector<Test> trainSet;
+             ^
+../src/KNNBeta.hpp:9:13: error: template argument 2 is invalid
+../src/KNNBeta.hpp:10:9: error: ‘Test’ was not declared in this scope
+  vector<Test> testSet;
+         ^~~~
+../src/KNNBeta.hpp:10:13: error: template argument 1 is invalid
+  vector<Test> testSet;
+             ^
+../src/KNNBeta.hpp:10:13: error: template argument 2 is invalid
+../src/KNNBeta.hpp:13:21: error: ‘Test’ has not been declared
+  int calcPrediction(Test testVal, int K);
+                     ^~~~
+../src/KNNBeta.hpp:16:18: error: ‘Test’ has not been declared
+  double calcDist(Test current,Test trainValue);
+                  ^~~~
+../src/KNNBeta.hpp:16:31: error: ‘Test’ has not been declared
+  double calcDist(Test current,Test trainValue);
+                               ^~~~
+../src/KNNBeta.cpp: In member function ‘void KNNBeta::knn(std::vector<Row>)’:
+../src/KNNBeta.cpp:23:44: error: invalid types ‘int[int]’ for array subscript
+   int prediction = calcPrediction(testSet[i], K);
+                                            ^
+../src/KNNBeta.cpp:24:12: error: invalid types ‘int[int]’ for array subscript
+   testSet[i].prediction = prediction;
+            ^
+../src/KNNBeta.cpp:31:16: error: invalid types ‘int[int]’ for array subscript
+   if (testSet[i].prediction == testSet[i].category) {
+                ^
+../src/KNNBeta.cpp:31:41: error: invalid types ‘int[int]’ for array subscript
+   if (testSet[i].prediction == testSet[i].category) {
+                                         ^
+../src/KNNBeta.cpp: At global scope:
+../src/KNNBeta.cpp:41:29: error: ‘int KNNBeta::calcPrediction’ is not a static data member of ‘class KNNBeta’
+ int KNNBeta::calcPrediction(Test testVal, int K) {
+                             ^~~~
+../src/KNNBeta.cpp:41:29: error: ‘Test’ was not declared in this scope
+../src/KNNBeta.cpp:41:43: error: expected primary-expression before ‘int’
+ int KNNBeta::calcPrediction(Test testVal, int K) {
+                                           ^~~
+../src/KNNBeta.cpp:41:48: error: expression list treated as compound expression in initializer [-fpermissive]
+ int KNNBeta::calcPrediction(Test testVal, int K) {
+                                                ^
+../src/KNNBeta.cpp:72:26: error: ‘double KNNBeta::calcDist’ is not a static data member of ‘class KNNBeta’
+ double KNNBeta::calcDist(Test test, Test train) {
+                          ^~~~
+../src/KNNBeta.cpp:72:26: error: ‘Test’ was not declared in this scope
+../src/KNNBeta.cpp:72:37: error: ‘Test’ was not declared in this scope
+ double KNNBeta::calcDist(Test test, Test train) {
+                                     ^~~~
+../src/KNNBeta.cpp:72:47: error: expression list treated as compound expression in initializer [-fpermissive]
+ double KNNBeta::calcDist(Test test, Test train) {
+                                               ^
+../src/KNNBeta.cpp: In member function ‘void KNNBeta::splitData(std::vector<Row>)’:
+../src/KNNBeta.cpp:92:3: error: ‘Test’ was not declared in this scope
+   Test t = Test();
+   ^~~~
+../src/KNNBeta.cpp:93:3: error: ‘t’ was not declared in this scope
+   t.category = inData[i].category;
+   ^
+../src/KNNBeta.cpp:93:3: note: suggested alternative: ‘tm’
+   t.category = inData[i].category;
+   ^
+   tm
+../src/KNNBeta.cpp:98:12: error: request for member ‘push_back’ in ‘((KNNBeta*)this)->KNNBeta::trainSet’, which is of non-class type ‘int’
+   trainSet.push_back(t);
+            ^~~~~~~~~
+../src/KNNBeta.cpp:101:28: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int i = trainSize; i < inData.size(); i++) {
+                          ~~^~~~~~~~~~~~~~~
+../src/KNNBeta.cpp:102:3: error: ‘Test’ was not declared in this scope
+   Test t;
+   ^~~~
+../src/KNNBeta.cpp:103:3: error: ‘t’ was not declared in this scope
+   t.category = inData[i].category;
+   ^
+../src/KNNBeta.cpp:103:3: note: suggested alternative: ‘tm’
+   t.category = inData[i].category;
+   ^
+   tm
+../src/KNNBeta.cpp:107:11: error: request for member ‘push_back’ in ‘((KNNBeta*)this)->KNNBeta::testSet’, which is of non-class type ‘int’
+   testSet.push_back(t);
+           ^~~~~~~~~
+make: *** [src/KNNBeta.o] Error 1
+src/subdir.mk:33: recipe for target 'src/KNNBeta.o' failed
+"make all" terminated with exit code 2. Build might be incomplete.
+22:28:04 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNNBeta.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNNBeta.d" -MT"src/KNNBeta.o" -o "src/KNNBeta.o" "../src/KNNBeta.cpp"
+../src/KNNBeta.cpp:41:29: error: ‘int KNNBeta::calcPrediction’ is not a static data member of ‘class KNNBeta’
+ int KNNBeta::calcPrediction(Test testVal, int K) {
+                             ^~~~
+../src/KNNBeta.cpp:41:29: error: ‘Test’ was not declared in this scope
+../src/KNNBeta.cpp:41:43: error: expected primary-expression before ‘int’
+ int KNNBeta::calcPrediction(Test testVal, int K) {
+                                           ^~~
+../src/KNNBeta.cpp:41:48: error: expression list treated as compound expression in initializer [-fpermissive]
+ int KNNBeta::calcPrediction(Test testVal, int K) {
+                                                ^
+../src/KNNBeta.cpp:72:26: error: ‘double KNNBeta::calcDist’ is not a static data member of ‘class KNNBeta’
+ double KNNBeta::calcDist(Test test, Test train) {
+                          ^~~~
+../src/KNNBeta.cpp:72:26: error: ‘Test’ was not declared in this scope
+../src/KNNBeta.cpp:72:37: error: ‘Test’ was not declared in this scope
+ double KNNBeta::calcDist(Test test, Test train) {
+                                     ^~~~
+../src/KNNBeta.cpp:72:47: error: expression list treated as compound expression in initializer [-fpermissive]
+ double KNNBeta::calcDist(Test test, Test train) {
+                                               ^
+../src/KNNBeta.cpp: In member function ‘void KNNBeta::splitData(std::vector<Row>)’:
+../src/KNNBeta.cpp:92:3: error: ‘Test’ was not declared in this scope
+   Test t = Test();
+   ^~~~
+../src/KNNBeta.cpp:93:3: error: ‘t’ was not declared in this scope
+   t.category = inData[i].category;
+   ^
+../src/KNNBeta.cpp:93:3: note: suggested alternative: ‘tm’
+   t.category = inData[i].category;
+   ^
+   tm
+../src/KNNBeta.cpp:101:28: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int i = trainSize; i < inData.size(); i++) {
+                          ~~^~~~~~~~~~~~~~~
+../src/KNNBeta.cpp:102:3: error: ‘Test’ was not declared in this scope
+   Test t;
+   ^~~~
+../src/KNNBeta.cpp:103:3: error: ‘t’ was not declared in this scope
+   t.category = inData[i].category;
+   ^
+../src/KNNBeta.cpp:103:3: note: suggested alternative: ‘tm’
+   t.category = inData[i].category;
+   ^
+   tm
+make: *** [src/KNNBeta.o] Error 1
+src/subdir.mk:33: recipe for target 'src/KNNBeta.o' failed
+"make all" terminated with exit code 2. Build might be incomplete.
+22:28:30 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNNBeta.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNNBeta.d" -MT"src/KNNBeta.o" -o "src/KNNBeta.o" "../src/KNNBeta.cpp"
+../src/KNNBeta.cpp:72:26: error: ‘double KNNBeta::calcDist’ is not a static data member of ‘class KNNBeta’
+ double KNNBeta::calcDist(Test test, Test train) {
+                          ^~~~
+../src/KNNBeta.cpp:72:26: error: ‘Test’ was not declared in this scope
+../src/KNNBeta.cpp:72:37: error: ‘Test’ was not declared in this scope
+ double KNNBeta::calcDist(Test test, Test train) {
+                                     ^~~~
+../src/KNNBeta.cpp:72:47: error: expression list treated as compound expression in initializer [-fpermissive]
+ double KNNBeta::calcDist(Test test, Test train) {
+                                               ^
+../src/KNNBeta.cpp: In member function ‘void KNNBeta::splitData(std::vector<Row>)’:
+../src/KNNBeta.cpp:92:3: error: ‘Test’ was not declared in this scope
+   Test t = Test();
+   ^~~~
+../src/KNNBeta.cpp:93:3: error: ‘t’ was not declared in this scope
+   t.category = inData[i].category;
+   ^
+../src/KNNBeta.cpp:93:3: note: suggested alternative: ‘tm’
+   t.category = inData[i].category;
+   ^
+   tm
+../src/KNNBeta.cpp:101:28: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int i = trainSize; i < inData.size(); i++) {
+                          ~~^~~~~~~~~~~~~~~
+../src/KNNBeta.cpp:102:3: error: ‘Test’ was not declared in this scope
+   Test t;
+   ^~~~
+../src/KNNBeta.cpp:103:3: error: ‘t’ was not declared in this scope
+   t.category = inData[i].category;
+   ^
+../src/KNNBeta.cpp:103:3: note: suggested alternative: ‘tm’
+   t.category = inData[i].category;
+   ^
+   tm
+make: *** [src/KNNBeta.o] Error 1
+src/subdir.mk:33: recipe for target 'src/KNNBeta.o' failed
+"make all" terminated with exit code 2. Build might be incomplete.
+22:28:36 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNNBeta.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNNBeta.d" -MT"src/KNNBeta.o" -o "src/KNNBeta.o" "../src/KNNBeta.cpp"
+../src/KNNBeta.cpp:72:26: error: ‘double KNNBeta::calcDist’ is not a static data member of ‘class KNNBeta’
+ double KNNBeta::calcDist(Test test, Test train) {
+                          ^~~~
+../src/KNNBeta.cpp:72:26: error: ‘Test’ was not declared in this scope
+../src/KNNBeta.cpp:72:37: error: ‘Test’ was not declared in this scope
+ double KNNBeta::calcDist(Test test, Test train) {
+                                     ^~~~
+../src/KNNBeta.cpp:72:47: error: expression list treated as compound expression in initializer [-fpermissive]
+ double KNNBeta::calcDist(Test test, Test train) {
+                                               ^
+../src/KNNBeta.cpp: In member function ‘void KNNBeta::splitData(std::vector<Row>)’:
+../src/KNNBeta.cpp:92:3: error: ‘Test’ was not declared in this scope
+   Test t = Test();
+   ^~~~
+../src/KNNBeta.cpp:93:3: error: ‘t’ was not declared in this scope
+   t.category = inData[i].category;
+   ^
+../src/KNNBeta.cpp:93:3: note: suggested alternative: ‘tm’
+   t.category = inData[i].category;
+   ^
+   tm
+../src/KNNBeta.cpp:101:28: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int i = trainSize; i < inData.size(); i++) {
+                          ~~^~~~~~~~~~~~~~~
+../src/KNNBeta.cpp:102:3: error: ‘Test’ was not declared in this scope
+   Test t;
+   ^~~~
+../src/KNNBeta.cpp:103:3: error: ‘t’ was not declared in this scope
+   t.category = inData[i].category;
+   ^
+../src/KNNBeta.cpp:103:3: note: suggested alternative: ‘tm’
+   t.category = inData[i].category;
+   ^
+   tm
+make: *** [src/KNNBeta.o] Error 1
+src/subdir.mk:33: recipe for target 'src/KNNBeta.o' failed
+"make all" terminated with exit code 2. Build might be incomplete.
+22:28:39 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNNBeta.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNNBeta.d" -MT"src/KNNBeta.o" -o "src/KNNBeta.o" "../src/KNNBeta.cpp"
+../src/KNNBeta.cpp: In member function ‘void KNNBeta::splitData(std::vector<Row>)’:
+../src/KNNBeta.cpp:92:3: error: ‘Test’ was not declared in this scope
+   Test t = Test();
+   ^~~~
+../src/KNNBeta.cpp:93:3: error: ‘t’ was not declared in this scope
+   t.category = inData[i].category;
+   ^
+../src/KNNBeta.cpp:93:3: note: suggested alternative: ‘tm’
+   t.category = inData[i].category;
+   ^
+   tm
+../src/KNNBeta.cpp:101:28: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int i = trainSize; i < inData.size(); i++) {
+                          ~~^~~~~~~~~~~~~~~
+../src/KNNBeta.cpp:102:3: error: ‘Test’ was not declared in this scope
+   Test t;
+   ^~~~
+../src/KNNBeta.cpp:103:3: error: ‘t’ was not declared in this scope
+   t.category = inData[i].category;
+   ^
+../src/KNNBeta.cpp:103:3: note: suggested alternative: ‘tm’
+   t.category = inData[i].category;
+   ^
+   tm
+src/subdir.mk:33: recipe for target 'src/KNNBeta.o' failed
+make: *** [src/KNNBeta.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+22:28:57 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNNBeta.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNNBeta.d" -MT"src/KNNBeta.o" -o "src/KNNBeta.o" "../src/KNNBeta.cpp"
+../src/KNNBeta.cpp: In member function ‘void KNNBeta::splitData(std::vector<Row>)’:
+../src/KNNBeta.cpp:101:28: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int i = trainSize; i < inData.size(); i++) {
+                          ~~^~~~~~~~~~~~~~~
+../src/KNNBeta.cpp:102:3: error: ‘Test’ was not declared in this scope
+   Test t;
+   ^~~~
+../src/KNNBeta.cpp:103:3: error: ‘t’ was not declared in this scope
+   t.category = inData[i].category;
+   ^
+../src/KNNBeta.cpp:103:3: note: suggested alternative: ‘tm’
+   t.category = inData[i].category;
+   ^
+   tm
+make: *** [src/KNNBeta.o] Error 1
+src/subdir.mk:33: recipe for target 'src/KNNBeta.o' failed
+"make all" terminated with exit code 2. Build might be incomplete.
+22:29:13 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNNBeta.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNNBeta.d" -MT"src/KNNBeta.o" -o "src/KNNBeta.o" "../src/KNNBeta.cpp"
+../src/KNNBeta.cpp: In member function ‘void KNNBeta::splitData(std::vector<Row>)’:
+../src/KNNBeta.cpp:101:28: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int i = trainSize; i < inData.size(); i++) {
+                          ~~^~~~~~~~~~~~~~~
+Finished building: ../src/KNNBeta.cpp
+ 
+Building file: ../src/lab1.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/lab1.d" -MT"src/lab1.o" -o "src/lab1.o" "../src/lab1.cpp"
+Finished building: ../src/lab1.cpp
+ 
+Building target: lab1
+Invoking: Cross G++ Linker
+g++ -fopenmp -o "lab1"  ./src/CrossValidator.o ./src/FIleLoader.o ./src/KNNBeta.o ./src/Normalization.o ./src/Standarization.o ./src/lab1.o   
+Finished building target: lab1
+ 
+22:29:44 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNNBeta.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNNBeta.d" -MT"src/KNNBeta.o" -o "src/KNNBeta.o" "../src/KNNBeta.cpp"
+../src/KNNBeta.cpp: In member function ‘void KNNBeta::splitData(std::vector<Row>)’:
+../src/KNNBeta.cpp:101:28: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int i = trainSize; i < inData.size(); i++) {
+                          ~~^~~~~~~~~~~~~~~
+Finished building: ../src/KNNBeta.cpp
+ 
+Building target: lab1
+Invoking: Cross G++ Linker
+g++ -fopenmp -o "lab1"  ./src/CrossValidator.o ./src/FIleLoader.o ./src/KNNBeta.o ./src/Normalization.o ./src/Standarization.o ./src/lab1.o   
+Finished building target: lab1
+ 
+22:29:51 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNNBeta.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNNBeta.d" -MT"src/KNNBeta.o" -o "src/KNNBeta.o" "../src/KNNBeta.cpp"
+../src/KNNBeta.cpp: In member function ‘void KNNBeta::splitData(std::vector<Row>)’:
+../src/KNNBeta.cpp:101:28: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int i = trainSize; i < inData.size(); i++) {
+                          ~~^~~~~~~~~~~~~~~
+Finished building: ../src/KNNBeta.cpp
+ 
+Building target: lab1
+Invoking: Cross G++ Linker
+g++ -fopenmp -o "lab1"  ./src/CrossValidator.o ./src/FIleLoader.o ./src/KNNBeta.o ./src/Normalization.o ./src/Standarization.o ./src/lab1.o   
+Finished building target: lab1
+ 
+22:30:04 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNNBeta.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNNBeta.d" -MT"src/KNNBeta.o" -o "src/KNNBeta.o" "../src/KNNBeta.cpp"
+../src/KNNBeta.cpp: In member function ‘void KNNBeta::splitData(std::vector<Row>)’:
+../src/KNNBeta.cpp:101:28: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int i = trainSize; i < inData.size(); i++) {
+                          ~~^~~~~~~~~~~~~~~
+Finished building: ../src/KNNBeta.cpp
+ 
+Building target: lab1
+Invoking: Cross G++ Linker
+g++ -fopenmp -o "lab1"  ./src/CrossValidator.o ./src/FIleLoader.o ./src/KNNBeta.o ./src/Normalization.o ./src/Standarization.o ./src/lab1.o   
+Finished building target: lab1
+ 
+22:30:23 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNNBeta.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNNBeta.d" -MT"src/KNNBeta.o" -o "src/KNNBeta.o" "../src/KNNBeta.cpp"
+../src/KNNBeta.cpp: In member function ‘void KNNBeta::splitData(std::vector<Row>)’:
+../src/KNNBeta.cpp:99:28: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int i = trainSize; i < inData.size(); i++) {
+                          ~~^~~~~~~~~~~~~~~
+Finished building: ../src/KNNBeta.cpp
+ 
+Building target: lab1
+Invoking: Cross G++ Linker
+g++ -fopenmp -o "lab1"  ./src/CrossValidator.o ./src/FIleLoader.o ./src/KNNBeta.o ./src/Normalization.o ./src/Standarization.o ./src/lab1.o   
+Finished building target: lab1
+ 
+22:30:33 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+make: Nothing to be done for 'all'.
+22:31:38 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/lab1.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/lab1.d" -MT"src/lab1.o" -o "src/lab1.o" "../src/lab1.cpp"
+Finished building: ../src/lab1.cpp
+ 
+Building target: lab1
+Invoking: Cross G++ Linker
+g++ -fopenmp -o "lab1"  ./src/CrossValidator.o ./src/FIleLoader.o ./src/KNNBeta.o ./src/Normalization.o ./src/Standarization.o ./src/lab1.o   
+Finished building target: lab1
+ 
+22:32:10 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNNBeta.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNNBeta.d" -MT"src/KNNBeta.o" -o "src/KNNBeta.o" "../src/KNNBeta.cpp"
+../src/KNNBeta.cpp: In member function ‘void KNNBeta::splitData(std::vector<Row>)’:
+../src/KNNBeta.cpp:99:28: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int i = trainSize; i < inData.size(); i++) {
+                          ~~^~~~~~~~~~~~~~~
+Finished building: ../src/KNNBeta.cpp
+ 
+Building target: lab1
+Invoking: Cross G++ Linker
+g++ -fopenmp -o "lab1"  ./src/CrossValidator.o ./src/FIleLoader.o ./src/KNNBeta.o ./src/Normalization.o ./src/Standarization.o ./src/lab1.o   
+Finished building target: lab1
+ 
+22:32:20 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/lab1.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/lab1.d" -MT"src/lab1.o" -o "src/lab1.o" "../src/lab1.cpp"
+Finished building: ../src/lab1.cpp
+ 
+Building target: lab1
+Invoking: Cross G++ Linker
+g++ -fopenmp -o "lab1"  ./src/CrossValidator.o ./src/FIleLoader.o ./src/KNNBeta.o ./src/Normalization.o ./src/Standarization.o ./src/lab1.o   
+Finished building target: lab1
+ 
+22:34:16 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNNBeta.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNNBeta.d" -MT"src/KNNBeta.o" -o "src/KNNBeta.o" "../src/KNNBeta.cpp"
+../src/KNNBeta.cpp: In member function ‘void KNNBeta::splitData(std::vector<Row>)’:
+../src/KNNBeta.cpp:100:28: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int i = trainSize; i < inData.size(); i++) {
+                          ~~^~~~~~~~~~~~~~~
+Finished building: ../src/KNNBeta.cpp
+ 
+Building target: lab1
+Invoking: Cross G++ Linker
+g++ -fopenmp -o "lab1"  ./src/CrossValidator.o ./src/FIleLoader.o ./src/KNNBeta.o ./src/Normalization.o ./src/Standarization.o ./src/lab1.o   
+Finished building target: lab1
+ 
+22:34:19 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+make: Nothing to be done for 'all'.
+22:36:33 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNNBeta.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNNBeta.d" -MT"src/KNNBeta.o" -o "src/KNNBeta.o" "../src/KNNBeta.cpp"
+../src/KNNBeta.cpp: In member function ‘void KNNBeta::splitData(std::vector<Row>)’:
+../src/KNNBeta.cpp:100:28: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int i = trainSize; i < inData.size(); i++) {
+                          ~~^~~~~~~~~~~~~~~
+Finished building: ../src/KNNBeta.cpp
+ 
+Building file: ../src/lab1.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/lab1.d" -MT"src/lab1.o" -o "src/lab1.o" "../src/lab1.cpp"
+Finished building: ../src/lab1.cpp
+ 
+Building target: lab1
+Invoking: Cross G++ Linker
+g++ -fopenmp -o "lab1"  ./src/CrossValidator.o ./src/FIleLoader.o ./src/KNNBeta.o ./src/Normalization.o ./src/Standarization.o ./src/lab1.o   
+Finished building target: lab1
+ 
+22:37:13 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNNBeta.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNNBeta.d" -MT"src/KNNBeta.o" -o "src/KNNBeta.o" "../src/KNNBeta.cpp"
+../src/KNNBeta.cpp: In member function ‘void KNNBeta::splitData(std::vector<Row>)’:
+../src/KNNBeta.cpp:99:28: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int i = trainSize; i < inData.size(); i++) {
+                          ~~^~~~~~~~~~~~~~~
+Finished building: ../src/KNNBeta.cpp
+ 
+Building target: lab1
+Invoking: Cross G++ Linker
+g++ -fopenmp -o "lab1"  ./src/CrossValidator.o ./src/FIleLoader.o ./src/KNNBeta.o ./src/Normalization.o ./src/Standarization.o ./src/lab1.o   
+Finished building target: lab1
+ 
+22:39:48 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNN.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNN.d" -MT"src/KNN.o" -o "src/KNN.o" "../src/KNN.cpp"
+../src/KNN.cpp: In member function ‘void KNN::splitData(std::vector<Row>)’:
+../src/KNN.cpp:99:28: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int i = trainSize; i < inData.size(); i++) {
+                          ~~^~~~~~~~~~~~~~~
+Finished building: ../src/KNN.cpp
+ 
+Building file: ../src/lab1.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/lab1.d" -MT"src/lab1.o" -o "src/lab1.o" "../src/lab1.cpp"
+../src/lab1.cpp: In function ‘int main()’:
+../src/lab1.cpp:25:2: error: ‘KNNBeta’ was not declared in this scope
+  KNNBeta knnBeta = KNNBeta();
+  ^~~~~~~
+../src/lab1.cpp:26:2: error: ‘knnBeta’ was not declared in this scope
+  knnBeta.knn(rows);
+  ^~~~~~~
+make: *** [src/lab1.o] Error 1
+src/subdir.mk:33: recipe for target 'src/lab1.o' failed
+"make all" terminated with exit code 2. Build might be incomplete.
+22:40:24 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/lab1.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/lab1.d" -MT"src/lab1.o" -o "src/lab1.o" "../src/lab1.cpp"
+../src/lab1.cpp: In function ‘int main()’:
+../src/lab1.cpp:38:22: error: ‘knnBeta’ was not declared in this scope
+  cout << "ACC : " << knnBeta.accuracy<< endl;
+                      ^~~~~~~
+make: *** [src/lab1.o] Error 1
+src/subdir.mk:33: recipe for target 'src/lab1.o' failed
+"make all" terminated with exit code 2. Build might be incomplete.
+22:40:32 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/lab1.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/lab1.d" -MT"src/lab1.o" -o "src/lab1.o" "../src/lab1.cpp"
+Finished building: ../src/lab1.cpp
+ 
+Building target: lab1
+Invoking: Cross G++ Linker
+g++ -fopenmp -o "lab1"  ./src/CrossValidator.o ./src/FIleLoader.o ./src/KNN.o ./src/Normalization.o ./src/Standarization.o ./src/lab1.o   
+Finished building target: lab1
+ 
+22:40:37 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+make: Nothing to be done for 'all'.

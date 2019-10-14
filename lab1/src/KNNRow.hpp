@@ -3,7 +3,7 @@
 
 using namespace std;
 
-class Test{
+class KNNRow{
 public:
 	double features[NUM_OF_FEATURES];
 	int category;
@@ -11,8 +11,8 @@ public:
 	double distance;
 };
 
-struct CompareTest {
-	bool operator ()(const Test &row1, Test  &row2) {
+struct CompareKNNRow {
+	bool operator ()(const KNNRow &row1, KNNRow  &row2) {
 		//kolejność - rosnąco
 		if (row1.distance > row2.distance)
 			return true;
