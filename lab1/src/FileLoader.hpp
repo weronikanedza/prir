@@ -8,4 +8,5 @@ class FileLoader {
 	vector<Row> readFile();
 	Row loadRow(string line);
 	string prepareData(string category);
+	string prepareCategory(string category);
 };

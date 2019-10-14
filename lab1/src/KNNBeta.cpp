@@ -4,6 +4,9 @@
 #include "omp.h"
 #include<algorithm>
 #include<random>
+#include<queue>
+
+#define CATEGORY_NUM 18
 
 using namespace std;
 void KNNBeta::knn(vector<Row> rows) {
@@ -15,42 +18,55 @@ void KNNBeta::knn(vector<Row> rows) {
 
 	double begin = omp_get_wtime();
 	for (i = 0; i < testSize; i++) {
-		string prediction = calcPrediction(test[i], 3);
-		test[i].prediction = prediction;
+		int prediction = calcPrediction(testSet[i], K);
+		testSet[i].prediction = prediction;
 	}
 
 	int correct = 0;
 
-
-
-	//#pragma omp parallel for default(none) shared(testingSetSize,testingSet) private(i) reduction(+:correct)
+#pragma omp parallel for default(none) shared(testSet,testSize) private(i) reduction(+:correct)
 	for (i = 0; i < testSize; i++) {
-		if (test[i].prediction.compare(test[i].category) == 0) {
+		if (testSet[i].prediction == testSet[i].category) {
 			correct += 1;
 		}
 	}
 	double end = omp_get_wtime();
 
-	cout << "ACC : " << correct / (double) testSize * 100.0<<endl;
+	cout<< "************KNN***********" <<endl;
+	cout << "ACC : " << correct / (double) testSize * 100.0 << endl;
 	cout << "TIME : " << end - begin << endl;
 }
 
-string KNNBeta::calcPrediction(Test testVal, int K) {
+int KNNBeta::calcPrediction(Test testVal, int K) {
 	int j;
-	double min = 1000000;
-	Test neigbour;
 
+	priority_queue<Test, vector<Test>, CompareTest> neighbours;
+
+#pragma omp parallel for default(none) shared(trainSize,testVal,neighbours) private(j)
 	for (j = 0; j < trainSize; j++) {
+		double dist = calcDist(testVal, trainSet[j]);
+		trainSet[j].distance = dist;
+		neighbours.push(trainSet[j]);
+	}
 
-		double dist = calcDist(testVal, train[j]);
-		train[j].distance = dist;
-		if (min > dist) {
-			min = dist;
-			neigbour = train[j];
+	int votes[CATEGORY_NUM] = { };
+
+	for (int i = 0; i < K; i++) {
+		int voteCategory = neighbours.top().category;
+		neighbours.pop();
+		votes[voteCategory] += 1;
+	}
+
+	int maxVotes = 0;
+	int category = 0;
+	for (int i = 0; i < CATEGORY_NUM; i++) {
+		if (votes[i] > maxVotes) {
+			maxVotes = votes[i];
+			category = i;
 		}
 	}
 
-	return neigbour.category;
+	return category;
 }
 
 double KNNBeta::calcDist(Test test, Test train) {
@@ -58,7 +74,6 @@ double KNNBeta::calcDist(Test test, Test train) {
 	int num_of_feaqtures = NUM_OF_FEATURES;
 	int k;
 
-	//#pragma omp parallel for default(none) shared(testingRow,trainingRow,num_of_feaqtures) private (k) reduction(+:dist)
 	for (k = 0; k < num_of_feaqtures; k++) {
 		dist += pow(test.features[k] - train.features[k], 2);
 	}
@@ -70,27 +85,26 @@ void KNNBeta::splitData(vector<Row> inData) {
 
 	auto randomEngine = default_random_engine { };
 	shuffle(begin(inData), end(inData), randomEngine);
-	trainSize =  0.7 * inData.size();
+	trainSize = 0.7 * inData.size();
 	testSize = inData.size() - trainSize;
-	test = new Test[testSize];
-	train = new Test[trainSize];
 
 	for (int i = 0; i < trainSize; i++) {
-		train[i].category = inData[i].category;
+		Test t = Test();
+		t.category = inData[i].category;
 		for (int j = 0; j < NUM_OF_FEATURES; j++) {
-			train[i].features[j] = inData[i].features[j];
+			t.features[j] = inData[i].features[j];
 		}
+
+		trainSet.push_back(t);
 	}
 
-	int k = trainSize;
-	for (int i = 0; i < testSize; i++) {
-		test[i].category = inData[k].category;
-
+	for (int i = trainSize; i < inData.size(); i++) {
+		Test t;
+		t.category = inData[i].category;
 		for (int j = 0; j < NUM_OF_FEATURES; j++) {
-			test[i].features[j] = inData[k].features[j];
+			t.features[j] = inData[i].features[j];
 		}
-		++k;
+		testSet.push_back(t);
 	}
-
 
 }

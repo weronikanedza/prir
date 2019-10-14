@@ -9,10 +9,10 @@ using namespace std;
 class Row {
 public:
 	vector<double> features;
-	string category;
+	int category;
 	double distance;
 	string prediction;
-	Row(vector<double> m_features, string m_category) :
+	Row(vector<double> m_features, int m_category) :
 			features(m_features), category(m_category) {
 	}
 	;

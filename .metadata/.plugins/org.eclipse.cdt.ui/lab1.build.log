@@ -1,6 +1,19 @@
-20:05:32 **** Incremental Build of configuration Debug for project lab1 ****
+21:43:39 **** Incremental Build of configuration Debug for project lab1 ****
 make all 
-make: Nothing to be done for 'all'.
+Building file: ../src/KNNBeta.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNNBeta.d" -MT"src/KNNBeta.o" -o "src/KNNBeta.o" "../src/KNNBeta.cpp"
+../src/KNNBeta.cpp: In member function ‘void KNNBeta::splitData(std::vector<Row>)’:
+../src/KNNBeta.cpp:101:28: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int i = trainSize; i < inData.size(); i++) {
+                          ~~^~~~~~~~~~~~~~~
+Finished building: ../src/KNNBeta.cpp
+ 
+Building target: lab1
+Invoking: Cross G++ Linker
+g++ -fopenmp -o "lab1"  ./src/CrossValidator.o ./src/FIleLoader.o ./src/KNNBeta.o ./src/Normalization.o ./src/Standarization.o ./src/lab1.o   
+Finished building target: lab1
+ 
 
-20:05:33 Build Finished. 0 errors, 0 warnings. (took 422ms)
+21:43:41 Build Finished. 0 errors, 1 warnings. (took 1s.583ms)
 

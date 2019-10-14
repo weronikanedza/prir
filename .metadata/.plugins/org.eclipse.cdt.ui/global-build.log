@@ -139,3 +139,1184 @@ Finished building target: lab1
 20:05:32 **** Incremental Build of configuration Debug for project lab1 ****
 make all 
 make: Nothing to be done for 'all'.
+20:27:45 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/CrossValidator.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/CrossValidator.d" -MT"src/CrossValidator.o" -o "src/CrossValidator.o" "../src/CrossValidator.cpp"
+Finished building: ../src/CrossValidator.cpp
+ 
+Building file: ../src/FIleLoader.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/FIleLoader.d" -MT"src/FIleLoader.o" -o "src/FIleLoader.o" "../src/FIleLoader.cpp"
+../src/FIleLoader.cpp: In member function ‘Row FileLoader::loadRow(std::__cxx11::string)’:
+../src/FIleLoader.cpp:35:27: error: no matching function for call to ‘Row::Row(std::vector<double>&, std::__cxx11::string&)’
+  return Row(features, word);
+                           ^
+In file included from ../src/FileLoader.hpp:2:0,
+                 from ../src/FIleLoader.cpp:1:
+../src/Row.hpp:15:2: note: candidate: Row::Row(std::vector<double>, int)
+  Row(vector<double> m_features, int m_category) :
+  ^~~
+../src/Row.hpp:15:2: note:   no known conversion for argument 2 from ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ to ‘int’
+../src/Row.hpp:9:7: note: candidate: Row::Row(const Row&)
+ class Row {
+       ^~~
+../src/Row.hpp:9:7: note:   candidate expects 1 argument, 2 provided
+../src/Row.hpp:9:7: note: candidate: Row::Row(Row&&)
+../src/Row.hpp:9:7: note:   candidate expects 1 argument, 2 provided
+../src/FIleLoader.cpp: In member function ‘std::__cxx11::string FileLoader::prepareData(std::__cxx11::string)’:
+../src/FIleLoader.cpp:61:10: error: could not convert ‘1’ from ‘int’ to ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’
+   return 1;
+          ^
+../src/FIleLoader.cpp:63:10: error: could not convert ‘2’ from ‘int’ to ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’
+   return 2;
+          ^
+../src/FIleLoader.cpp:65:10: error: could not convert ‘3’ from ‘int’ to ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’
+   return 3;
+          ^
+../src/FIleLoader.cpp:67:10: error: could not convert ‘4’ from ‘int’ to ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’
+   return 4;
+          ^
+../src/FIleLoader.cpp:69:10: error: could not convert ‘5’ from ‘int’ to ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’
+   return 5;
+          ^
+../src/FIleLoader.cpp:71:10: error: could not convert ‘6’ from ‘int’ to ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’
+   return 6;
+          ^
+../src/FIleLoader.cpp:73:10: error: could not convert ‘7’ from ‘int’ to ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’
+   return 7;
+          ^
+../src/FIleLoader.cpp:75:10: error: could not convert ‘8’ from ‘int’ to ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’
+   return 8;
+          ^
+../src/FIleLoader.cpp:77:10: error: could not convert ‘9’ from ‘int’ to ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’
+   return 9;
+          ^
+../src/FIleLoader.cpp:79:10: error: could not convert ‘10’ from ‘int’ to ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’
+   return 10;
+          ^~
+../src/FIleLoader.cpp:81:10: error: could not convert ‘11’ from ‘int’ to ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’
+   return 11;
+          ^~
+../src/FIleLoader.cpp:83:10: error: could not convert ‘12’ from ‘int’ to ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’
+   return 12;
+          ^~
+../src/FIleLoader.cpp:85:10: error: could not convert ‘13’ from ‘int’ to ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’
+   return 13;
+          ^~
+../src/FIleLoader.cpp:87:10: error: could not convert ‘14’ from ‘int’ to ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’
+   return 14;
+          ^~
+../src/FIleLoader.cpp:89:10: error: could not convert ‘15’ from ‘int’ to ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’
+   return 15;
+          ^~
+../src/FIleLoader.cpp:91:10: error: could not convert ‘16’ from ‘int’ to ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’
+   return 16;
+          ^~
+../src/FIleLoader.cpp:93:10: error: could not convert ‘17’ from ‘int’ to ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’
+   return 17;
+          ^~
+../src/FIleLoader.cpp:95:10: error: could not convert ‘18’ from ‘int’ to ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’
+   return 18;
+          ^~
+src/subdir.mk:36: recipe for target 'src/FIleLoader.o' failed
+make: *** [src/FIleLoader.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+20:28:22 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/FIleLoader.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/FIleLoader.d" -MT"src/FIleLoader.o" -o "src/FIleLoader.o" "../src/FIleLoader.cpp"
+../src/FIleLoader.cpp: In member function ‘Row FileLoader::loadRow(std::__cxx11::string)’:
+../src/FIleLoader.cpp:35:27: error: no matching function for call to ‘Row::Row(std::vector<double>&, std::__cxx11::string&)’
+  return Row(features, word);
+                           ^
+In file included from ../src/FileLoader.hpp:2:0,
+                 from ../src/FIleLoader.cpp:1:
+../src/Row.hpp:15:2: note: candidate: Row::Row(std::vector<double>, int)
+  Row(vector<double> m_features, int m_category) :
+  ^~~
+../src/Row.hpp:15:2: note:   no known conversion for argument 2 from ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ to ‘int’
+../src/Row.hpp:9:7: note: candidate: Row::Row(const Row&)
+ class Row {
+       ^~~
+../src/Row.hpp:9:7: note:   candidate expects 1 argument, 2 provided
+../src/Row.hpp:9:7: note: candidate: Row::Row(Row&&)
+../src/Row.hpp:9:7: note:   candidate expects 1 argument, 2 provided
+../src/FIleLoader.cpp: In member function ‘std::__cxx11::string FileLoader::prepareData(std::__cxx11::string)’:
+../src/FIleLoader.cpp:61:10: error: could not convert ‘1’ from ‘int’ to ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’
+   return 1;
+          ^
+../src/FIleLoader.cpp:63:10: error: could not convert ‘2’ from ‘int’ to ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’
+   return 2;
+          ^
+../src/FIleLoader.cpp:65:10: error: could not convert ‘3’ from ‘int’ to ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’
+   return 3;
+          ^
+../src/FIleLoader.cpp:67:10: error: could not convert ‘4’ from ‘int’ to ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’
+   return 4;
+          ^
+../src/FIleLoader.cpp:69:10: error: could not convert ‘5’ from ‘int’ to ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’
+   return 5;
+          ^
+../src/FIleLoader.cpp:71:10: error: could not convert ‘6’ from ‘int’ to ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’
+   return 6;
+          ^
+../src/FIleLoader.cpp:73:10: error: could not convert ‘7’ from ‘int’ to ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’
+   return 7;
+          ^
+../src/FIleLoader.cpp:75:10: error: could not convert ‘8’ from ‘int’ to ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’
+   return 8;
+          ^
+../src/FIleLoader.cpp:77:10: error: could not convert ‘9’ from ‘int’ to ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’
+   return 9;
+          ^
+../src/FIleLoader.cpp:79:10: error: could not convert ‘10’ from ‘int’ to ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’
+   return 10;
+          ^~
+../src/FIleLoader.cpp:81:10: error: could not convert ‘11’ from ‘int’ to ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’
+   return 11;
+          ^~
+../src/FIleLoader.cpp:83:10: error: could not convert ‘12’ from ‘int’ to ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’
+   return 12;
+          ^~
+../src/FIleLoader.cpp:85:10: error: could not convert ‘13’ from ‘int’ to ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’
+   return 13;
+          ^~
+../src/FIleLoader.cpp:87:10: error: could not convert ‘14’ from ‘int’ to ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’
+   return 14;
+          ^~
+../src/FIleLoader.cpp:89:10: error: could not convert ‘15’ from ‘int’ to ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’
+   return 15;
+          ^~
+../src/FIleLoader.cpp:91:10: error: could not convert ‘16’ from ‘int’ to ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’
+   return 16;
+          ^~
+../src/FIleLoader.cpp:93:10: error: could not convert ‘17’ from ‘int’ to ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’
+   return 17;
+          ^~
+../src/FIleLoader.cpp:95:10: error: could not convert ‘18’ from ‘int’ to ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’
+   return 18;
+          ^~
+make: *** [src/FIleLoader.o] Error 1
+src/subdir.mk:36: recipe for target 'src/FIleLoader.o' failed
+"make all" terminated with exit code 2. Build might be incomplete.
+20:28:28 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/FIleLoader.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/FIleLoader.d" -MT"src/FIleLoader.o" -o "src/FIleLoader.o" "../src/FIleLoader.cpp"
+../src/FIleLoader.cpp: In member function ‘Row FileLoader::loadRow(std::__cxx11::string)’:
+../src/FIleLoader.cpp:35:27: error: no matching function for call to ‘Row::Row(std::vector<double>&, std::__cxx11::string&)’
+  return Row(features, word);
+                           ^
+In file included from ../src/FileLoader.hpp:2:0,
+                 from ../src/FIleLoader.cpp:1:
+../src/Row.hpp:15:2: note: candidate: Row::Row(std::vector<double>, int)
+  Row(vector<double> m_features, int m_category) :
+  ^~~
+../src/Row.hpp:15:2: note:   no known conversion for argument 2 from ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ to ‘int’
+../src/Row.hpp:9:7: note: candidate: Row::Row(const Row&)
+ class Row {
+       ^~~
+../src/Row.hpp:9:7: note:   candidate expects 1 argument, 2 provided
+../src/Row.hpp:9:7: note: candidate: Row::Row(Row&&)
+../src/Row.hpp:9:7: note:   candidate expects 1 argument, 2 provided
+make: *** [src/FIleLoader.o] Error 1
+src/subdir.mk:36: recipe for target 'src/FIleLoader.o' failed
+"make all" terminated with exit code 2. Build might be incomplete.
+20:28:49 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/FIleLoader.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/FIleLoader.d" -MT"src/FIleLoader.o" -o "src/FIleLoader.o" "../src/FIleLoader.cpp"
+Finished building: ../src/FIleLoader.cpp
+ 
+Building file: ../src/KNN.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNN.d" -MT"src/KNN.o" -o "src/KNN.o" "../src/KNN.cpp"
+../src/KNN.cpp: In member function ‘double KNN::getAccuracy()’:
+../src/KNN.cpp:56:54: error: invalid conversion from ‘int’ to ‘const char*’ [-fpermissive]
+   if (testingSet[i].prediction.compare(testingSet[i].category) == 0) {
+In file included from /usr/include/c++/7/string:52:0,
+                 from ../src/Row.hpp:3,
+                 from ../src/KNN.hpp:1,
+                 from ../src/KNN.cpp:1:
+/usr/include/c++/7/bits/basic_string.h:2970:7: note:   initializing argument 1 of ‘int std::__cxx11::basic_string<_CharT, _Traits, _Alloc>::compare(const _CharT*) const [with _CharT = char; _Traits = std::char_traits<char>; _Alloc = std::allocator<char>]’
+       compare(const _CharT* __s) const _GLIBCXX_NOEXCEPT;
+       ^~~~~~~
+../src/KNN.cpp: In member function ‘std::__cxx11::string KNN::votePrediction(std::priority_queue<Row, std::vector<Row>, CompareRows>, int)’:
+../src/KNN.cpp:93:38: error: conversion from ‘const int’ to non-scalar type ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ requested
+   string category = neighbours.top().category;
+                     ~~~~~~~~~~~~~~~~~^~~~~~~~
+src/subdir.mk:36: recipe for target 'src/KNN.o' failed
+make: *** [src/KNN.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+20:29:49 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNN.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNN.d" -MT"src/KNN.o" -o "src/KNN.o" "../src/KNN.cpp"
+Finished building: ../src/KNN.cpp
+ 
+Building file: ../src/KNNBeta.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNNBeta.d" -MT"src/KNNBeta.o" -o "src/KNNBeta.o" "../src/KNNBeta.cpp"
+../src/KNNBeta.cpp: In member function ‘void KNNBeta::knn(std::vector<Row>)’:
+../src/KNNBeta.cpp:19:37: error: conversion from ‘int’ to non-scalar type ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ requested
+   string prediction = calcPrediction(test[i], 3);
+                       ~~~~~~~~~~~~~~^~~~~~~~~~~~
+../src/KNNBeta.cpp:27:42: error: invalid conversion from ‘int’ to ‘const char*’ [-fpermissive]
+   if (test[i].prediction.compare(test[i].category) == 0) {
+                                  ~~~~~~~~^~~~~~~~
+In file included from /usr/include/c++/7/string:52:0,
+                 from ../src/Test.hpp:1,
+                 from ../src/KNNBeta.hpp:1,
+                 from ../src/KNNBeta.cpp:1:
+/usr/include/c++/7/bits/basic_string.h:2970:7: note:   initializing argument 1 of ‘int std::__cxx11::basic_string<_CharT, _Traits, _Alloc>::compare(const _CharT*) const [with _CharT = char; _Traits = std::char_traits<char>; _Alloc = std::allocator<char>]’
+       compare(const _CharT* __s) const _GLIBCXX_NOEXCEPT;
+       ^~~~~~~
+../src/KNNBeta.cpp:13:6: warning: unused variable ‘K’ [-Wunused-variable]
+  int K = 3;
+      ^
+../src/KNNBeta.cpp: At global scope:
+../src/KNNBeta.cpp:37:8: error: prototype for ‘std::__cxx11::string KNNBeta::calcPrediction(Test, int)’ does not match any in class ‘KNNBeta’
+ string KNNBeta::calcPrediction(Test testVal, int K) {
+        ^~~~~~~
+In file included from ../src/KNNBeta.cpp:1:0:
+../src/KNNBeta.hpp:11:6: error: candidate is: int KNNBeta::calcPrediction(Test, int)
+  int calcPrediction(Test testVal, int K);
+      ^~~~~~~~~~~~~~
+make: *** [src/KNNBeta.o] Error 1
+src/subdir.mk:36: recipe for target 'src/KNNBeta.o' failed
+"make all" terminated with exit code 2. Build might be incomplete.
+20:29:58 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNNBeta.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNNBeta.d" -MT"src/KNNBeta.o" -o "src/KNNBeta.o" "../src/KNNBeta.cpp"
+../src/KNNBeta.cpp: In member function ‘void KNNBeta::knn(std::vector<Row>)’:
+../src/KNNBeta.cpp:19:37: error: conversion from ‘int’ to non-scalar type ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ requested
+   string prediction = calcPrediction(test[i], 3);
+                       ~~~~~~~~~~~~~~^~~~~~~~~~~~
+../src/KNNBeta.cpp:20:24: error: cannot convert ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ to ‘int’ in assignment
+   test[i].prediction = prediction;
+                        ^~~~~~~~~~
+../src/KNNBeta.cpp:27:26: error: request for member ‘compare’ in ‘(((KNNBeta*)this)->KNNBeta::test + ((sizetype)(((long unsigned int)i) * 64)))->Test::prediction’, which is of non-class type ‘int’
+   if (test[i].prediction.compare(test[i].category) == 0) {
+                          ^~~~~~~
+../src/KNNBeta.cpp:13:6: warning: unused variable ‘K’ [-Wunused-variable]
+  int K = 3;
+      ^
+../src/KNNBeta.cpp: At global scope:
+../src/KNNBeta.cpp:37:8: error: prototype for ‘std::__cxx11::string KNNBeta::calcPrediction(Test, int)’ does not match any in class ‘KNNBeta’
+ string KNNBeta::calcPrediction(Test testVal, int K) {
+        ^~~~~~~
+In file included from ../src/KNNBeta.cpp:1:0:
+../src/KNNBeta.hpp:11:6: error: candidate is: int KNNBeta::calcPrediction(Test, int)
+  int calcPrediction(Test testVal, int K);
+      ^~~~~~~~~~~~~~
+make: *** [src/KNNBeta.o] Error 1
+src/subdir.mk:36: recipe for target 'src/KNNBeta.o' failed
+"make all" terminated with exit code 2. Build might be incomplete.
+20:30:06 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNNBeta.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNNBeta.d" -MT"src/KNNBeta.o" -o "src/KNNBeta.o" "../src/KNNBeta.cpp"
+../src/KNNBeta.cpp: In member function ‘void KNNBeta::knn(std::vector<Row>)’:
+../src/KNNBeta.cpp:19:37: error: conversion from ‘int’ to non-scalar type ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ requested
+   string prediction = calcPrediction(test[i], 3);
+                       ~~~~~~~~~~~~~~^~~~~~~~~~~~
+../src/KNNBeta.cpp:20:24: error: cannot convert ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ to ‘int’ in assignment
+   test[i].prediction = prediction;
+                        ^~~~~~~~~~
+../src/KNNBeta.cpp:27:26: error: request for member ‘compare’ in ‘(((KNNBeta*)this)->KNNBeta::test + ((sizetype)(((long unsigned int)i) * 64)))->Test::prediction’, which is of non-class type ‘int’
+   if (test[i].prediction.compare(test[i].category) == 0) {
+                          ^~~~~~~
+../src/KNNBeta.cpp:13:6: warning: unused variable ‘K’ [-Wunused-variable]
+  int K = 3;
+      ^
+../src/KNNBeta.cpp: At global scope:
+../src/KNNBeta.cpp:37:8: error: prototype for ‘std::__cxx11::string KNNBeta::calcPrediction(Test, int)’ does not match any in class ‘KNNBeta’
+ string KNNBeta::calcPrediction(Test testVal, int K) {
+        ^~~~~~~
+In file included from ../src/KNNBeta.cpp:1:0:
+../src/KNNBeta.hpp:11:6: error: candidate is: int KNNBeta::calcPrediction(Test, int)
+  int calcPrediction(Test testVal, int K);
+      ^~~~~~~~~~~~~~
+src/subdir.mk:36: recipe for target 'src/KNNBeta.o' failed
+make: *** [src/KNNBeta.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+20:30:13 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNNBeta.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNNBeta.d" -MT"src/KNNBeta.o" -o "src/KNNBeta.o" "../src/KNNBeta.cpp"
+../src/KNNBeta.cpp: In member function ‘void KNNBeta::knn(std::vector<Row>)’:
+../src/KNNBeta.cpp:13:6: warning: unused variable ‘K’ [-Wunused-variable]
+  int K = 3;
+      ^
+../src/KNNBeta.cpp: In member function ‘int KNNBeta::calcPrediction(Test, int)’:
+../src/KNNBeta.cpp:39:9: warning: unused variable ‘min’ [-Wunused-variable]
+  double min = 1000000;
+         ^~~
+../src/KNNBeta.cpp:56:18: warning: ‘neigbour.Test::category’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+  return neigbour.category;
+                  ^~~~~~~~
+Finished building: ../src/KNNBeta.cpp
+ 
+Building file: ../src/Normalization.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/Normalization.d" -MT"src/Normalization.o" -o "src/Normalization.o" "../src/Normalization.cpp"
+Finished building: ../src/Normalization.cpp
+ 
+Building file: ../src/Standarization.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/Standarization.d" -MT"src/Standarization.o" -o "src/Standarization.o" "../src/Standarization.cpp"
+Finished building: ../src/Standarization.cpp
+ 
+Building file: ../src/lab1.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/lab1.d" -MT"src/lab1.o" -o "src/lab1.o" "../src/lab1.cpp"
+Finished building: ../src/lab1.cpp
+ 
+Building target: lab1
+Invoking: Cross G++ Linker
+g++ -fopenmp -o "lab1"  ./src/CrossValidator.o ./src/FIleLoader.o ./src/KNN.o ./src/KNNBeta.o ./src/Normalization.o ./src/Standarization.o ./src/lab1.o   
+Finished building target: lab1
+ 
+20:37:49 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNNBeta.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNNBeta.d" -MT"src/KNNBeta.o" -o "src/KNNBeta.o" "../src/KNNBeta.cpp"
+../src/KNNBeta.cpp: In member function ‘void KNNBeta::knn(std::vector<Row>)’:
+../src/KNNBeta.cpp:16:6: warning: unused variable ‘K’ [-Wunused-variable]
+  int K = 3;
+      ^
+../src/KNNBeta.cpp: In member function ‘int KNNBeta::calcPrediction(Test, int)’:
+../src/KNNBeta.cpp:58:33: error: cannot convert ‘const value_type {aka const Test}’ to ‘int’ in initialization
+   int category = neighbours.top();
+                                 ^
+../src/KNNBeta.cpp:42:9: warning: unused variable ‘min’ [-Wunused-variable]
+  double min = 1000000;
+         ^~~
+../src/KNNBeta.cpp:43:7: warning: unused variable ‘neigbour’ [-Wunused-variable]
+  Test neigbour;
+       ^~~~~~~~
+make: *** [src/KNNBeta.o] Error 1
+src/subdir.mk:36: recipe for target 'src/KNNBeta.o' failed
+"make all" terminated with exit code 2. Build might be incomplete.
+20:38:05 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNNBeta.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNNBeta.d" -MT"src/KNNBeta.o" -o "src/KNNBeta.o" "../src/KNNBeta.cpp"
+../src/KNNBeta.cpp: In member function ‘void KNNBeta::knn(std::vector<Row>)’:
+../src/KNNBeta.cpp:15:6: warning: unused variable ‘K’ [-Wunused-variable]
+  int K = 3;
+      ^
+../src/KNNBeta.cpp: In member function ‘int KNNBeta::calcPrediction(Test, int)’:
+../src/KNNBeta.cpp:41:9: warning: unused variable ‘min’ [-Wunused-variable]
+  double min = 1000000;
+         ^~~
+../src/KNNBeta.cpp:42:7: warning: unused variable ‘neigbour’ [-Wunused-variable]
+  Test neigbour;
+       ^~~~~~~~
+Finished building: ../src/KNNBeta.cpp
+ 
+Building target: lab1
+Invoking: Cross G++ Linker
+g++ -fopenmp -o "lab1"  ./src/CrossValidator.o ./src/FIleLoader.o ./src/KNN.o ./src/KNNBeta.o ./src/Normalization.o ./src/Standarization.o ./src/lab1.o   
+Finished building target: lab1
+ 
+20:39:40 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/FIleLoader.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/FIleLoader.d" -MT"src/FIleLoader.o" -o "src/FIleLoader.o" "../src/FIleLoader.cpp"
+Finished building: ../src/FIleLoader.cpp
+ 
+Building target: lab1
+Invoking: Cross G++ Linker
+g++ -fopenmp -o "lab1"  ./src/CrossValidator.o ./src/FIleLoader.o ./src/KNN.o ./src/KNNBeta.o ./src/Normalization.o ./src/Standarization.o ./src/lab1.o   
+Finished building target: lab1
+ 
+20:41:45 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+make: Nothing to be done for 'all'.
+20:44:26 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/FIleLoader.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/FIleLoader.d" -MT"src/FIleLoader.o" -o "src/FIleLoader.o" "../src/FIleLoader.cpp"
+Finished building: ../src/FIleLoader.cpp
+ 
+Building target: lab1
+Invoking: Cross G++ Linker
+g++ -fopenmp -o "lab1"  ./src/CrossValidator.o ./src/FIleLoader.o ./src/KNN.o ./src/KNNBeta.o ./src/Normalization.o ./src/Standarization.o ./src/lab1.o   
+Finished building target: lab1
+ 
+20:45:28 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+make: Nothing to be done for 'all'.
+20:48:11 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/FIleLoader.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/FIleLoader.d" -MT"src/FIleLoader.o" -o "src/FIleLoader.o" "../src/FIleLoader.cpp"
+Finished building: ../src/FIleLoader.cpp
+ 
+Building file: ../src/lab1.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/lab1.d" -MT"src/lab1.o" -o "src/lab1.o" "../src/lab1.cpp"
+Finished building: ../src/lab1.cpp
+ 
+Building target: lab1
+Invoking: Cross G++ Linker
+g++ -fopenmp -o "lab1"  ./src/CrossValidator.o ./src/FIleLoader.o ./src/KNN.o ./src/KNNBeta.o ./src/Normalization.o ./src/Standarization.o ./src/lab1.o   
+Finished building target: lab1
+ 
+20:48:18 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/FIleLoader.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/FIleLoader.d" -MT"src/FIleLoader.o" -o "src/FIleLoader.o" "../src/FIleLoader.cpp"
+Finished building: ../src/FIleLoader.cpp
+ 
+Building target: lab1
+Invoking: Cross G++ Linker
+g++ -fopenmp -o "lab1"  ./src/CrossValidator.o ./src/FIleLoader.o ./src/KNN.o ./src/KNNBeta.o ./src/Normalization.o ./src/Standarization.o ./src/lab1.o   
+Finished building target: lab1
+ 
+20:48:24 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+make: Nothing to be done for 'all'.
+20:50:54 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/FIleLoader.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/FIleLoader.d" -MT"src/FIleLoader.o" -o "src/FIleLoader.o" "../src/FIleLoader.cpp"
+Finished building: ../src/FIleLoader.cpp
+ 
+Building target: lab1
+Invoking: Cross G++ Linker
+g++ -fopenmp -o "lab1"  ./src/CrossValidator.o ./src/FIleLoader.o ./src/KNN.o ./src/KNNBeta.o ./src/Normalization.o ./src/Standarization.o ./src/lab1.o   
+Finished building target: lab1
+ 
+20:51:03 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+make: Nothing to be done for 'all'.
+20:54:48 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNNBeta.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNNBeta.d" -MT"src/KNNBeta.o" -o "src/KNNBeta.o" "../src/KNNBeta.cpp"
+../src/KNNBeta.cpp: In member function ‘void KNNBeta::knn(std::vector<Row>)’:
+../src/KNNBeta.cpp:15:6: warning: unused variable ‘K’ [-Wunused-variable]
+  int K = 3;
+      ^
+../src/KNNBeta.cpp: In member function ‘int KNNBeta::calcPrediction(Test, int)’:
+../src/KNNBeta.cpp:41:9: warning: unused variable ‘min’ [-Wunused-variable]
+  double min = 1000000;
+         ^~~
+../src/KNNBeta.cpp:42:7: warning: unused variable ‘neigbour’ [-Wunused-variable]
+  Test neigbour;
+       ^~~~~~~~
+Finished building: ../src/KNNBeta.cpp
+ 
+Building target: lab1
+Invoking: Cross G++ Linker
+g++ -fopenmp -o "lab1"  ./src/CrossValidator.o ./src/FIleLoader.o ./src/KNN.o ./src/KNNBeta.o ./src/Normalization.o ./src/Standarization.o ./src/lab1.o   
+Finished building target: lab1
+ 
+20:54:52 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+make: Nothing to be done for 'all'.
+20:56:51 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNNBeta.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNNBeta.d" -MT"src/KNNBeta.o" -o "src/KNNBeta.o" "../src/KNNBeta.cpp"
+../src/KNNBeta.cpp: In member function ‘void KNNBeta::knn(std::vector<Row>)’:
+../src/KNNBeta.cpp:15:6: warning: unused variable ‘K’ [-Wunused-variable]
+  int K = 3;
+      ^
+../src/KNNBeta.cpp: In member function ‘int KNNBeta::calcPrediction(Test, int)’:
+../src/KNNBeta.cpp:41:9: warning: unused variable ‘min’ [-Wunused-variable]
+  double min = 1000000;
+         ^~~
+../src/KNNBeta.cpp:42:7: warning: unused variable ‘neigbour’ [-Wunused-variable]
+  Test neigbour;
+       ^~~~~~~~
+Finished building: ../src/KNNBeta.cpp
+ 
+Building target: lab1
+Invoking: Cross G++ Linker
+g++ -fopenmp -o "lab1"  ./src/CrossValidator.o ./src/FIleLoader.o ./src/KNN.o ./src/KNNBeta.o ./src/Normalization.o ./src/Standarization.o ./src/lab1.o   
+Finished building target: lab1
+ 
+20:56:55 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+make: Nothing to be done for 'all'.
+20:57:46 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNNBeta.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNNBeta.d" -MT"src/KNNBeta.o" -o "src/KNNBeta.o" "../src/KNNBeta.cpp"
+../src/KNNBeta.cpp: In member function ‘void KNNBeta::knn(std::vector<Row>)’:
+../src/KNNBeta.cpp:15:6: warning: unused variable ‘K’ [-Wunused-variable]
+  int K = 3;
+      ^
+../src/KNNBeta.cpp: In member function ‘int KNNBeta::calcPrediction(Test, int)’:
+../src/KNNBeta.cpp:41:9: warning: unused variable ‘min’ [-Wunused-variable]
+  double min = 1000000;
+         ^~~
+../src/KNNBeta.cpp:42:7: warning: unused variable ‘neigbour’ [-Wunused-variable]
+  Test neigbour;
+       ^~~~~~~~
+Finished building: ../src/KNNBeta.cpp
+ 
+Building target: lab1
+Invoking: Cross G++ Linker
+g++ -fopenmp -o "lab1"  ./src/CrossValidator.o ./src/FIleLoader.o ./src/KNN.o ./src/KNNBeta.o ./src/Normalization.o ./src/Standarization.o ./src/lab1.o   
+Finished building target: lab1
+ 
+21:00:12 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNNBeta.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNNBeta.d" -MT"src/KNNBeta.o" -o "src/KNNBeta.o" "../src/KNNBeta.cpp"
+../src/KNNBeta.cpp: In member function ‘void KNNBeta::knn(std::vector<Row>)’:
+../src/KNNBeta.cpp:15:6: warning: unused variable ‘K’ [-Wunused-variable]
+  int K = 3;
+      ^
+../src/KNNBeta.cpp: In member function ‘int KNNBeta::calcPrediction(Test, int)’:
+../src/KNNBeta.cpp:41:9: warning: unused variable ‘min’ [-Wunused-variable]
+  double min = 1000000;
+         ^~~
+Finished building: ../src/KNNBeta.cpp
+ 
+Building target: lab1
+Invoking: Cross G++ Linker
+g++ -fopenmp -o "lab1"  ./src/CrossValidator.o ./src/FIleLoader.o ./src/KNN.o ./src/KNNBeta.o ./src/Normalization.o ./src/Standarization.o ./src/lab1.o   
+Finished building target: lab1
+ 
+21:01:16 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNNBeta.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNNBeta.d" -MT"src/KNNBeta.o" -o "src/KNNBeta.o" "../src/KNNBeta.cpp"
+../src/KNNBeta.cpp: In member function ‘void KNNBeta::knn(std::vector<Row>)’:
+../src/KNNBeta.cpp:15:6: warning: unused variable ‘K’ [-Wunused-variable]
+  int K = 3;
+      ^
+../src/KNNBeta.cpp: In member function ‘int KNNBeta::calcPrediction(Test, int)’:
+../src/KNNBeta.cpp:41:9: warning: unused variable ‘min’ [-Wunused-variable]
+  double min = 1000000;
+         ^~~
+Finished building: ../src/KNNBeta.cpp
+ 
+Building target: lab1
+Invoking: Cross G++ Linker
+g++ -fopenmp -o "lab1"  ./src/CrossValidator.o ./src/FIleLoader.o ./src/KNN.o ./src/KNNBeta.o ./src/Normalization.o ./src/Standarization.o ./src/lab1.o   
+Finished building target: lab1
+ 
+21:01:18 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+make: Nothing to be done for 'all'.
+21:02:13 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNNBeta.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNNBeta.d" -MT"src/KNNBeta.o" -o "src/KNNBeta.o" "../src/KNNBeta.cpp"
+../src/KNNBeta.cpp: In member function ‘void KNNBeta::knn(std::vector<Row>)’:
+../src/KNNBeta.cpp:15:6: warning: unused variable ‘K’ [-Wunused-variable]
+  int K = 3;
+      ^
+../src/KNNBeta.cpp: In member function ‘int KNNBeta::calcPrediction(Test, int)’:
+../src/KNNBeta.cpp:41:9: warning: unused variable ‘min’ [-Wunused-variable]
+  double min = 1000000;
+         ^~~
+Finished building: ../src/KNNBeta.cpp
+ 
+Building target: lab1
+Invoking: Cross G++ Linker
+g++ -fopenmp -o "lab1"  ./src/CrossValidator.o ./src/FIleLoader.o ./src/KNN.o ./src/KNNBeta.o ./src/Normalization.o ./src/Standarization.o ./src/lab1.o   
+Finished building target: lab1
+ 
+21:02:15 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+make: Nothing to be done for 'all'.
+21:03:39 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNNBeta.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNNBeta.d" -MT"src/KNNBeta.o" -o "src/KNNBeta.o" "../src/KNNBeta.cpp"
+../src/KNNBeta.cpp: In member function ‘void KNNBeta::knn(std::vector<Row>)’:
+../src/KNNBeta.cpp:15:6: warning: unused variable ‘K’ [-Wunused-variable]
+  int K = 3;
+      ^
+../src/KNNBeta.cpp: In member function ‘int KNNBeta::calcPrediction(Test, int)’:
+../src/KNNBeta.cpp:41:9: warning: unused variable ‘min’ [-Wunused-variable]
+  double min = 1000000;
+         ^~~
+Finished building: ../src/KNNBeta.cpp
+ 
+Building target: lab1
+Invoking: Cross G++ Linker
+g++ -fopenmp -o "lab1"  ./src/CrossValidator.o ./src/FIleLoader.o ./src/KNN.o ./src/KNNBeta.o ./src/Normalization.o ./src/Standarization.o ./src/lab1.o   
+Finished building target: lab1
+ 
+21:05:16 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+make: Nothing to be done for 'all'.
+21:08:55 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNNBeta.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNNBeta.d" -MT"src/KNNBeta.o" -o "src/KNNBeta.o" "../src/KNNBeta.cpp"
+../src/KNNBeta.cpp: In member function ‘int KNNBeta::calcPrediction(Test, int)’:
+../src/KNNBeta.cpp:41:9: warning: unused variable ‘min’ [-Wunused-variable]
+  double min = 1000000;
+         ^~~
+Finished building: ../src/KNNBeta.cpp
+ 
+Building file: ../src/lab1.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/lab1.d" -MT"src/lab1.o" -o "src/lab1.o" "../src/lab1.cpp"
+Finished building: ../src/lab1.cpp
+ 
+Building target: lab1
+Invoking: Cross G++ Linker
+g++ -fopenmp -o "lab1"  ./src/CrossValidator.o ./src/FIleLoader.o ./src/KNN.o ./src/KNNBeta.o ./src/Normalization.o ./src/Standarization.o ./src/lab1.o   
+Finished building target: lab1
+ 
+21:09:43 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNNBeta.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNNBeta.d" -MT"src/KNNBeta.o" -o "src/KNNBeta.o" "../src/KNNBeta.cpp"
+../src/KNNBeta.cpp: In member function ‘int KNNBeta::calcPrediction(Test, int)’:
+../src/KNNBeta.cpp:41:9: warning: unused variable ‘min’ [-Wunused-variable]
+  double min = 1000000;
+         ^~~
+Finished building: ../src/KNNBeta.cpp
+ 
+Building target: lab1
+Invoking: Cross G++ Linker
+g++ -fopenmp -o "lab1"  ./src/CrossValidator.o ./src/FIleLoader.o ./src/KNN.o ./src/KNNBeta.o ./src/Normalization.o ./src/Standarization.o ./src/lab1.o   
+Finished building target: lab1
+ 
+21:11:21 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNNBeta.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNNBeta.d" -MT"src/KNNBeta.o" -o "src/KNNBeta.o" "../src/KNNBeta.cpp"
+../src/KNNBeta.cpp: In member function ‘int KNNBeta::calcPrediction(Test, int)’:
+../src/KNNBeta.cpp:41:9: warning: unused variable ‘min’ [-Wunused-variable]
+  double min = 1000000;
+         ^~~
+Finished building: ../src/KNNBeta.cpp
+ 
+Building target: lab1
+Invoking: Cross G++ Linker
+g++ -fopenmp -o "lab1"  ./src/CrossValidator.o ./src/FIleLoader.o ./src/KNN.o ./src/KNNBeta.o ./src/Normalization.o ./src/Standarization.o ./src/lab1.o   
+Finished building target: lab1
+ 
+21:17:54 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNNBeta.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNNBeta.d" -MT"src/KNNBeta.o" -o "src/KNNBeta.o" "../src/KNNBeta.cpp"
+../src/KNNBeta.cpp: In member function ‘int KNNBeta::calcPrediction(Test, int)’:
+../src/KNNBeta.cpp:41:9: warning: unused variable ‘min’ [-Wunused-variable]
+  double min = 1000000;
+         ^~~
+../src/KNNBeta.cpp: In member function ‘void KNNBeta::splitData(std::vector<Row>)’:
+../src/KNNBeta.cpp:105:26: error: incompatible types in assignment of ‘std::vector<double>’ to ‘double [6]’
+   t.features = inData[i].features;
+                          ^~~~~~~~
+../src/KNNBeta.cpp:113:26: error: incompatible types in assignment of ‘std::vector<double>’ to ‘double [6]’
+   t.features = inData[i].features;
+                          ^~~~~~~~
+../src/KNNBeta.cpp:114:30: error: no matching function for call to ‘std::vector<Test>::push_back(__gnu_cxx::__alloc_traits<std::allocator<Row> >::value_type&)’
+   testSet.push_back(inData[i]);
+                              ^
+In file included from /usr/include/c++/7/vector:64:0,
+                 from ../src/Row.hpp:4,
+                 from ../src/Test.hpp:2,
+                 from ../src/KNNBeta.hpp:1,
+                 from ../src/KNNBeta.cpp:1:
+/usr/include/c++/7/bits/stl_vector.h:939:7: note: candidate: void std::vector<_Tp, _Alloc>::push_back(const value_type&) [with _Tp = Test; _Alloc = std::allocator<Test>; std::vector<_Tp, _Alloc>::value_type = Test]
+       push_back(const value_type& __x)
+       ^~~~~~~~~
+/usr/include/c++/7/bits/stl_vector.h:939:7: note:   no known conversion for argument 1 from ‘__gnu_cxx::__alloc_traits<std::allocator<Row> >::value_type {aka Row}’ to ‘const value_type& {aka const Test&}’
+/usr/include/c++/7/bits/stl_vector.h:953:7: note: candidate: void std::vector<_Tp, _Alloc>::push_back(std::vector<_Tp, _Alloc>::value_type&&) [with _Tp = Test; _Alloc = std::allocator<Test>; std::vector<_Tp, _Alloc>::value_type = Test]
+       push_back(value_type&& __x)
+       ^~~~~~~~~
+/usr/include/c++/7/bits/stl_vector.h:953:7: note:   no known conversion for argument 1 from ‘__gnu_cxx::__alloc_traits<std::allocator<Row> >::value_type {aka Row}’ to ‘std::vector<Test>::value_type&& {aka Test&&}’
+make: *** [src/KNNBeta.o] Error 1
+src/subdir.mk:36: recipe for target 'src/KNNBeta.o' failed
+"make all" terminated with exit code 2. Build might be incomplete.
+21:18:02 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNNBeta.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNNBeta.d" -MT"src/KNNBeta.o" -o "src/KNNBeta.o" "../src/KNNBeta.cpp"
+../src/KNNBeta.cpp: In member function ‘int KNNBeta::calcPrediction(Test, int)’:
+../src/KNNBeta.cpp:41:9: warning: unused variable ‘min’ [-Wunused-variable]
+  double min = 1000000;
+         ^~~
+../src/KNNBeta.cpp: In member function ‘void KNNBeta::splitData(std::vector<Row>)’:
+../src/KNNBeta.cpp:105:26: error: incompatible types in assignment of ‘std::vector<double>’ to ‘double [6]’
+   t.features = inData[i].features;
+                          ^~~~~~~~
+../src/KNNBeta.cpp:113:26: error: incompatible types in assignment of ‘std::vector<double>’ to ‘double [6]’
+   t.features = inData[i].features;
+                          ^~~~~~~~
+src/subdir.mk:36: recipe for target 'src/KNNBeta.o' failed
+make: *** [src/KNNBeta.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+21:18:53 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNNBeta.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNNBeta.d" -MT"src/KNNBeta.o" -o "src/KNNBeta.o" "../src/KNNBeta.cpp"
+../src/KNNBeta.cpp: In member function ‘int KNNBeta::calcPrediction(Test, int)’:
+../src/KNNBeta.cpp:41:9: warning: unused variable ‘min’ [-Wunused-variable]
+  double min = 1000000;
+         ^~~
+../src/KNNBeta.cpp: In member function ‘void KNNBeta::splitData(std::vector<Row>)’:
+../src/KNNBeta.cpp:106:15: error: request for member ‘push_back’ in ‘t.Test::features’, which is of non-class type ‘double [6]’
+    t.features.push_back(inData[i].features[j]);
+               ^~~~~~~~~
+../src/KNNBeta.cpp:116:26: error: incompatible types in assignment of ‘std::vector<double>’ to ‘double [6]’
+   t.features = inData[i].features;
+                          ^~~~~~~~
+make: *** [src/KNNBeta.o] Error 1
+src/subdir.mk:36: recipe for target 'src/KNNBeta.o' failed
+"make all" terminated with exit code 2. Build might be incomplete.
+21:19:47 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNNBeta.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNNBeta.d" -MT"src/KNNBeta.o" -o "src/KNNBeta.o" "../src/KNNBeta.cpp"
+../src/KNNBeta.cpp: In member function ‘int KNNBeta::calcPrediction(Test, int)’:
+../src/KNNBeta.cpp:41:9: warning: unused variable ‘min’ [-Wunused-variable]
+  double min = 1000000;
+         ^~~
+../src/KNNBeta.cpp: In member function ‘void KNNBeta::splitData(std::vector<Row>)’:
+../src/KNNBeta.cpp:117:16: error: request for member ‘push_back’ in ‘t.Test::features’, which is of non-class type ‘double [6]’
+     t.features.push_back(inData[i].features[j]);
+                ^~~~~~~~~
+make: *** [src/KNNBeta.o] Error 1
+src/subdir.mk:36: recipe for target 'src/KNNBeta.o' failed
+"make all" terminated with exit code 2. Build might be incomplete.
+21:19:55 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNNBeta.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNNBeta.d" -MT"src/KNNBeta.o" -o "src/KNNBeta.o" "../src/KNNBeta.cpp"
+../src/KNNBeta.cpp: In member function ‘int KNNBeta::calcPrediction(Test, int)’:
+../src/KNNBeta.cpp:41:9: warning: unused variable ‘min’ [-Wunused-variable]
+  double min = 1000000;
+         ^~~
+Finished building: ../src/KNNBeta.cpp
+ 
+Building target: lab1
+Invoking: Cross G++ Linker
+g++ -fopenmp -o "lab1"  ./src/CrossValidator.o ./src/FIleLoader.o ./src/KNN.o ./src/KNNBeta.o ./src/Normalization.o ./src/Standarization.o ./src/lab1.o   
+Finished building target: lab1
+ 
+21:21:03 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNNBeta.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNNBeta.d" -MT"src/KNNBeta.o" -o "src/KNNBeta.o" "../src/KNNBeta.cpp"
+../src/KNNBeta.cpp: In member function ‘int KNNBeta::calcPrediction(Test, int)’:
+../src/KNNBeta.cpp:41:9: warning: unused variable ‘min’ [-Wunused-variable]
+  double min = 1000000;
+         ^~~
+Finished building: ../src/KNNBeta.cpp
+ 
+Building target: lab1
+Invoking: Cross G++ Linker
+g++ -fopenmp -o "lab1"  ./src/CrossValidator.o ./src/FIleLoader.o ./src/KNN.o ./src/KNNBeta.o ./src/Normalization.o ./src/Standarization.o ./src/lab1.o   
+Finished building target: lab1
+ 
+21:21:33 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNNBeta.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNNBeta.d" -MT"src/KNNBeta.o" -o "src/KNNBeta.o" "../src/KNNBeta.cpp"
+../src/KNNBeta.cpp: In member function ‘int KNNBeta::calcPrediction(Test, int)’:
+../src/KNNBeta.cpp:41:9: warning: unused variable ‘min’ [-Wunused-variable]
+  double min = 1000000;
+         ^~~
+Finished building: ../src/KNNBeta.cpp
+ 
+Building target: lab1
+Invoking: Cross G++ Linker
+g++ -fopenmp -o "lab1"  ./src/CrossValidator.o ./src/FIleLoader.o ./src/KNN.o ./src/KNNBeta.o ./src/Normalization.o ./src/Standarization.o ./src/lab1.o   
+Finished building target: lab1
+ 
+21:22:53 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+make: Nothing to be done for 'all'.
+21:23:51 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNNBeta.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNNBeta.d" -MT"src/KNNBeta.o" -o "src/KNNBeta.o" "../src/KNNBeta.cpp"
+../src/KNNBeta.cpp: In member function ‘int KNNBeta::calcPrediction(Test, int)’:
+../src/KNNBeta.cpp:41:9: warning: unused variable ‘min’ [-Wunused-variable]
+  double min = 1000000;
+         ^~~
+../src/KNNBeta.cpp: In member function ‘void KNNBeta::splitData(std::vector<Row>)’:
+../src/KNNBeta.cpp:114:11: error: conversion from ‘Test*’ to non-scalar type ‘Test’ requested
+   Test t =new Test();
+           ^~~~~~~~~~
+make: *** [src/KNNBeta.o] Error 1
+src/subdir.mk:36: recipe for target 'src/KNNBeta.o' failed
+"make all" terminated with exit code 2. Build might be incomplete.
+21:23:58 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNNBeta.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNNBeta.d" -MT"src/KNNBeta.o" -o "src/KNNBeta.o" "../src/KNNBeta.cpp"
+../src/KNNBeta.cpp: In member function ‘int KNNBeta::calcPrediction(Test, int)’:
+../src/KNNBeta.cpp:41:9: warning: unused variable ‘min’ [-Wunused-variable]
+  double min = 1000000;
+         ^~~
+Finished building: ../src/KNNBeta.cpp
+ 
+Building target: lab1
+Invoking: Cross G++ Linker
+g++ -fopenmp -o "lab1"  ./src/CrossValidator.o ./src/FIleLoader.o ./src/KNN.o ./src/KNNBeta.o ./src/Normalization.o ./src/Standarization.o ./src/lab1.o   
+Finished building target: lab1
+ 
+21:24:06 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+make: Nothing to be done for 'all'.
+21:24:31 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+make: Nothing to be done for 'all'.
+21:25:52 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNNBeta.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNNBeta.d" -MT"src/KNNBeta.o" -o "src/KNNBeta.o" "../src/KNNBeta.cpp"
+../src/KNNBeta.cpp: In member function ‘int KNNBeta::calcPrediction(Test, int)’:
+../src/KNNBeta.cpp:41:9: warning: unused variable ‘min’ [-Wunused-variable]
+  double min = 1000000;
+         ^~~
+../src/KNNBeta.cpp: In member function ‘void KNNBeta::splitData(std::vector<Row>)’:
+../src/KNNBeta.cpp:113:28: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int i = trainSize; i < inData.size(); i++) {
+                          ~~^~~~~~~~~~~~~~~
+Finished building: ../src/KNNBeta.cpp
+ 
+Building target: lab1
+Invoking: Cross G++ Linker
+g++ -fopenmp -o "lab1"  ./src/CrossValidator.o ./src/FIleLoader.o ./src/KNN.o ./src/KNNBeta.o ./src/Normalization.o ./src/Standarization.o ./src/lab1.o   
+Finished building target: lab1
+ 
+21:25:55 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+make: Nothing to be done for 'all'.
+21:27:52 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+make: Nothing to be done for 'all'.
+21:28:37 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/lab1.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/lab1.d" -MT"src/lab1.o" -o "src/lab1.o" "../src/lab1.cpp"
+Finished building: ../src/lab1.cpp
+ 
+Building target: lab1
+Invoking: Cross G++ Linker
+g++ -fopenmp -o "lab1"  ./src/CrossValidator.o ./src/FIleLoader.o ./src/KNNBeta.o ./src/Normalization.o ./src/Standarization.o ./src/lab1.o   
+Finished building target: lab1
+ 
+21:29:42 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+make: Nothing to be done for 'all'.
+21:31:29 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNNBeta.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNNBeta.d" -MT"src/KNNBeta.o" -o "src/KNNBeta.o" "../src/KNNBeta.cpp"
+../src/KNNBeta.cpp: In member function ‘int KNNBeta::calcPrediction(Test, int)’:
+../src/KNNBeta.cpp:41:9: warning: unused variable ‘min’ [-Wunused-variable]
+  double min = 1000000;
+         ^~~
+../src/KNNBeta.cpp: In member function ‘void KNNBeta::splitData(std::vector<Row>)’:
+../src/KNNBeta.cpp:103:28: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int i = trainSize; i < inData.size(); i++) {
+                          ~~^~~~~~~~~~~~~~~
+Finished building: ../src/KNNBeta.cpp
+ 
+Building target: lab1
+Invoking: Cross G++ Linker
+g++ -fopenmp -o "lab1"  ./src/CrossValidator.o ./src/FIleLoader.o ./src/KNNBeta.o ./src/Normalization.o ./src/Standarization.o ./src/lab1.o   
+Finished building target: lab1
+ 
+21:31:58 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNNBeta.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNNBeta.d" -MT"src/KNNBeta.o" -o "src/KNNBeta.o" "../src/KNNBeta.cpp"
+../src/KNNBeta.cpp: In member function ‘int KNNBeta::calcPrediction(Test, int)’:
+../src/KNNBeta.cpp:41:9: warning: unused variable ‘min’ [-Wunused-variable]
+  double min = 1000000;
+         ^~~
+../src/KNNBeta.cpp: In member function ‘void KNNBeta::splitData(std::vector<Row>)’:
+../src/KNNBeta.cpp:103:28: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int i = trainSize; i < inData.size(); i++) {
+                          ~~^~~~~~~~~~~~~~~
+Finished building: ../src/KNNBeta.cpp
+ 
+Building target: lab1
+Invoking: Cross G++ Linker
+g++ -fopenmp -o "lab1"  ./src/CrossValidator.o ./src/FIleLoader.o ./src/KNNBeta.o ./src/Normalization.o ./src/Standarization.o ./src/lab1.o   
+Finished building target: lab1
+ 
+21:34:29 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNNBeta.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNNBeta.d" -MT"src/KNNBeta.o" -o "src/KNNBeta.o" "../src/KNNBeta.cpp"
+../src/KNNBeta.cpp: In member function ‘int KNNBeta::calcPrediction(Test, int)’:
+../src/KNNBeta.cpp:43:21: error: expected ‘#pragma omp’ clause before ‘{’ token
+ #pragma omp parallel{
+                     ^
+../src/KNNBeta.cpp:52:3: error: ‘neighbours’ was not declared in this scope
+   neighbours.push(trainSet[j]);
+   ^~~~~~~~~~
+../src/KNNBeta.cpp:41:9: warning: unused variable ‘min’ [-Wunused-variable]
+  double min = 1000000;
+         ^~~
+../src/KNNBeta.cpp:54:1: warning: no return statement in function returning non-void [-Wreturn-type]
+ }
+ ^
+../src/KNNBeta.cpp: At global scope:
+../src/KNNBeta.cpp:58:1: error: expected unqualified-id before ‘for’
+ for (int i = 0; i < K; i++) {
+ ^~~
+../src/KNNBeta.cpp:58:17: error: ‘i’ does not name a type
+ for (int i = 0; i < K; i++) {
+                 ^
+../src/KNNBeta.cpp:58:24: error: ‘i’ does not name a type
+ for (int i = 0; i < K; i++) {
+                        ^
+../src/KNNBeta.cpp:66:1: error: expected unqualified-id before ‘for’
+ for (int i = 0; i < CATEGORY_NUM; i++) {
+ ^~~
+../src/KNNBeta.cpp:66:17: error: ‘i’ does not name a type
+ for (int i = 0; i < CATEGORY_NUM; i++) {
+                 ^
+../src/KNNBeta.cpp:66:35: error: ‘i’ does not name a type
+ for (int i = 0; i < CATEGORY_NUM; i++) {
+                                   ^
+../src/KNNBeta.cpp:73:1: error: expected unqualified-id before ‘return’
+ return category;
+ ^~~~~~
+../src/KNNBeta.cpp:74:1: error: expected declaration before ‘}’ token
+ }
+ ^
+src/subdir.mk:33: recipe for target 'src/KNNBeta.o' failed
+make: *** [src/KNNBeta.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+21:34:34 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNNBeta.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNNBeta.d" -MT"src/KNNBeta.o" -o "src/KNNBeta.o" "../src/KNNBeta.cpp"
+../src/KNNBeta.cpp: In member function ‘int KNNBeta::calcPrediction(Test, int)’:
+../src/KNNBeta.cpp:60:21: error: ‘neighbours’ was not declared in this scope
+  int voteCategory = neighbours.top().category;
+                     ^~~~~~~~~~
+../src/KNNBeta.cpp:41:9: warning: unused variable ‘min’ [-Wunused-variable]
+  double min = 1000000;
+         ^~~
+../src/KNNBeta.cpp: In member function ‘void KNNBeta::splitData(std::vector<Row>)’:
+../src/KNNBeta.cpp:107:27: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+ for (int i = trainSize; i < inData.size(); i++) {
+                         ~~^~~~~~~~~~~~~~~
+make: *** [src/KNNBeta.o] Error 1
+src/subdir.mk:33: recipe for target 'src/KNNBeta.o' failed
+"make all" terminated with exit code 2. Build might be incomplete.
+21:36:27 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNNBeta.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNNBeta.d" -MT"src/KNNBeta.o" -o "src/KNNBeta.o" "../src/KNNBeta.cpp"
+../src/KNNBeta.cpp: In member function ‘int KNNBeta::calcPrediction(Test, int)’:
+../src/KNNBeta.cpp:44:21: error: expected ‘#pragma omp’ clause before ‘{’ token
+ #pragma omp parallel{
+                     ^
+../src/KNNBeta.cpp:53:3: error: ‘neighbours’ was not declared in this scope
+   neighbours.push(trainSet[j]);
+   ^~~~~~~~~~
+../src/KNNBeta.cpp:41:9: warning: unused variable ‘min’ [-Wunused-variable]
+  double min = 1000000;
+         ^~~
+../src/KNNBeta.cpp:55:1: warning: no return statement in function returning non-void [-Wreturn-type]
+ }
+ ^
+../src/KNNBeta.cpp: At global scope:
+../src/KNNBeta.cpp:60:2: error: expected unqualified-id before ‘for’
+  for (int i = 0; i < K; i++) {
+  ^~~
+../src/KNNBeta.cpp:60:18: error: ‘i’ does not name a type
+  for (int i = 0; i < K; i++) {
+                  ^
+../src/KNNBeta.cpp:60:25: error: ‘i’ does not name a type
+  for (int i = 0; i < K; i++) {
+                         ^
+../src/KNNBeta.cpp:68:2: error: expected unqualified-id before ‘for’
+  for (int i = 0; i < CATEGORY_NUM; i++) {
+  ^~~
+../src/KNNBeta.cpp:68:18: error: ‘i’ does not name a type
+  for (int i = 0; i < CATEGORY_NUM; i++) {
+                  ^
+../src/KNNBeta.cpp:68:36: error: ‘i’ does not name a type
+  for (int i = 0; i < CATEGORY_NUM; i++) {
+                                    ^
+../src/KNNBeta.cpp:75:2: error: expected unqualified-id before ‘return’
+  return category;
+  ^~~~~~
+../src/KNNBeta.cpp:76:1: error: expected declaration before ‘}’ token
+ }
+ ^
+make: *** [src/KNNBeta.o] Error 1
+src/subdir.mk:33: recipe for target 'src/KNNBeta.o' failed
+"make all" terminated with exit code 2. Build might be incomplete.
+21:36:38 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNNBeta.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNNBeta.d" -MT"src/KNNBeta.o" -o "src/KNNBeta.o" "../src/KNNBeta.cpp"
+../src/KNNBeta.cpp: In member function ‘int KNNBeta::calcPrediction(Test, int)’:
+../src/KNNBeta.cpp:41:9: warning: unused variable ‘min’ [-Wunused-variable]
+  double min = 1000000;
+         ^~~
+../src/KNNBeta.cpp: In member function ‘void KNNBeta::splitData(std::vector<Row>)’:
+../src/KNNBeta.cpp:109:28: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int i = trainSize; i < inData.size(); i++) {
+                          ~~^~~~~~~~~~~~~~~
+Finished building: ../src/KNNBeta.cpp
+ 
+Building target: lab1
+Invoking: Cross G++ Linker
+g++ -fopenmp -o "lab1"  ./src/CrossValidator.o ./src/FIleLoader.o ./src/KNNBeta.o ./src/Normalization.o ./src/Standarization.o ./src/lab1.o   
+Finished building target: lab1
+ 
+21:37:59 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNNBeta.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNNBeta.d" -MT"src/KNNBeta.o" -o "src/KNNBeta.o" "../src/KNNBeta.cpp"
+../src/KNNBeta.cpp: In member function ‘int KNNBeta::calcPrediction(Test, int)’:
+../src/KNNBeta.cpp:41:9: warning: unused variable ‘min’ [-Wunused-variable]
+  double min = 1000000;
+         ^~~
+../src/KNNBeta.cpp: In member function ‘void KNNBeta::splitData(std::vector<Row>)’:
+../src/KNNBeta.cpp:103:28: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int i = trainSize; i < inData.size(); i++) {
+                          ~~^~~~~~~~~~~~~~~
+Finished building: ../src/KNNBeta.cpp
+ 
+Building target: lab1
+Invoking: Cross G++ Linker
+g++ -fopenmp -o "lab1"  ./src/CrossValidator.o ./src/FIleLoader.o ./src/KNNBeta.o ./src/Normalization.o ./src/Standarization.o ./src/lab1.o   
+Finished building target: lab1
+ 
+21:38:11 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNNBeta.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNNBeta.d" -MT"src/KNNBeta.o" -o "src/KNNBeta.o" "../src/KNNBeta.cpp"
+../src/KNNBeta.cpp: In member function ‘int KNNBeta::calcPrediction(Test, int)’:
+../src/KNNBeta.cpp:41:9: warning: unused variable ‘min’ [-Wunused-variable]
+  double min = 1000000;
+         ^~~
+../src/KNNBeta.cpp: In member function ‘void KNNBeta::splitData(std::vector<Row>)’:
+../src/KNNBeta.cpp:102:28: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int i = trainSize; i < inData.size(); i++) {
+                          ~~^~~~~~~~~~~~~~~
+Finished building: ../src/KNNBeta.cpp
+ 
+Building target: lab1
+Invoking: Cross G++ Linker
+g++ -fopenmp -o "lab1"  ./src/CrossValidator.o ./src/FIleLoader.o ./src/KNNBeta.o ./src/Normalization.o ./src/Standarization.o ./src/lab1.o   
+Finished building target: lab1
+ 
+21:39:22 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNNBeta.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNNBeta.d" -MT"src/KNNBeta.o" -o "src/KNNBeta.o" "../src/KNNBeta.cpp"
+../src/KNNBeta.cpp: In member function ‘int KNNBeta::calcPrediction(Test, int)’:
+../src/KNNBeta.cpp:41:9: warning: unused variable ‘min’ [-Wunused-variable]
+  double min = 1000000;
+         ^~~
+../src/KNNBeta.cpp: In member function ‘void KNNBeta::splitData(std::vector<Row>)’:
+../src/KNNBeta.cpp:101:28: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int i = trainSize; i < inData.size(); i++) {
+                          ~~^~~~~~~~~~~~~~~
+Finished building: ../src/KNNBeta.cpp
+ 
+Building target: lab1
+Invoking: Cross G++ Linker
+g++ -fopenmp -o "lab1"  ./src/CrossValidator.o ./src/FIleLoader.o ./src/KNNBeta.o ./src/Normalization.o ./src/Standarization.o ./src/lab1.o   
+Finished building target: lab1
+ 
+21:39:25 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+make: Nothing to be done for 'all'.
+21:42:53 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNNBeta.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNNBeta.d" -MT"src/KNNBeta.o" -o "src/KNNBeta.o" "../src/KNNBeta.cpp"
+../src/KNNBeta.cpp: In member function ‘int KNNBeta::calcPrediction(Test, int)’:
+../src/KNNBeta.cpp:42:9: warning: unused variable ‘min’ [-Wunused-variable]
+  double min = 1000000;
+         ^~~
+../src/KNNBeta.cpp: In member function ‘void KNNBeta::splitData(std::vector<Row>)’:
+../src/KNNBeta.cpp:102:28: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int i = trainSize; i < inData.size(); i++) {
+                          ~~^~~~~~~~~~~~~~~
+Finished building: ../src/KNNBeta.cpp
+ 
+Building file: ../src/lab1.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/lab1.d" -MT"src/lab1.o" -o "src/lab1.o" "../src/lab1.cpp"
+Finished building: ../src/lab1.cpp
+ 
+Building target: lab1
+Invoking: Cross G++ Linker
+g++ -fopenmp -o "lab1"  ./src/CrossValidator.o ./src/FIleLoader.o ./src/KNNBeta.o ./src/Normalization.o ./src/Standarization.o ./src/lab1.o   
+Finished building target: lab1
+ 
+21:43:39 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNNBeta.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNNBeta.d" -MT"src/KNNBeta.o" -o "src/KNNBeta.o" "../src/KNNBeta.cpp"
+../src/KNNBeta.cpp: In member function ‘void KNNBeta::splitData(std::vector<Row>)’:
+../src/KNNBeta.cpp:101:28: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int i = trainSize; i < inData.size(); i++) {
+                          ~~^~~~~~~~~~~~~~~
+Finished building: ../src/KNNBeta.cpp
+ 
+Building target: lab1
+Invoking: Cross G++ Linker
+g++ -fopenmp -o "lab1"  ./src/CrossValidator.o ./src/FIleLoader.o ./src/KNNBeta.o ./src/Normalization.o ./src/Standarization.o ./src/lab1.o   
+Finished building target: lab1
+ 

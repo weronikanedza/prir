@@ -1,12 +1,13 @@
 #include <string>
+#include "Row.hpp"
 
 using namespace std;
 
 class Test{
 public:
-	double features[6];
-	string category;
-	string prediction;
+	double features[NUM_OF_FEATURES];
+	int category;
+	int prediction;
 	double distance;
 };
 

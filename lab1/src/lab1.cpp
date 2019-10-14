@@ -1,7 +1,6 @@
 #include "FileLoader.hpp"
 #include "Normalization.hpp"
 #include "Standarization.hpp"
-#include "KNN.hpp"
 #include "omp.h"
 #include <math.h>
 #include <omp.h>
@@ -37,9 +36,7 @@ int main() {
 //					+ standarization.getDeviationTime()
 //					+ standarization.getStandarizationTIme() << endl << endl;
 //
-//	cout << "********KNN*******" << endl;
-//	cout << knn.getKnnTime() << endl;
-//	cout << "Accuracy : " << knn.getAccuracy();
+
 	return 0;
 }
 
