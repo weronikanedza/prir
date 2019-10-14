@@ -2323,3 +2323,6 @@ Finished building target: lab1
 22:47:26 **** Incremental Build of configuration Debug for project lab1 ****
 make all 
 make: Nothing to be done for 'all'.
+22:53:14 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+make: Nothing to be done for 'all'.
