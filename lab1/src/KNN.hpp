@@ -23,4 +23,6 @@ public:
 			priority_queue<Row, vector<Row>, CompareRows> neighbours, int K);
 	double getAccuracy();
 	double getKnnTime();
+	vector<Row> getTrainSet();
+	vector<Row> getTestSet();
 };

@@ -1,5 +1,6 @@
 src/lab1.o: ../src/lab1.cpp ../src/FileLoader.hpp ../src/Row.hpp \
- ../src/Normalization.hpp ../src/Standarization.hpp ../src/KNN.hpp
+ ../src/Normalization.hpp ../src/Standarization.hpp ../src/KNN.hpp \
+ ../src/KNNBeta.hpp ../src/Test.hpp
 
 ../src/FileLoader.hpp:
 
@@ -10,3 +11,7 @@ src/lab1.o: ../src/lab1.cpp ../src/FileLoader.hpp ../src/Row.hpp \
 ../src/Standarization.hpp:
 
 ../src/KNN.hpp:
+
+../src/KNNBeta.hpp:
+
+../src/Test.hpp:

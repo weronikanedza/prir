@@ -138,3 +138,11 @@ double KNN::calculateEuclideanDist(Row testingRow, Row trainingRow) {
 double KNN::getKnnTime() {
 	return knnTime;
 }
+
+vector<Row> KNN::getTestSet(){
+	return testingSet;
+}
+
+vector<Row> KNN::getTrainSet(){
+	return trainingSet;
+}

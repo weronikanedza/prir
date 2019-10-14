@@ -4,22 +4,28 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 CPP_SRCS += \
+../src/CrossValidator.cpp \
 ../src/FIleLoader.cpp \
 ../src/KNN.cpp \
+../src/KNNBeta.cpp \
 ../src/Normalization.cpp \
 ../src/Standarization.cpp \
 ../src/lab1.cpp 
 
 OBJS += \
+./src/CrossValidator.o \
 ./src/FIleLoader.o \
 ./src/KNN.o \
+./src/KNNBeta.o \
 ./src/Normalization.o \
 ./src/Standarization.o \
 ./src/lab1.o 
 
 CPP_DEPS += \
+./src/CrossValidator.d \
 ./src/FIleLoader.d \
 ./src/KNN.d \
+./src/KNNBeta.d \
 ./src/Normalization.d \
 ./src/Standarization.d \
 ./src/lab1.d 
