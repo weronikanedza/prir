@@ -1,38 +1,32 @@
 #include "FileLoader.hpp"
-#include "Normalization.hpp"
-#include "Standarization.hpp"
-#include "omp.h"
-#include <math.h>
-#include <omp.h>
-#include <iostream>
-
 #include "KNN.hpp"
+#include <math.h>
+#include <iostream>
+#include "Normalization.hpp"
+
 
 using namespace std;
 
-int main() {
+int main(int argc , char * argv []) {
 	vector<Row> rows = FileLoader().readFile();
-	Normalization normalization = Normalization(rows);
-	Standarization standarization = Standarization(rows);
 	KNN knn = KNN();
+	Normalization normalize = Normalization(rows);
 
-	//set threads num
-	omp_set_num_threads(2);
+	cout<< "rows size" << rows.size()<<endl;
 
-	normalization.normalize();
-	standarization.standarize();
-	knn.knn(rows);
+	int myid, numprocs, islave;
 
-	cout << "-------NORMALIZATION----------" << endl;
-	cout << "SUM : "
-			<< normalization.getMinMaxTime()
-					+ normalization.getNormalizationTime() << endl << endl;
+	MPI_Status status;
 
-	cout << "========STANDARIZATION============" << endl;
-	cout << "SUM : "
-			<< standarization.getAverageCalcTime()
-					+ standarization.getDeviationTime()
-					+ standarization.getStandarizationTIme() << endl << endl;
+	//knn.knn(rows, argc, argv);
+	//normalize.normalize(argc, argv, numprocs, myid);
+
+	knn.knn(rows,argc, argv);
+
+	MPI_Finalize();
+
+//	cout << "Normalization time "<<endl;
+//	cout << normalize.getMinMaxTime() + normalize.getNormalizationTime()<<endl;
 
 	cout<<"********KNN**************"<<endl;
 	cout << "ACC : " << knn.accuracy<< endl;

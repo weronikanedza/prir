@@ -2,7 +2,11 @@
 
 #include <string>
 #include <vector>
+#include "mpi.h"
+
 #define NUM_OF_FEATURES 6
+# define MTAG1 1
+# define MTAG2 2
 
 using namespace std;
 

@@ -2326,3 +2326,388 @@ make: Nothing to be done for 'all'.
 22:53:14 **** Incremental Build of configuration Debug for project lab1 ****
 make all 
 make: Nothing to be done for 'all'.
+13:07:10 **** Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/Standarization.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/Standarization.d" -MT"src/Standarization.o" -o "src/Standarization.o" "../src/Standarization.cpp"
+../src/Standarization.cpp:80:48: error: no ‘std::vector<Row> Standarization::getStandarizedData()’ member function declared in class ‘Standarization’
+ vector<Row> Standarization::getStandarizedData(){
+                                                ^
+src/subdir.mk:30: recipe for target 'src/Standarization.o' failed
+make: *** [src/Standarization.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+13:07:28 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/Standarization.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/Standarization.d" -MT"src/Standarization.o" -o "src/Standarization.o" "../src/Standarization.cpp"
+Finished building: ../src/Standarization.cpp
+ 
+Building file: ../src/lab1.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/lab1.d" -MT"src/lab1.o" -o "src/lab1.o" "../src/lab1.cpp"
+Finished building: ../src/lab1.cpp
+ 
+Building target: lab1
+Invoking: Cross G++ Linker
+g++ -fopenmp -o "lab1"  ./src/FIleLoader.o ./src/KNN.o ./src/Normalization.o ./src/Standarization.o ./src/lab1.o   
+Finished building target: lab1
+ 
+13:08:28 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/Normalization.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/Normalization.d" -MT"src/Normalization.o" -o "src/Normalization.o" "../src/Normalization.cpp"
+../src/Normalization.cpp:60:46: error: no ‘std::vector<Row> Normalization::getNormalizedData()’ member function declared in class ‘Normalization’
+ vector<Row> Normalization::getNormalizedData(){
+                                              ^
+../src/Normalization.cpp:63:1: error: expected declaration before ‘}’ token
+ }
+ ^
+src/subdir.mk:30: recipe for target 'src/Normalization.o' failed
+make: *** [src/Normalization.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+13:08:34 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/Normalization.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/Normalization.d" -MT"src/Normalization.o" -o "src/Normalization.o" "../src/Normalization.cpp"
+../src/Normalization.cpp:63:1: error: expected declaration before ‘}’ token
+ }
+ ^
+make: *** [src/Normalization.o] Error 1
+src/subdir.mk:30: recipe for target 'src/Normalization.o' failed
+"make all" terminated with exit code 2. Build might be incomplete.
+13:09:39 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/Normalization.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/Normalization.d" -MT"src/Normalization.o" -o "src/Normalization.o" "../src/Normalization.cpp"
+../src/Normalization.cpp:63:1: error: expected declaration before ‘}’ token
+ }
+ ^
+make: *** [src/Normalization.o] Error 1
+src/subdir.mk:30: recipe for target 'src/Normalization.o' failed
+"make all" terminated with exit code 2. Build might be incomplete.
+13:09:51 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/Normalization.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/Normalization.d" -MT"src/Normalization.o" -o "src/Normalization.o" "../src/Normalization.cpp"
+Finished building: ../src/Normalization.cpp
+ 
+Building file: ../src/lab1.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/lab1.d" -MT"src/lab1.o" -o "src/lab1.o" "../src/lab1.cpp"
+Finished building: ../src/lab1.cpp
+ 
+Building target: lab1
+Invoking: Cross G++ Linker
+g++ -fopenmp -o "lab1"  ./src/FIleLoader.o ./src/KNN.o ./src/Normalization.o ./src/Standarization.o ./src/lab1.o   
+Finished building target: lab1
+ 
+13:10:09 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNN.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNN.d" -MT"src/KNN.o" -o "src/KNN.o" "../src/KNN.cpp"
+../src/KNN.cpp: In member function ‘void KNN::splitData(std::vector<Row>)’:
+../src/KNN.cpp:99:28: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int i = trainSize; i < inData.size(); i++) {
+                          ~~^~~~~~~~~~~~~~~
+Finished building: ../src/KNN.cpp
+ 
+Building file: ../src/lab1.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/lab1.d" -MT"src/lab1.o" -o "src/lab1.o" "../src/lab1.cpp"
+Finished building: ../src/lab1.cpp
+ 
+Building target: lab1
+Invoking: Cross G++ Linker
+g++ -fopenmp -o "lab1"  ./src/FIleLoader.o ./src/KNN.o ./src/Normalization.o ./src/Standarization.o ./src/lab1.o   
+Finished building target: lab1
+ 
+13:10:12 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+make: Nothing to be done for 'all'.
+13:10:34 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+make: Nothing to be done for 'all'.
+13:11:56 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNN.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNN.d" -MT"src/KNN.o" -o "src/KNN.o" "../src/KNN.cpp"
+../src/KNN.cpp: In member function ‘void KNN::splitData(std::vector<Row>)’:
+../src/KNN.cpp:99:28: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int i = trainSize; i < inData.size(); i++) {
+                          ~~^~~~~~~~~~~~~~~
+Finished building: ../src/KNN.cpp
+ 
+Building target: lab1
+Invoking: Cross G++ Linker
+g++ -fopenmp -o "lab1"  ./src/FIleLoader.o ./src/KNN.o ./src/Normalization.o ./src/Standarization.o ./src/lab1.o   
+Finished building target: lab1
+ 
+13:11:59 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+make: Nothing to be done for 'all'.
+13:13:50 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNN.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNN.d" -MT"src/KNN.o" -o "src/KNN.o" "../src/KNN.cpp"
+../src/KNN.cpp: In member function ‘void KNN::splitData(std::vector<Row>)’:
+../src/KNN.cpp:99:28: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int i = trainSize; i < inData.size(); i++) {
+                          ~~^~~~~~~~~~~~~~~
+Finished building: ../src/KNN.cpp
+ 
+Building target: lab1
+Invoking: Cross G++ Linker
+g++ -fopenmp -o "lab1"  ./src/FIleLoader.o ./src/KNN.o ./src/Normalization.o ./src/Standarization.o ./src/lab1.o   
+Finished building target: lab1
+ 
+13:13:53 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+make: Nothing to be done for 'all'.
+13:15:20 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNN.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNN.d" -MT"src/KNN.o" -o "src/KNN.o" "../src/KNN.cpp"
+../src/KNN.cpp: In member function ‘void KNN::splitData(std::vector<Row>)’:
+../src/KNN.cpp:99:28: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int i = trainSize; i < inData.size(); i++) {
+                          ~~^~~~~~~~~~~~~~~
+Finished building: ../src/KNN.cpp
+ 
+Building target: lab1
+Invoking: Cross G++ Linker
+g++ -fopenmp -o "lab1"  ./src/FIleLoader.o ./src/KNN.o ./src/Normalization.o ./src/Standarization.o ./src/lab1.o   
+Finished building target: lab1
+ 
+13:16:35 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNN.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNN.d" -MT"src/KNN.o" -o "src/KNN.o" "../src/KNN.cpp"
+../src/KNN.cpp: In member function ‘void KNN::splitData(std::vector<Row>)’:
+../src/KNN.cpp:99:28: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int i = trainSize; i < inData.size(); i++) {
+                          ~~^~~~~~~~~~~~~~~
+Finished building: ../src/KNN.cpp
+ 
+Building target: lab1
+Invoking: Cross G++ Linker
+g++ -fopenmp -o "lab1"  ./src/FIleLoader.o ./src/KNN.o ./src/Normalization.o ./src/Standarization.o ./src/lab1.o   
+Finished building target: lab1
+ 
+13:17:51 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNN.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNN.d" -MT"src/KNN.o" -o "src/KNN.o" "../src/KNN.cpp"
+../src/KNN.cpp: In member function ‘void KNN::splitData(std::vector<Row>)’:
+../src/KNN.cpp:99:28: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int i = trainSize; i < inData.size(); i++) {
+                          ~~^~~~~~~~~~~~~~~
+Finished building: ../src/KNN.cpp
+ 
+Building target: lab1
+Invoking: Cross G++ Linker
+g++ -fopenmp -o "lab1"  ./src/FIleLoader.o ./src/KNN.o ./src/Normalization.o ./src/Standarization.o ./src/lab1.o   
+Finished building target: lab1
+ 
+13:20:22 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/lab1.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/lab1.d" -MT"src/lab1.o" -o "src/lab1.o" "../src/lab1.cpp"
+Finished building: ../src/lab1.cpp
+ 
+Building target: lab1
+Invoking: Cross G++ Linker
+g++ -fopenmp -o "lab1"  ./src/FIleLoader.o ./src/KNN.o ./src/Normalization.o ./src/Standarization.o ./src/lab1.o   
+Finished building target: lab1
+ 
+13:21:18 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+make: Nothing to be done for 'all'.
+13:27:22 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+make: Nothing to be done for 'all'.
+13:27:46 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+make: Nothing to be done for 'all'.
+13:29:47 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/lab1.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/lab1.d" -MT"src/lab1.o" -o "src/lab1.o" "../src/lab1.cpp"
+Finished building: ../src/lab1.cpp
+ 
+Building target: lab1
+Invoking: Cross G++ Linker
+g++ -fopenmp -o "lab1"  ./src/FIleLoader.o ./src/KNN.o ./src/Normalization.o ./src/Standarization.o ./src/lab1.o   
+Finished building target: lab1
+ 
+13:29:59 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+make: Nothing to be done for 'all'.
+13:30:16 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+make: Nothing to be done for 'all'.
+13:30:43 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+make: Nothing to be done for 'all'.
+13:32:11 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/Standarization.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/Standarization.d" -MT"src/Standarization.o" -o "src/Standarization.o" "../src/Standarization.cpp"
+Finished building: ../src/Standarization.cpp
+ 
+Building target: lab1
+Invoking: Cross G++ Linker
+g++ -fopenmp -o "lab1"  ./src/FIleLoader.o ./src/KNN.o ./src/Normalization.o ./src/Standarization.o ./src/lab1.o   
+Finished building target: lab1
+ 
+13:34:26 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/lab1.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/lab1.d" -MT"src/lab1.o" -o "src/lab1.o" "../src/lab1.cpp"
+Finished building: ../src/lab1.cpp
+ 
+Building target: lab1
+Invoking: Cross G++ Linker
+g++ -fopenmp -o "lab1"  ./src/FIleLoader.o ./src/KNN.o ./src/Normalization.o ./src/Standarization.o ./src/lab1.o   
+Finished building target: lab1
+ 
+13:34:43 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+make: Nothing to be done for 'all'.
+13:38:31 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNN.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNN.d" -MT"src/KNN.o" -o "src/KNN.o" "../src/KNN.cpp"
+../src/KNN.cpp: In member function ‘void KNN::splitData(std::vector<Row>)’:
+../src/KNN.cpp:99:28: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int i = trainSize; i < inData.size(); i++) {
+                          ~~^~~~~~~~~~~~~~~
+Finished building: ../src/KNN.cpp
+ 
+Building target: lab1
+Invoking: Cross G++ Linker
+g++ -fopenmp -o "lab1"  ./src/FIleLoader.o ./src/KNN.o ./src/Normalization.o ./src/Standarization.o ./src/lab1.o   
+Finished building target: lab1
+ 
+13:40:14 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/lab1.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/lab1.d" -MT"src/lab1.o" -o "src/lab1.o" "../src/lab1.cpp"
+Finished building: ../src/lab1.cpp
+ 
+Building target: lab1
+Invoking: Cross G++ Linker
+g++ -fopenmp -o "lab1"  ./src/FIleLoader.o ./src/KNN.o ./src/Normalization.o ./src/Standarization.o ./src/lab1.o   
+Finished building target: lab1
+ 
+13:42:01 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNN.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNN.d" -MT"src/KNN.o" -o "src/KNN.o" "../src/KNN.cpp"
+../src/KNN.cpp: In member function ‘void KNN::splitData(std::vector<Row>)’:
+../src/KNN.cpp:99:28: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int i = trainSize; i < inData.size(); i++) {
+                          ~~^~~~~~~~~~~~~~~
+Finished building: ../src/KNN.cpp
+ 
+Building target: lab1
+Invoking: Cross G++ Linker
+g++ -fopenmp -o "lab1"  ./src/FIleLoader.o ./src/KNN.o ./src/Normalization.o ./src/Standarization.o ./src/lab1.o   
+Finished building target: lab1
+ 
+13:43:29 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNN.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNN.d" -MT"src/KNN.o" -o "src/KNN.o" "../src/KNN.cpp"
+../src/KNN.cpp: In member function ‘void KNN::splitData(std::vector<Row>)’:
+../src/KNN.cpp:99:28: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int i = trainSize; i < inData.size(); i++) {
+                          ~~^~~~~~~~~~~~~~~
+Finished building: ../src/KNN.cpp
+ 
+Building target: lab1
+Invoking: Cross G++ Linker
+g++ -fopenmp -o "lab1"  ./src/FIleLoader.o ./src/KNN.o ./src/Normalization.o ./src/Standarization.o ./src/lab1.o   
+Finished building target: lab1
+ 
+15:40:23 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNN.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNN.d" -MT"src/KNN.o" -o "src/KNN.o" "../src/KNN.cpp"
+../src/KNN.cpp: In member function ‘void KNN::splitData(std::vector<Row>)’:
+../src/KNN.cpp:95:28: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int i = trainSize; i < inData.size(); i++) {
+                          ~~^~~~~~~~~~~~~~~
+Finished building: ../src/KNN.cpp
+ 
+Building file: ../src/lab1.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/lab1.d" -MT"src/lab1.o" -o "src/lab1.o" "../src/lab1.cpp"
+Finished building: ../src/lab1.cpp
+ 
+Building target: lab1
+Invoking: Cross G++ Linker
+g++ -fopenmp -o "lab1"  ./src/FIleLoader.o ./src/KNN.o ./src/Normalization.o ./src/Standarization.o ./src/lab1.o   
+Finished building target: lab1
+ 
+17:30:10 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/KNN.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/KNN.d" -MT"src/KNN.o" -o "src/KNN.o" "../src/KNN.cpp"
+In file included from ../src/KNN.cpp:1:0:
+../src/KNN.hpp:3:10: fatal error: mpi.h: No such file or directory
+ #include <mpi.h>
+          ^~~~~~~
+compilation terminated.
+src/subdir.mk:30: recipe for target 'src/KNN.o' failed
+make: *** [src/KNN.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+17:49:01 **** Incremental Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/FIleLoader.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/FIleLoader.d" -MT"src/FIleLoader.o" -o "src/FIleLoader.o" "../src/FIleLoader.cpp"
+In file included from ../src/FileLoader.hpp:2:0,
+                 from ../src/FIleLoader.cpp:1:
+../src/Row.hpp:5:10: fatal error: mpi.h: No such file or directory
+ #include "mpi.h"
+          ^~~~~~~
+compilation terminated.
+src/subdir.mk:30: recipe for target 'src/FIleLoader.o' failed
+make: *** [src/FIleLoader.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+13:48:09 **** Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/FIleLoader.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/FIleLoader.d" -MT"src/FIleLoader.o" -o "src/FIleLoader.o" "../src/FIleLoader.cpp"
+In file included from ../src/FileLoader.hpp:2:0,
+                 from ../src/FIleLoader.cpp:1:
+../src/Row.hpp:5:10: fatal error: mpi.h: No such file or directory
+ #include "mpi.h"
+src/subdir.mk:30: recipe for target 'src/FIleLoader.o' failed
+          ^~~~~~~
+compilation terminated.
+make: *** [src/FIleLoader.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.

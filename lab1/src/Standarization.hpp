@@ -22,4 +22,5 @@ public:
 	double getDeviationTime();
 	double getAverageCalcTime();
 	double getStandarizationTIme();
+	vector<Row> getStandarizedData();
 };

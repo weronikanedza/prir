@@ -15,7 +15,8 @@ public:
 	Normalization(vector<Row> inData) :
 			inData(inData),inDataSize(inData.size()) {};
 	double getNormalizationTime();
-	void normalize();
-	void findMinMax();
+	void normalize(int argc, char *argv[],int numprocs ,int myid);
+	void findMinMax(int argc, char *argv[]);
 	double getMinMaxTime();
+	vector<Row> getNormalizedData();
 };

@@ -19,6 +19,7 @@ void Standarization::standarize() {
 
 	double end = omp_get_wtime();
 	standarizationTime = end-begin;
+	standarizedData = inData;
 }
 
 void Standarization::calcAverage() {
@@ -75,4 +76,8 @@ double Standarization::getAverageCalcTime(){
 }
 double Standarization::getStandarizationTIme(){
 	return standarizationTime;
+}
+
+vector<Row> Standarization::getStandarizedData(){
+	return standarizedData;
 }

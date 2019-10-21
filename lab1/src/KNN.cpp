@@ -1,7 +1,6 @@
 #include "KNN.hpp"
 #include "math.h"
 #include <iostream>
-#include "omp.h"
 #include<algorithm>
 #include<random>
 #include<queue>
@@ -9,39 +8,72 @@
 #define CATEGORY_NUM 18
 
 using namespace std;
-void KNN::knn(vector<Row> rows) {
+void KNN::knn(vector<Row> rows, int argc, char *argv[]) {
 	int correct = 0;
 	int i;
-	int K = 3;
+	int K = 7;
 
 	splitData(rows);
+	int  myCorrect = 0;
 
-	double begin = omp_get_wtime();
+	int islave;
+	double begin = MPI_Wtime();
+	int numprocs, myid;
+	MPI_Status status;
 
-	#pragma omp parallel for default(none) shared(testSize,testSet,K) private(i)
-	for (i = 0; i < testSize; i++) {
+	MPI_Init(&argc, &argv);
+	MPI_Comm_size(MPI_COMM_WORLD, &numprocs);
+	MPI_Comm_rank(MPI_COMM_WORLD, &myid);
+
+
+	if (myid == 0) {
+		for (islave = 1; islave < numprocs; islave++) {
+			MPI_Send(&testSize, 1, MPI_INTEGER, islave, MTAG1, MPI_COMM_WORLD);
+		}
+	} else {
+		MPI_Recv(&testSize, 1, MPI_INTEGER, 0, MTAG1, MPI_COMM_WORLD, &status);
+	}
+
+
+	for (i = myid; i <= testSize; i += numprocs) {
+
 		int prediction = calcPrediction(testSet[i], K);
 		testSet[i].prediction = prediction;
 	}
 
+	MPI_Barrier (MPI_COMM_WORLD);
+	cout << "Za barierą";
+	for (i = myid; i <= testSize; i += numprocs) {
 
-	#pragma omp parallel for default(none) shared(testSet,testSize) private(i) reduction(+:correct)
-	for (i = 0; i < testSize; i++) {
 		if (testSet[i].prediction == testSet[i].category) {
-			correct += 1;
+			myCorrect += 1;
 		}
+
 	}
+	if (myid != 0) {
+		MPI_Send(&myCorrect, 1, MPI_INTEGER, 0, MTAG2, MPI_COMM_WORLD);
+	} else {
+		correct += myCorrect;
+		for (islave = 1; islave < numprocs; islave++) {
+			MPI_Recv(&myCorrect, 1, MPI_INTEGER, islave,
+			MTAG2, MPI_COMM_WORLD, &status);
+			cout << correct << " " << myCorrect << endl;
+			correct += myCorrect;
+		}
 
-	double end = omp_get_wtime();
+	}
+	double end = MPI_Wtime();
 
-	knnTime = end-begin;
-	accuracy =  correct / (double) testSize * 100.0 ;
+	knnTime = end - begin;
+	accuracy = correct / (double) testSize * 100.0;
+
 }
 
 int KNN::calcPrediction(KNNRow testVal, int K) {
 	int j;
 	int votes[CATEGORY_NUM] = { };
 	priority_queue<KNNRow, vector<KNNRow>, CompareKNNRow> neighbours;
+
 
 	for (j = 0; j < trainSize; j++) {
 		double dist = calcDist(testVal, trainSet[j]);
@@ -81,11 +113,12 @@ double KNN::calcDist(KNNRow test, KNNRow train) {
 
 void KNN::splitData(vector<Row> inData) {
 
+	cout<< "JEST SPLIT" << endl ;
+
 	auto randomEngine = default_random_engine { };
 	shuffle(begin(inData), end(inData), randomEngine);
 	trainSize = 0.7 * inData.size();
 	testSize = inData.size() - trainSize;
-
 	for (int i = 0; i < trainSize; i++) {
 		KNNRow r = KNNRow();
 		r.category = inData[i].category;
@@ -106,3 +139,41 @@ void KNN::splitData(vector<Row> inData) {
 	}
 
 }
+
+/*
+
+class K {
+
+	List<A> list ;
+
+	list.add(new A())
+	list.add(new B())
+
+	for(A a: list)
+		execute(A);
+	execute(A a)
+	{
+		print "A" + a.getDescr();
+	}
+	execute(B b)
+	{
+		print "B" + a.getDescr();
+	}
+
+	static class A
+		getDescr()
+		{
+			print "A"
+		}
+	static class B extends A
+			getDescr()
+			{
+				print "B"
+			}
+};
+
+
+
+*/
+
+
