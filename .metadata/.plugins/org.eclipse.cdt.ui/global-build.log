@@ -2711,3 +2711,17 @@ src/subdir.mk:30: recipe for target 'src/FIleLoader.o' failed
 compilation terminated.
 make: *** [src/FIleLoader.o] Error 1
 "make all" terminated with exit code 2. Build might be incomplete.
+20:23:00 **** Build of configuration Debug for project lab1 ****
+make all 
+Building file: ../src/FIleLoader.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/FIleLoader.d" -MT"src/FIleLoader.o" -o "src/FIleLoader.o" "../src/FIleLoader.cpp"
+In file included from ../src/FileLoader.hpp:2:0,
+                 from ../src/FIleLoader.cpp:1:
+../src/Row.hpp:5:10: fatal error: mpi.h: No such file or directory
+src/subdir.mk:30: recipe for target 'src/FIleLoader.o' failed
+ #include "mpi.h"
+          ^~~~~~~
+compilation terminated.
+make: *** [src/FIleLoader.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.

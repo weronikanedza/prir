@@ -10,22 +10,19 @@
 using namespace std;
 void KNN::knn(vector<Row> rows, int argc, char *argv[]) {
 	int correct = 0;
-	int i;
+	int i, islave;
 	int K = 7;
+	int myCorrect = 0;
 
-	splitData(rows);
-	int  myCorrect = 0;
-
-	int islave;
 	double begin = MPI_Wtime();
 	int numprocs, myid;
 	MPI_Status status;
-
-	MPI_Init(&argc, &argv);
 	MPI_Comm_size(MPI_COMM_WORLD, &numprocs);
 	MPI_Comm_rank(MPI_COMM_WORLD, &myid);
 
+	splitData(rows);
 
+	//send information about data size
 	if (myid == 0) {
 		for (islave = 1; islave < numprocs; islave++) {
 			MPI_Send(&testSize, 1, MPI_INTEGER, islave, MTAG1, MPI_COMM_WORLD);
@@ -34,22 +31,24 @@ void KNN::knn(vector<Row> rows, int argc, char *argv[]) {
 		MPI_Recv(&testSize, 1, MPI_INTEGER, 0, MTAG1, MPI_COMM_WORLD, &status);
 	}
 
-
+	//each processor counts prediction for given rows
 	for (i = myid; i <= testSize; i += numprocs) {
 
 		int prediction = calcPrediction(testSet[i], K);
 		testSet[i].prediction = prediction;
 	}
 
+	//wait for all processes
 	MPI_Barrier (MPI_COMM_WORLD);
-	cout << "Za barierą";
-	for (i = myid; i <= testSize; i += numprocs) {
 
+	//calc prediction
+	for (i = myid; i <= testSize; i += numprocs) {
 		if (testSet[i].prediction == testSet[i].category) {
 			myCorrect += 1;
 		}
-
 	}
+
+	//sum up all processes correct value
 	if (myid != 0) {
 		MPI_Send(&myCorrect, 1, MPI_INTEGER, 0, MTAG2, MPI_COMM_WORLD);
 	} else {
@@ -60,8 +59,8 @@ void KNN::knn(vector<Row> rows, int argc, char *argv[]) {
 			cout << correct << " " << myCorrect << endl;
 			correct += myCorrect;
 		}
-
 	}
+
 	double end = MPI_Wtime();
 
 	knnTime = end - begin;
@@ -73,7 +72,6 @@ int KNN::calcPrediction(KNNRow testVal, int K) {
 	int j;
 	int votes[CATEGORY_NUM] = { };
 	priority_queue<KNNRow, vector<KNNRow>, CompareKNNRow> neighbours;
-
 
 	for (j = 0; j < trainSize; j++) {
 		double dist = calcDist(testVal, trainSet[j]);
@@ -113,7 +111,7 @@ double KNN::calcDist(KNNRow test, KNNRow train) {
 
 void KNN::splitData(vector<Row> inData) {
 
-	cout<< "JEST SPLIT" << endl ;
+	cout << "JEST SPLIT" << endl;
 
 	auto randomEngine = default_random_engine { };
 	shuffle(begin(inData), end(inData), randomEngine);
@@ -142,38 +140,37 @@ void KNN::splitData(vector<Row> inData) {
 
 /*
 
-class K {
+ class K {
 
-	List<A> list ;
+ List<A> list ;
 
-	list.add(new A())
-	list.add(new B())
+ list.add(new A())
+ list.add(new B())
 
-	for(A a: list)
-		execute(A);
-	execute(A a)
-	{
-		print "A" + a.getDescr();
-	}
-	execute(B b)
-	{
-		print "B" + a.getDescr();
-	}
+ for(A a: list)
+ execute(A);
+ execute(A a)
+ {
+ print "A" + a.getDescr();
+ }
+ execute(B b)
+ {
+ print "B" + a.getDescr();
+ }
 
-	static class A
-		getDescr()
-		{
-			print "A"
-		}
-	static class B extends A
-			getDescr()
-			{
-				print "B"
-			}
-};
+ static class A
+ getDescr()
+ {
+ print "A"
+ }
+ static class B extends A
+ getDescr()
+ {
+ print "B"
+ }
+ };
 
 
 
-*/
-
+ */
 

@@ -12,25 +12,22 @@ int main(int argc , char * argv []) {
 	KNN knn = KNN();
 	Normalization normalize = Normalization(rows);
 
-	cout<< "rows size" << rows.size()<<endl;
-
-	int myid, numprocs, islave;
-
 	MPI_Status status;
+	MPI_Init(&argc,&argv);
 
 	//knn.knn(rows, argc, argv);
-	//normalize.normalize(argc, argv, numprocs, myid);
+	normalize.normalize(argc, argv);
 
-	knn.knn(rows,argc, argv);
+//	knn.knn(rows,argc, argv);
 
 	MPI_Finalize();
 
-//	cout << "Normalization time "<<endl;
-//	cout << normalize.getMinMaxTime() + normalize.getNormalizationTime()<<endl;
+	cout << "Normalization time "<<endl;
+	cout << normalize.getMinMaxTime() + normalize.getNormalizationTime()<<endl;
 
-	cout<<"********KNN**************"<<endl;
-	cout << "ACC : " << knn.accuracy<< endl;
-	cout << "TIME : " << knn.knnTime << endl<<endl;
+//	cout<<"********KNN**************"<<endl;
+//	cout << "ACC : " << knn.accuracy<< endl;
+//	cout << "TIME : " << knn.knnTime << endl<<endl;
 
 	return 0;
 }
