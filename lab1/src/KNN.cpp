@@ -11,7 +11,7 @@ using namespace std;
 void KNN::knn(vector<Row> rows, int argc, char *argv[]) {
 	int correct = 0;
 	int i, islave;
-	int K = 7;
+	int K = 5;
 	int myCorrect = 0;
 
 	double begin = MPI_Wtime();
@@ -20,7 +20,10 @@ void KNN::knn(vector<Row> rows, int argc, char *argv[]) {
 	MPI_Comm_size(MPI_COMM_WORLD, &numprocs);
 	MPI_Comm_rank(MPI_COMM_WORLD, &myid);
 
+	cout<<"KNNN"<<endl;
+
 	splitData(rows);
+
 
 	//send information about data size
 	if (myid == 0) {
@@ -56,7 +59,6 @@ void KNN::knn(vector<Row> rows, int argc, char *argv[]) {
 		for (islave = 1; islave < numprocs; islave++) {
 			MPI_Recv(&myCorrect, 1, MPI_INTEGER, islave,
 			MTAG2, MPI_COMM_WORLD, &status);
-			cout << correct << " " << myCorrect << endl;
 			correct += myCorrect;
 		}
 	}
@@ -111,8 +113,6 @@ double KNN::calcDist(KNNRow test, KNNRow train) {
 
 void KNN::splitData(vector<Row> inData) {
 
-	cout << "JEST SPLIT" << endl;
-
 	auto randomEngine = default_random_engine { };
 	shuffle(begin(inData), end(inData), randomEngine);
 	trainSize = 0.7 * inData.size();
@@ -137,40 +137,3 @@ void KNN::splitData(vector<Row> inData) {
 	}
 
 }
-
-/*
-
- class K {
-
- List<A> list ;
-
- list.add(new A())
- list.add(new B())
-
- for(A a: list)
- execute(A);
- execute(A a)
- {
- print "A" + a.getDescr();
- }
- execute(B b)
- {
- print "B" + a.getDescr();
- }
-
- static class A
- getDescr()
- {
- print "A"
- }
- static class B extends A
- getDescr()
- {
- print "B"
- }
- };
-
-
-
- */
-

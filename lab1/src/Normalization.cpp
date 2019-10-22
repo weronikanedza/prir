@@ -9,8 +9,8 @@ void Normalization::normalize(int argc, char *argv[]) {
 	findMinMax(argc, argv);
 
 	int num_of_features = NUM_OF_FEATURES;
-	int i, j;
 	int numprocs, myid, islave;
+	double local_category[inDataSize];
 
 	MPI_Status status;
 	MPI_Comm_size(MPI_COMM_WORLD, &numprocs);
@@ -26,10 +26,10 @@ void Normalization::normalize(int argc, char *argv[]) {
 	int inDataIdx = myid * iterationsPerProcess;
 
 	//fill data for each process
-	for (i = 0; i < iterationsPerProcess; i++) {
+	for (int i = 0; i < iterationsPerProcess; i++) {
 		buf_category[i] = inData[inDataIdx].category;
 
-		for (j = 0; j < num_of_features; j++) {
+		for (int j = 0; j < num_of_features; j++) {
 			buf_features[i * num_of_features + j] =
 					(inData[inDataIdx].features[j] - min[j])
 							/ (max[j] - min[j]);
@@ -38,15 +38,39 @@ void Normalization::normalize(int argc, char *argv[]) {
 		++inDataIdx;
 	}
 
-	//gather in one all data
-	int *all_categories = nullptr;
-	double *all_features = nullptr;
+	//fill data for each process
 
 	if (myid == 0) {
-		all_categories = new int[iterationsPerProcess * numprocs];
-		all_features = new double[iterationsPerProcess * numprocs
-				* sizeof(KNNRow)];
+		cout << "ZERO : " << endl;
+		for (int i = 0; i < iterationsPerProcess; i++) {
+			cout << " Category " << buf_category[i] << "  ------   ";
+
+			for (int j = 0; j < num_of_features; j++) {
+
+				cout << buf_features[i * num_of_features + j] << " ";
+			}
+			cout << endl;
+			++inDataIdx;
+		}
 	}
+
+	if (myid == 1) {
+		cout << "PIERWSZY : " << endl;
+		for (int i = 0; i < iterationsPerProcess; i++) {
+			cout << " Category " << buf_category[i] << "  ------   ";
+
+			for (int j = 0; j < num_of_features; j++) {
+
+				cout << buf_features[i * num_of_features + j] << " ";
+			}
+			cout << endl;
+			++inDataIdx;
+		}
+	}
+
+
+	int all_categories[iterationsPerProcess * numprocs];
+	double all_features[iterationsPerProcess * numprocs * NUM_OF_FEATURES];
 
 	MPI_Gather(buf_category, iterationsPerProcess, MPI_INT, all_categories,
 			iterationsPerProcess, MPI_INT, 0, MPI_COMM_WORLD);
@@ -54,72 +78,129 @@ void Normalization::normalize(int argc, char *argv[]) {
 			all_features, iterationsPerProcess * NUM_OF_FEATURES, MPI_DOUBLE, 0,
 			MPI_COMM_WORLD);
 
-	//clean them in one beautiful structure
+	MPI_Barrier (MPI_COMM_WORLD);
+
 	if (myid == 0) {
-		KNNRow allNormalizedData[iterationsPerProcess * numprocs];
-		memset(allNormalizedData, 0,
-				iterationsPerProcess * numprocs * sizeof(KNNRow));
 
-		for (int i = 0; i < numprocs; i++) {
-			for (int j = 0; j < iterationsPerProcess; j++) {
-				int data_id = i * iterationsPerProcess + j;
-				normalizedData[data_id].category = all_categories[data_id];
-
-				for (int k = 0; k < all_categories[data_id]; ++k) {
-					normalizedData[data_id].features[k] = all_features[i
-							* iterationsPerProcess * NUM_OF_FEATURES
-							+ j * NUM_OF_FEATURES];
-				}
-			}
+		for (islave = 1; islave < numprocs; islave++) {
+			MPI_Send(all_categories, inDataSize, MPI_INTEGER, islave, 5,
+					MPI_COMM_WORLD);
+			MPI_Send(all_features, inDataSize * NUM_OF_FEATURES, MPI_DOUBLE, islave, 5,
+								MPI_COMM_WORLD);
 		}
+
+	} else {
+		MPI_Recv(all_categories, inDataSize, MPI_INTEGER, 0, 5, MPI_COMM_WORLD,
+				&status);
+		MPI_Recv(all_features, inDataSize * NUM_OF_FEATURES, MPI_DOUBLE, 0, 5, MPI_COMM_WORLD,
+					&status);
 	}
 
+	//pack to normal structure
+	int idx = 0;
+	for (int i = 0; i < inDataSize; i++) {
+		Row row;
+		row.category = all_categories[i];
+		for (int j = 0; j < NUM_OF_FEATURES; j++) {
+			row.features.push_back(all_features[idx++]);
+		}
+		normalizedData.push_back(row);
+	}
 
-	delete[] all_categories;
-	delete[] all_features;
+	if (myid == 1) {
+		cout << "NORMALIZED FOR myID " << endl;
+		for (int i = 0; i < inDataSize; i++) {
+			cout << "\n category " << normalizedData[i].category << "   "
+					<< endl;
+			for (int j = 0; j < NUM_OF_FEATURES; j++) {
+				cout << normalizedData[i].features[j] << " ";
+			}
+		}
+
+	}
+
+	MPI_Barrier (MPI_COMM_WORLD);
+	cout<<"ZA BARIERA"<<endl;
+//	delete[] all_categories;
+//	delete[] all_features;
+
 }
 
 void Normalization::findMinMax(int argc, char *argv[]) {
 	int i, j;
 	int num_of_features = NUM_OF_FEATURES;
-	int numprocs, myid, islave;
-
 	MPI_Status status;
-	MPI_Comm_size(MPI_COMM_WORLD, &numprocs);
-	MPI_Comm_rank(MPI_COMM_WORLD, &myid);
+	double global_min[NUM_OF_FEATURES];
+	double global_max[NUM_OF_FEATURES];
+
+	double local_min[NUM_OF_FEATURES];
+	double local_max[NUM_OF_FEATURES];
 
 	for (i = 0; i < num_of_features; i++) {
 		min[i] = numeric_limits<int>::max();
+		local_min[i] = numeric_limits<int>::max();
 	}
 
+	int myid, numprocs, islave;
+	MPI_Comm_rank(MPI_COMM_WORLD, &myid);
+
+	MPI_Comm_size(MPI_COMM_WORLD, &numprocs);
 	double begin = MPI_Wtime();
 
 	if (myid == 0) {
-		for (islave = 1; islave < numprocs; islave++) {
-			MPI_Send(&inDataSize, 1, MPI_INTEGER, islave, MTAG1,
-					MPI_COMM_WORLD);
+		for (int i = 0; i < inDataSize; i++) {
+			cout << inData[i].category << " ";
+			for (int j = 0; j < NUM_OF_FEATURES; j++) {
+				cout << " , " << inData[i].features[j];
+			}
+
+			cout << endl;
 		}
-	} else {
-		MPI_Recv(&inDataSize, 1, MPI_INTEGER, 0, MTAG1, MPI_COMM_WORLD,
-				&status);
 	}
 
 	for (i = myid; i < inDataSize; i += numprocs) {
-
 		for (j = 0; j < num_of_features; j++) {
-			if (min[j] > inData[i].features[j]) {
-				min[j] = inData[i].features[j];
+
+			if (local_min[j] > inData[i].features[j]) {
+				local_min[j] = inData[i].features[j];
 			}
 
-			if (max[j] < inData[i].features[j]) {
-				max[j] = inData[i].features[j];
+			if (local_max[j] < inData[i].features[j]) {
+				local_max[j] = inData[i].features[j];
 			}
 		}
-
 	}
+
+	MPI_Barrier (MPI_COMM_WORLD);
+
+	for (int i = 0; i < NUM_OF_FEATURES; i++) {
+		MPI_Reduce(&local_min[i], &min[i], 1, MPI_DOUBLE, MPI_MIN, 0,
+				MPI_COMM_WORLD);
+		MPI_Reduce(&local_max[i], &max[i], 1, MPI_DOUBLE, MPI_MAX, 0,
+				MPI_COMM_WORLD);
+	}
+
+//pass min /max to all
+	if (myid == 0) {
+		for (islave = 1; islave < numprocs; islave++) {
+			MPI_Send(min, NUM_OF_FEATURES, MPI_DOUBLE, islave, 10,
+					MPI_COMM_WORLD);
+			MPI_Send(max, NUM_OF_FEATURES, MPI_DOUBLE, islave, MTAG2,
+					MPI_COMM_WORLD);
+
+		}
+	} else {
+		MPI_Recv(min, NUM_OF_FEATURES, MPI_DOUBLE, 0, 10, MPI_COMM_WORLD,
+				&status);
+
+		MPI_Recv(max, NUM_OF_FEATURES, MPI_DOUBLE, 0, MTAG2, MPI_COMM_WORLD,
+				&status);
+	}
+
 
 	double end = MPI_Wtime();
 	minMaxTime = end - begin;
+
 
 }
 
