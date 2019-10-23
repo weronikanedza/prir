@@ -20,10 +20,10 @@ void KNN::knn(vector<Row> rows, int argc, char *argv[]) {
 	MPI_Comm_size(MPI_COMM_WORLD, &numprocs);
 	MPI_Comm_rank(MPI_COMM_WORLD, &myid);
 
-	cout<<"KNNN"<<endl;
-
 	splitData(rows);
 
+
+	//cout << " RANDOM TRAIN VALUE : " <<trainSet[5].features[2];
 
 	//send information about data size
 	if (myid == 0) {
@@ -117,6 +117,7 @@ void KNN::splitData(vector<Row> inData) {
 	shuffle(begin(inData), end(inData), randomEngine);
 	trainSize = 0.7 * inData.size();
 	testSize = inData.size() - trainSize;
+
 	for (int i = 0; i < trainSize; i++) {
 		KNNRow r = KNNRow();
 		r.category = inData[i].category;

@@ -5153,3 +5153,53 @@ org.eclipse.core.runtime.CoreException: Cannot determine URI for '/lab1/src/Norm
 
 !ENTRY org.eclipse.cdt.core 1 0 2019-10-21 20:11:38.781
 !MESSAGE Indexed 'lab1' (5 sources, 253 headers) in 33.7 sec: 32,630 declarations; 61,323 references; 3 unresolved inclusions; 0 syntax errors; 23 unresolved names (0.024%)
+!SESSION 2019-10-22 09:08:19.009 -----------------------------------------------
+eclipse.buildId=4.13.0.I20190916-1045
+java.version=12.0.2
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.cpp.product
+Command-line arguments:  -os linux -ws gtk -arch x86_64 -product org.eclipse.epp.package.cpp.product
+
+!ENTRY org.eclipse.core.resources 2 10035 2019-10-22 09:08:29.040
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+!SESSION 2019-10-22 11:05:22.040 -----------------------------------------------
+eclipse.buildId=4.13.0.I20190916-1045
+java.version=12.0.2
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.cpp.product
+Command-line arguments:  -os linux -ws gtk -arch x86_64 -product org.eclipse.epp.package.cpp.product
+
+!ENTRY org.eclipse.core.resources 2 10035 2019-10-22 11:05:36.387
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+!SESSION 2019-10-22 13:22:33.356 -----------------------------------------------
+eclipse.buildId=4.13.0.I20190916-1045
+java.version=12.0.2
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.cpp.product
+Command-line arguments:  -os linux -ws gtk -arch x86_64 -product org.eclipse.epp.package.cpp.product
+
+!ENTRY org.eclipse.core.resources 2 10035 2019-10-22 13:22:45.564
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+!SESSION 2019-10-22 16:22:32.449 -----------------------------------------------
+eclipse.buildId=4.13.0.I20190916-1045
+java.version=12.0.2
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.cpp.product
+Command-line arguments:  -os linux -ws gtk -arch x86_64 -product org.eclipse.epp.package.cpp.product
+
+!ENTRY org.eclipse.core.resources 2 10035 2019-10-22 16:22:40.919
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+!SESSION 2019-10-23 18:24:28.766 -----------------------------------------------
+eclipse.buildId=4.13.0.I20190916-1045
+java.version=12.0.2
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.cpp.product
+Command-line arguments:  -os linux -ws gtk -arch x86_64 -product org.eclipse.epp.package.cpp.product
+
+!ENTRY org.eclipse.core.resources 2 10035 2019-10-23 18:24:43.288
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
