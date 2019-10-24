@@ -43,9 +43,6 @@ void Normalization::normalize(int argc, char *argv[]) {
 				&status);
 	}
 
-	cout << " MOJE ITERACJE : " << iterationsPerProcess << endl;
-
-
 	//lokalne tablice na kategorie
 	double local_category[iterationsPerProcess];
 	double local_features[iterationsPerProcess * NUM_OF_FEATURES];
