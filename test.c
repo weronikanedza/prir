@@ -1,89 +1,88 @@
-#include <iostream>
-#include <cstdlib>
-#include <cmath>
+//
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 #include <mpi.h>
+#include <assert.h>
 
-constexpr int DOUBLE_MAX = 10;
-struct CustomData {
-  int n_values;
-  double values[DOUBLE_MAX];
-};
+// Creates an array of random numbers. Each number has a value from 0 - 1
+float *create_rand_nums(int num_elements) {
+  float *rand_nums = (float *)malloc(sizeof(float) * num_elements);
+  assert(rand_nums != NULL);
+  int i;
+  for (i = 0; i < num_elements; i++) {
+    rand_nums[i] = (rand() / (float)RAND_MAX);
+  }
+  return rand_nums;
+}
 
-int main(int argc, char **argv) {
-  
-  MPI_Init(&argc, &argv);
+// Computes the average of an array of numbers
+float compute_avg(float *array, int num_elements) {
+  float sum = 0.f;
+  int i;
+  for (i = 0; i < num_elements; i++) {
+    sum += array[i];
+  }
+  return sum / num_elements;
+}
 
-  int rank, size;
-
-  MPI_Comm_size(MPI_COMM_WORLD, &size);
-  MPI_Comm_rank(MPI_COMM_WORLD, &rank);
-
-  constexpr int n_structure_per_process = 5; // M = 5
-
-  // Random generator init
-  srand(rank * 10);
-  
-  // Creating the dataset
-  CustomData data[n_structure_per_process];
-
-  // Generating the data
-  for (int i=0; i < n_structure_per_process; ++i) {
-    // Terrible way of generating random numbers, don't reproduce this at home
-    data[i].n_values = rand() % DOUBLE_MAX + 1;
-    for (int j=0; j < DOUBLE_MAX; ++j)
-      data[i].values[j] = (j < data[i].n_values ? (double)rand() / (double)RAND_MAX : 0.0);
+int main(int argc, char** argv) {
+  if (argc != 2) {
+    fprintf(stderr, "Usage: avg num_elements_per_proc\n");
+    exit(1);
   }
 
-  // Copying the data to two different arrays
-  int int_send_buf[n_structure_per_process];
-  double dbl_send_buf[n_structure_per_process * DOUBLE_MAX];
+  int num_elements_per_proc = atoi(argv[1]);
+  // Seed the random number generator to get different results each time
+  srand(time(NULL));
 
-  for (int i=0; i < n_structure_per_process; ++i) {
-    int_send_buf[i] = data[i].n_values;
-    for (int j=0; j < data[i].n_values; ++j)
-      dbl_send_buf[i*DOUBLE_MAX + j] = data[i].values[j];
+  MPI_Init(NULL, NULL);
+
+  int world_rank;
+  MPI_Comm_rank(MPI_COMM_WORLD, &world_rank);
+  int world_size;
+  MPI_Comm_size(MPI_COMM_WORLD, &world_size);
+
+  // Create a random array of elements on the root process. Its total
+  // size will be the number of elements per process times the number
+  // of processes
+  float *rand_nums = NULL;
+  if (world_rank == 0) {
+    rand_nums = create_rand_nums(num_elements_per_proc * world_size);
   }
 
-  // Gathering everything on process 0
-  int *n_values = nullptr; 
-  double *dbl_values = nullptr; 
+  // For each process, create a buffer that will hold a subset of the entire
+  // array
+  float *sub_rand_nums = (float *)malloc(sizeof(float) * num_elements_per_proc);
+  assert(sub_rand_nums != NULL);
 
-  if (rank == 0) {
-    n_values = new int[n_structure_per_process * size];
-    dbl_values = new double[n_structure_per_process * size * DOUBLE_MAX];
+  // Scatter the random numbers from the root process to all processes in
+  // the MPI world
+  MPI_Scatter(rand_nums, num_elements_per_proc, MPI_FLOAT, sub_rand_nums,
+              num_elements_per_proc, MPI_FLOAT, 0, MPI_COMM_WORLD);
+
+  // Compute the average of your subset
+  float sub_avg = compute_avg(sub_rand_nums, num_elements_per_proc);
+
+  // Gather all partial averages down to all the processes
+  float *sub_avgs = (float *)malloc(sizeof(float) * world_size);
+  assert(sub_avgs != NULL);
+  MPI_Allgather(&sub_avg, 1, MPI_FLOAT, sub_avgs, 1, MPI_FLOAT, MPI_COMM_WORLD);
+
+  // Now that we have all of the partial averages, compute the
+  // total average of all numbers. Since we are assuming each process computed
+  // an average across an equal amount of elements, this computation will
+  // produce the correct answer.
+  float avg = compute_avg(sub_avgs, world_size);
+  printf("Avg of all elements from proc %d is %f\n", world_rank, avg);
+
+  // Clean up
+  if (world_rank == 0) {
+    free(rand_nums);
   }
-  
-  MPI_Gather(int_send_buf, n_structure_per_process, MPI_INT,
-	     n_values, n_structure_per_process, MPI_INT, 0, MPI_COMM_WORLD);
-  MPI_Gather(dbl_send_buf, n_structure_per_process * DOUBLE_MAX, MPI_DOUBLE,
-	     dbl_values, n_structure_per_process * DOUBLE_MAX, MPI_DOUBLE, 0, MPI_COMM_WORLD);
+  free(sub_avgs);
+  free(sub_rand_nums);
 
-  if (rank == 0) {
-    // Recopying the data and printing
-    CustomData gathered_data[n_structure_per_process * size];
-    memset(gathered_data, 0, n_structure_per_process * size * sizeof(CustomData));
-    for (int i=0; i < size; ++i) {
-      for (int j=0; j < n_structure_per_process; ++j) {
-	int data_id = i * n_structure_per_process + j; // Linear index
-
-	std::cout << "Data structure " << data_id << " : [";
-	
-	gathered_data[data_id].n_values = n_values[data_id];
-	for (int k=0; k < n_values[data_id]; ++k) {
-	  gathered_data[data_id].values[k] = dbl_values[i*n_structure_per_process*DOUBLE_MAX + j*DOUBLE_MAX + k];
-	  std::cout << gathered_data[data_id].values[k] << (k == n_values[data_id]-1 ? "]" : "; ");
-	}
-	std::cout << std::endl;
-      }
-    }
-
-    // And freeing the memory
-    delete [] n_values;
-    delete [] dbl_values;
-  }
-  
-  
+  MPI_Barrier(MPI_COMM_WORLD);
   MPI_Finalize();
-  
-  return 0;
 }

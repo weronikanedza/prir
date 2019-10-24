@@ -8,11 +8,26 @@
 #define CATEGORY_NUM 18
 
 using namespace std;
-void KNN::knn(vector<Row> rows, int argc, char *argv[]) {
+void KNN::knn(vector<KNNRow> rows, int argc, char *argv[]) {
 	int correct = 0;
 	int i, islave;
 	int K = 5;
 	int myCorrect = 0;
+
+
+
+//	cout<<"BEFORe PACKING"<<endl;
+//	cout<<"SIIIIZEEE : "<<inrows.size()<<endl;
+//	for( i=0;i<inrows.size();i++){
+//		Row row;
+//		row.category = inrows[i].category;
+//		for(int j=0;j<NUM_OF_FEATURES;j++){
+//			vector<Row> rows;
+//			rows[i].features.push_back(inrows[i].features[j]);
+//		}
+//		rows.push_back(row);
+//	}
+//	cout<<"AFTER PACKING"<<endl;
 
 	double begin = MPI_Wtime();
 	int numprocs, myid;
@@ -20,11 +35,12 @@ void KNN::knn(vector<Row> rows, int argc, char *argv[]) {
 	MPI_Comm_size(MPI_COMM_WORLD, &numprocs);
 	MPI_Comm_rank(MPI_COMM_WORLD, &myid);
 
+	cout<<"OSTATNI ELEMENT PRZED SPLIT"<< rows[28055].category << "  feat : "<< rows[28055].features[0]<<endl;
 	splitData(rows);
 
 
-	//cout << " RANDOM TRAIN VALUE : " <<trainSet[5].features[2];
 
+	cout<<"OSTATNI ELEMENT "<< rows[28055].category << "  feat : "<< rows[28055].features[3]<<endl;
 	//send information about data size
 	if (myid == 0) {
 		for (islave = 1; islave < numprocs; islave++) {
@@ -41,6 +57,7 @@ void KNN::knn(vector<Row> rows, int argc, char *argv[]) {
 		testSet[i].prediction = prediction;
 	}
 
+	cout<<"COUTET PREDICTION"<<endl;
 	//wait for all processes
 	MPI_Barrier (MPI_COMM_WORLD);
 
@@ -111,7 +128,7 @@ double KNN::calcDist(KNNRow test, KNNRow train) {
 	return dist;
 }
 
-void KNN::splitData(vector<Row> inData) {
+void KNN::splitData(vector<KNNRow> inData) {
 
 	auto randomEngine = default_random_engine { };
 	shuffle(begin(inData), end(inData), randomEngine);

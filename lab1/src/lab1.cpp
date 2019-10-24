@@ -19,6 +19,11 @@ int main(int argc, char *argv[]) {
 	//knn.knn(rows, argc, argv);
 	normalize.normalize(argc, argv);
 
+
+
+
+
+
 	knn.knn(normalize.getNormalizedData(), argc, argv);
 
 	if(myid==0){
