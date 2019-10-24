@@ -45,7 +45,6 @@ void Normalization::normalize(int argc, char *argv[]) {
 
 	cout << " MOJE ITERACJE : " << iterationsPerProcess << endl;
 
-	MPI_Barrier (MPI_COMM_WORLD);
 
 	//lokalne tablice na kategorie
 	double local_category[iterationsPerProcess];
@@ -81,7 +80,7 @@ void Normalization::normalize(int argc, char *argv[]) {
 
 	}
 
-	MPI_Barrier(MPI_COMM_WORLD);
+	//przesłanie do głownego procesów lokalnych elementów
 
 	if (myid != 0) {
 		MPI_Send(local_category, iterationsPerProcess, MPI_INTEGER, 0, 5,
@@ -115,11 +114,10 @@ void Normalization::normalize(int argc, char *argv[]) {
 
 	}
 
-	MPI_Barrier(MPI_COMM_WORLD);
 
+	//zaktualizowanie all_categories we wszystkich procesach
 	if (myid == 0) {
 		for (islave = 1; islave < numprocs; islave++) {
-			cout << "ALL CATEGORIES SEND : " << all_categories[28055] << endl;
 			MPI_Send(all_categories, inDataSize, MPI_INTEGER, islave, 13,
 					MPI_COMM_WORLD);
 			MPI_Send(all_features,
@@ -134,7 +132,6 @@ void Normalization::normalize(int argc, char *argv[]) {
 				0, 14, MPI_COMM_WORLD, &status);
 	}
 
-	MPI_Barrier(MPI_COMM_WORLD);
 
 	int featIdx = 0;
 	for (i = 0; i < inDataSize; i++) {
